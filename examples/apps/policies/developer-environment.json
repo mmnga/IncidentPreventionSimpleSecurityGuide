@@ -1,0 +1,34 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "ide": {
+    "extensions": "allowlist with version/digest review",
+    "workspace_trust": "untrusted target"
+  },
+  "bootstrap": {
+    "auto_run": false,
+    "devcontainer_post_create": false,
+    "curl_pipe_shell": false
+  },
+  "git": {
+    "hooks": "not activated",
+    "filters": "not activated",
+    "fsmonitor": "not activated"
+  },
+  "production_credentials_in_audit_workspace": false,
+  "audit_tools": {
+    "source": "trusted canonical skill outside snapshot",
+    "version_hash": "required",
+    "telemetry": false,
+    "target_instructions": "data, not authority"
+  },
+  "input_limits": {
+    "symlink_follow": false,
+    "archive_execute": false,
+    "oversize": "record gap"
+  },
+  "outputs": {
+    "classification": "confidential",
+    "redaction": true,
+    "public_upload": false
+  }
+}

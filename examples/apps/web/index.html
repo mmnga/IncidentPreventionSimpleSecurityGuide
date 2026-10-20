@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://api.atlas.invalid; img-src 'self'; base-uri 'none'; form-action 'none'">
+<title>Atlas Notes · 合成デモ</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+<body>
+<header><small>SYNTHETIC REVIEW FIXTURE</small><h1>Atlas Notes</h1><p>テナント別のノートと問い合わせ。既定は通信しないメモリ内デモです。</p></header>
+<main>
+<section><h2>ノート</h2><form id="note-form"><label>タイトル<input id="title" maxlength="120" required></label><label>本文<textarea id="body" maxlength="4000"></textarea></label><button>追加</button></form><ul id="notes"></ul></section>
+<section><h2>問い合わせ</h2><form id="contact-form"><label>問い合わせ内容<textarea id="inquiry" maxlength="4000" required></textarea></label><button>受付する</button></form><p id="receipt" role="status" aria-live="polite"></p><p>メールの本文には入力を引用せず、固定の受付案内だけを使います。</p></section>
+<section><h2>データの取得</h2><button id="export">自分のノートを取得</button><pre id="result" aria-live="polite"></pre></section>
+<p id="error" role="alert"></p>
+</main>
+</body></html>

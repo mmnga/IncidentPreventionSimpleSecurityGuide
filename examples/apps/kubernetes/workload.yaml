@@ -1,0 +1,69 @@
+# SYNTHETIC declaration; registry.invalid digest is not a verified image.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: atlas-api
+  namespace: atlas
+automountServiceAccountToken: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atlas-api
+  namespace: atlas
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: atlas-api}
+  template:
+    metadata:
+      labels: {app: atlas-api}
+    spec:
+      serviceAccountName: atlas-api
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: api
+          image: registry.invalid/atlas/api@sha256:0000000000000000000000000000000000000000000000000000000000000000
+          ports: [{containerPort: 8080}]
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities: {drop: [ALL]}
+          resources:
+            requests: {cpu: 100m, memory: 128Mi}
+            limits: {cpu: 500m, memory: 256Mi}
+          volumeMounts: [{name: tmp, mountPath: /tmp}]
+      volumes: [{name: tmp, emptyDir: {sizeLimit: 32Mi}}]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: atlas-default-deny, namespace: atlas}
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: atlas-api-ingress, namespace: atlas}
+spec:
+  podSelector:
+    matchLabels: {app: atlas-api}
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels: {purpose: ingress}
+      ports: [{protocol: TCP, port: 8080}]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata: {name: atlas-config-reader, namespace: atlas}
+rules:
+  - apiGroups: ['']
+    resources: [configmaps]
+    resourceNames: [atlas-public-config]
+    verbs: [get]

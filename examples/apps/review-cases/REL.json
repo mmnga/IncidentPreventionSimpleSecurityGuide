@@ -1,0 +1,183 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "REL",
+  "cases": [
+    {
+      "control_id": "REL-01",
+      "title": "配布ファイル許可リスト",
+      "counterexample": "配布許可リストをworkspace全体へ広げる",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "REL-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/40",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "REL-02",
+      "title": "source map・デバッグシンボル",
+      "counterexample": "sourcesContentを含むmapを一般公開する",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "REL-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/41",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "REL-03",
+      "title": ".git・バックアップ・設定の配布",
+      "counterexample": ".git/env/backupを配布物へ含める",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "REL-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/42",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "REL-04",
+      "title": "フロントエンドbundleの秘密値",
+      "counterexample": "bundleへサーバー用secretを置く",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "REL-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/43",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "REL-05",
+      "title": "コンテナ過去層・build arg",
+      "counterexample": "DockerのARG/layerへ秘密値を残す",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "REL-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/44",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "REL-06",
+      "title": "release署名と検証側",
+      "counterexample": "署名は生成するが利用側で署名/digestを検証しない",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "REL-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/45",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "REL-07",
+      "title": "配布版の不変性・巻き戻り防止",
+      "counterexample": "配布済み版を上書き可能にし旧版へのrollbackを許す",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/46",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "REL-08",
+      "title": "preview・stagingの公開範囲",
+      "counterexample": "previewへ本番データ付きで匿名公開する",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "REL-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/47",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "REL-09",
+      "title": "CI artifactとrelease添付の内容",
+      "counterexample": "CI artifactへstateやdiagnostic dumpを添付する",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "REL-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/48",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "REL-10",
+      "title": "再現buildとリリース対応表",
+      "counterexample": "commit/lock/builderとrelease digestの結合を記録しない",
+      "inspect_files": [
+        "policies/RELEASE.md",
+        "containers/api.Dockerfile",
+        "flutter/android/app/build.gradle.kts"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/49",
+      "additional_condition_focus": []
+    }
+  ]
+}

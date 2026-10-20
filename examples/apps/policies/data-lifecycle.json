@@ -1,0 +1,36 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "classification": {
+    "notes": "tenant confidential",
+    "inquiries": "support restricted",
+    "sessions": "secret",
+    "audit_metadata": "security restricted"
+  },
+  "storage": {
+    "sqlite_demo": "not proof of encryption at rest",
+    "deployment": "encrypted DB and separated KMS"
+  },
+  "retention": {
+    "inquiry_days": 30,
+    "export_minutes": 10,
+    "session_minutes": 30
+  },
+  "delete_flow": [
+    "authorize tenant/owner",
+    "delete active record",
+    "record tombstone",
+    "expire export/cache/search",
+    "reapply tombstones after restore"
+  ],
+  "nonproduction": {
+    "production_data_allowed": false,
+    "crash_dumps": "redacted and access-controlled",
+    "temporary_files": "quarantine, bounded and erased"
+  },
+  "backup": {
+    "independent_role": true,
+    "versioning": true,
+    "retention_lock": true,
+    "actual_restore": null
+  }
+}

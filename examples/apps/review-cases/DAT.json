@@ -1,0 +1,203 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "DAT",
+  "cases": [
+    {
+      "control_id": "DAT-01",
+      "title": "データ分類・流れ・所有者",
+      "counterexample": "問い合わせ/ノート/分析送信の所有者と用途を棚卸ししない",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/90",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DAT-02",
+      "title": "データ最小化",
+      "counterexample": "必要のない本人情報を全応答へ含める",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/91",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DAT-03",
+      "title": "保存時暗号化と鍵分離",
+      "counterexample": "暗号鍵と復号対象を同じ広域roleで読めるようにする",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/92",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DAT-04",
+      "title": "テスト環境への本番データ持込",
+      "counterexample": "本番データをテストseedへコピーする",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/93",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DAT-05",
+      "title": "保存期限・削除・派生データ",
+      "counterexample": "削除時にexport/cacheを残し復元後のtombstoneも適用しない",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-05/S1"
+      ],
+      "full_criteria": [
+        "DAT-05/C1",
+        "DAT-05/C2"
+      ],
+      "definition_pointer": "checks.json#/94",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DAT-06",
+      "title": "export・download保護",
+      "counterexample": "他人のexport IDで結果を取得可能にする",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/95",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DAT-07",
+      "title": "暗号方式・乱数・nonce",
+      "counterexample": "tokenを予測可能な乱数や固定nonceで発行する",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/96",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DAT-08",
+      "title": "backup・snapshotの公開と権限",
+      "counterexample": "backup/snapshotを公開またはアプリroleで全閲覧可能にする",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/97",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DAT-09",
+      "title": "一時ファイル・crash dump",
+      "counterexample": "crash dump/一時exportへ本文とtokenを残す",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-09/S1"
+      ],
+      "full_criteria": [
+        "DAT-09/C1",
+        "DAT-09/C2"
+      ],
+      "definition_pointer": "checks.json#/98",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DAT-10",
+      "title": "第三者処理とデータ送信先",
+      "counterexample": "外部APM/AIへ未承認の本文を送る",
+      "inspect_files": [
+        "api/schema.sql",
+        "api/workers.py",
+        "policies/data-lifecycle.json",
+        "terraform/data.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DAT-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/99",
+      "additional_condition_focus": []
+    }
+  ]
+}

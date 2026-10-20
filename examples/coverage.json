@@ -1,0 +1,5846 @@
+{
+  "kind": "SYNTHETIC_COVERAGE_INDEX_NOT_AUDIT_EVIDENCE",
+  "authoritative_verdict": false,
+  "catalog_path": "skills/repository-security-audit/references/checks.json",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "base_directory": "examples",
+  "target_directory": "examples/apps",
+  "counts": {
+    "controls": 220,
+    "static_controls": 172,
+    "external_controls": 48,
+    "static_criteria": 184,
+    "full_criteria": 127
+  },
+  "controls": [
+    {
+      "control_id": "SEC-01",
+      "title": "現在のソース内の秘密情報",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SEC-01/S1",
+          "case_ref": "apps/review-cases/SEC.json#/cases/0",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/notifications/receipt.py",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SEC-02",
+      "title": "秘密鍵・署名鍵の混入",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SEC-02/S1",
+          "case_ref": "apps/review-cases/SEC.json#/cases/1",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/notifications/receipt.py",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SEC-03",
+      "title": ".env・認証設定の混入",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SEC-03/S1",
+          "case_ref": "apps/review-cases/SEC.json#/cases/2",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/notifications/receipt.py",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SEC-04",
+      "title": "接続文字列・URL内の資格情報",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SEC-04/S1",
+          "case_ref": "apps/review-cases/SEC.json#/cases/3",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/notifications/receipt.py",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SEC-05",
+      "title": "ブラウザ・モバイル公開設定",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SEC-05/S1",
+          "case_ref": "apps/review-cases/SEC.json#/cases/4",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/notifications/receipt.py",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SEC-06",
+      "title": "テスト・ノートブック・fixtureの秘密情報",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SEC-06/S1",
+          "case_ref": "apps/review-cases/SEC.json#/cases/5",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/notifications/receipt.py",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SEC-07",
+      "title": "シークレットの権限・有効期限",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SEC-07/S1",
+          "case_ref": "apps/review-cases/SEC.json#/cases/6",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/notifications/receipt.py",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SEC-08",
+      "title": "OIDC・ワークロードIDの信頼条件",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SEC-08/S1",
+          "case_ref": "apps/review-cases/SEC.json#/cases/7",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/notifications/receipt.py",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SEC-09",
+      "title": "シークレット注入と平文露出",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SEC-09/S1",
+          "case_ref": "apps/review-cases/SEC.json#/cases/8",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/notifications/receipt.py",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SEC-10",
+      "title": "失効・ローテーションの実効性",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/notifications/receipt.py",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/SEC.json#/cases/9",
+      "external_model_ref": "apps/operations/external-controls.json#/records/0",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-01",
+      "title": "全到達可能履歴の秘密情報検査",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "GIT-01/S1",
+          "case_ref": "apps/review-cases/GIT.json#/cases/0",
+          "source_refs": [
+            "apps/policies/git-governance.json",
+            "apps/policies/CODEOWNERS.example"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-02",
+      "title": "shallow・partial cloneと取得範囲",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "GIT-02/S1",
+          "case_ref": "apps/review-cases/GIT.json#/cases/1",
+          "source_refs": [
+            "apps/policies/git-governance.json",
+            "apps/policies/CODEOWNERS.example"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-03",
+      "title": "未追跡・ignoredファイル",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "GIT-03/S1",
+          "case_ref": "apps/review-cases/GIT.json#/cases/2",
+          "source_refs": [
+            "apps/policies/git-governance.json",
+            "apps/policies/CODEOWNERS.example"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-04",
+      "title": "submodule・LFSの実体",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "GIT-04/S1",
+          "case_ref": "apps/review-cases/GIT.json#/cases/3",
+          "source_refs": [
+            "apps/policies/git-governance.json",
+            "apps/policies/CODEOWNERS.example"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-05",
+      "title": "公開範囲とfork・mirror",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/4",
+      "external_model_ref": "apps/operations/external-controls.json#/records/1",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-06",
+      "title": "保護ブランチ・ruleset",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/5",
+      "external_model_ref": "apps/operations/external-controls.json#/records/2",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-07",
+      "title": "重要ファイルのCODEOWNERS",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "GIT-07/S1",
+          "case_ref": "apps/review-cases/GIT.json#/cases/6",
+          "source_refs": [
+            "apps/policies/git-governance.json",
+            "apps/policies/CODEOWNERS.example"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-08",
+      "title": "管理者・botの迂回権限",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/7",
+      "external_model_ref": "apps/operations/external-controls.json#/records/3",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-09",
+      "title": "push時の秘密情報防止",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/8",
+      "external_model_ref": "apps/operations/external-controls.json#/records/4",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "GIT-10",
+      "title": "force push・削除・監査証跡",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/policies/git-governance.json",
+        "apps/policies/CODEOWNERS.example"
+      ],
+      "case_ref": "apps/review-cases/GIT.json#/cases/9",
+      "external_model_ref": "apps/operations/external-controls.json#/records/5",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-01",
+      "title": "Action・再利用workflowの固定",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-01/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/0",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-02",
+      "title": "CIトークンの最小権限",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-02/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/1",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-03",
+      "title": "特権イベントと未信頼コード",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-03/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/2",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-04",
+      "title": "式展開・シェルへの入力注入",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-04/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/3",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-05",
+      "title": "checkout資格情報の残留",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-05/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/4",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-06",
+      "title": "秘密情報の継承・PR配布",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-06/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/5",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-07",
+      "title": "runner隔離・使い捨て性",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-07/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/6",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-08",
+      "title": "ビルドの外向き通信",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-08/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/7",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-09",
+      "title": "cache・artifact汚染",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-09/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/8",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CIC-10",
+      "title": "デプロイ承認と署名job分離",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ci/review.workflow.yaml",
+        "apps/policies/RELEASE.md"
+      ],
+      "case_ref": "apps/review-cases/CIC.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CIC-10/S1",
+          "case_ref": "apps/review-cases/CIC.json#/cases/9",
+          "source_refs": [
+            "apps/ci/review.workflow.yaml",
+            "apps/policies/RELEASE.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SUP-01",
+      "title": "全manifest・lockfileの棚卸し",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-01/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/0",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "SUP-01/C1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/0"
+        },
+        {
+          "criterion_id": "SUP-01/C2",
+          "case_ref": "apps/review-cases/SUP.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/1"
+        }
+      ]
+    },
+    {
+      "control_id": "SUP-02",
+      "title": "既知脆弱性と悪用実績",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-02/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/1",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "SUP-02/C1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/2"
+        },
+        {
+          "criterion_id": "SUP-02/C2",
+          "case_ref": "apps/review-cases/SUP.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/3"
+        }
+      ]
+    },
+    {
+      "control_id": "SUP-03",
+      "title": "悪性パッケージ・侵害版",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-03/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/2",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SUP-04",
+      "title": "install・build lifecycle script",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-04/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/3",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SUP-05",
+      "title": "registryとdependency confusion",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-05/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/4",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SUP-06",
+      "title": "整合性・署名・provenance",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-06/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/5",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SUP-07",
+      "title": "非固定Git・URL・動的依存",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-07/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/6",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SUP-08",
+      "title": "保守終了・runtimeサポート",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-08/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/7",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SUP-09",
+      "title": "更新PRと差分レビュー",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-09/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/8",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "SUP-10",
+      "title": "SBOMと実配布物の一致",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/dependencies.json",
+        "apps/flutter/pubspec.yaml",
+        "apps/terraform/versions.tf"
+      ],
+      "case_ref": "apps/review-cases/SUP.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "SUP-10/S1",
+          "case_ref": "apps/review-cases/SUP.json#/cases/9",
+          "source_refs": [
+            "apps/policies/dependencies.json",
+            "apps/flutter/pubspec.yaml",
+            "apps/terraform/versions.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-01",
+      "title": "配布ファイル許可リスト",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "REL-01/S1",
+          "case_ref": "apps/review-cases/REL.json#/cases/0",
+          "source_refs": [
+            "apps/policies/RELEASE.md",
+            "apps/containers/api.Dockerfile",
+            "apps/flutter/android/app/build.gradle.kts"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-02",
+      "title": "source map・デバッグシンボル",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "REL-02/S1",
+          "case_ref": "apps/review-cases/REL.json#/cases/1",
+          "source_refs": [
+            "apps/policies/RELEASE.md",
+            "apps/containers/api.Dockerfile",
+            "apps/flutter/android/app/build.gradle.kts"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-03",
+      "title": ".git・バックアップ・設定の配布",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "REL-03/S1",
+          "case_ref": "apps/review-cases/REL.json#/cases/2",
+          "source_refs": [
+            "apps/policies/RELEASE.md",
+            "apps/containers/api.Dockerfile",
+            "apps/flutter/android/app/build.gradle.kts"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-04",
+      "title": "フロントエンドbundleの秘密値",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "REL-04/S1",
+          "case_ref": "apps/review-cases/REL.json#/cases/3",
+          "source_refs": [
+            "apps/policies/RELEASE.md",
+            "apps/containers/api.Dockerfile",
+            "apps/flutter/android/app/build.gradle.kts"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-05",
+      "title": "コンテナ過去層・build arg",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "REL-05/S1",
+          "case_ref": "apps/review-cases/REL.json#/cases/4",
+          "source_refs": [
+            "apps/policies/RELEASE.md",
+            "apps/containers/api.Dockerfile",
+            "apps/flutter/android/app/build.gradle.kts"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-06",
+      "title": "release署名と検証側",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "REL-06/S1",
+          "case_ref": "apps/review-cases/REL.json#/cases/5",
+          "source_refs": [
+            "apps/policies/RELEASE.md",
+            "apps/containers/api.Dockerfile",
+            "apps/flutter/android/app/build.gradle.kts"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-07",
+      "title": "配布版の不変性・巻き戻り防止",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/6",
+      "external_model_ref": "apps/operations/external-controls.json#/records/6",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-08",
+      "title": "preview・stagingの公開範囲",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "REL-08/S1",
+          "case_ref": "apps/review-cases/REL.json#/cases/7",
+          "source_refs": [
+            "apps/policies/RELEASE.md",
+            "apps/containers/api.Dockerfile",
+            "apps/flutter/android/app/build.gradle.kts"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-09",
+      "title": "CI artifactとrelease添付の内容",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "REL-09/S1",
+          "case_ref": "apps/review-cases/REL.json#/cases/8",
+          "source_refs": [
+            "apps/policies/RELEASE.md",
+            "apps/containers/api.Dockerfile",
+            "apps/flutter/android/app/build.gradle.kts"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "REL-10",
+      "title": "再現buildとリリース対応表",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/policies/RELEASE.md",
+        "apps/containers/api.Dockerfile",
+        "apps/flutter/android/app/build.gradle.kts"
+      ],
+      "case_ref": "apps/review-cases/REL.json#/cases/9",
+      "external_model_ref": "apps/operations/external-controls.json#/records/7",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AUT-01",
+      "title": "認証処理の一元化と迂回",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-01/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/0",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "AUT-01/C1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/4"
+        },
+        {
+          "criterion_id": "AUT-01/C2",
+          "case_ref": "apps/review-cases/AUT.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/5"
+        }
+      ]
+    },
+    {
+      "control_id": "AUT-02",
+      "title": "管理者MFAと復旧経路",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-02/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/1",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AUT-03",
+      "title": "パスワード保存",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-03/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/2",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AUT-04",
+      "title": "総当たり・認証濫用",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-04/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/3",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        },
+        {
+          "criterion_id": "AUT-04/S2",
+          "case_ref": "apps/review-cases/AUT.json#/cases/3",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "AUT-04/AR8-1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/6"
+        }
+      ]
+    },
+    {
+      "control_id": "AUT-05",
+      "title": "ユーザー列挙の抑制",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-05/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/4",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AUT-06",
+      "title": "reset・メール変更・招待token",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-06/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/5",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AUT-07",
+      "title": "JWT・OIDC署名とclaim",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-07/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/6",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AUT-08",
+      "title": "OAuth認証フロー",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-08/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/7",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AUT-09",
+      "title": "session cookieと固定化",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-09/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/8",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AUT-10",
+      "title": "logout・権限変更後の失効",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/app.py",
+        "apps/integrations/boundaries.py",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/AUT.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AUT-10/S1",
+          "case_ref": "apps/review-cases/AUT.json#/cases/9",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/app.py",
+            "apps/integrations/boundaries.py",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AZ-01",
+      "title": "各endpointのサーバー側認可",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-01/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/0",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AZ-02",
+      "title": "オブジェクト単位のIDOR/BOLA",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-02/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/1",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AZ-03",
+      "title": "組織・テナント横断",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-03/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/2",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AZ-04",
+      "title": "管理機能・ロール昇格",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-04/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/3",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "AZ-04/C1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/7"
+        },
+        {
+          "criterion_id": "AZ-04/C2",
+          "case_ref": "apps/review-cases/AZ.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/8"
+        }
+      ]
+    },
+    {
+      "control_id": "AZ-05",
+      "title": "mass assignment・フィールド認可",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-05/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/4",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AZ-06",
+      "title": "一括処理・export認可",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-06/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/5",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "AZ-06/C1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/9"
+        }
+      ]
+    },
+    {
+      "control_id": "AZ-07",
+      "title": "GraphQL・WebSocket・RPC認可",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-07/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/6",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AZ-08",
+      "title": "worker・queueの権限継承",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-08/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/7",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AZ-09",
+      "title": "DB RLSと接続role",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-09/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/8",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AZ-10",
+      "title": "cache・検索・共有URLの境界",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/api/workers.py",
+        "apps/api/advanced.py",
+        "apps/policies/postgres.sql"
+      ],
+      "case_ref": "apps/review-cases/AZ.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AZ-10/S1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/9",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        },
+        {
+          "criterion_id": "AZ-10/S2",
+          "case_ref": "apps/review-cases/AZ.json#/cases/9",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/api/workers.py",
+            "apps/api/advanced.py",
+            "apps/policies/postgres.sql"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "AZ-10/AR8-1",
+          "case_ref": "apps/review-cases/AZ.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/10"
+        }
+      ]
+    },
+    {
+      "control_id": "INJ-01",
+      "title": "SQL・NoSQL injection",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-01/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/0",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "INJ-01/C1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/11"
+        },
+        {
+          "criterion_id": "INJ-01/C2",
+          "case_ref": "apps/review-cases/INJ.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/12"
+        }
+      ]
+    },
+    {
+      "control_id": "INJ-02",
+      "title": "OSコマンド injection",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-02/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/1",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INJ-03",
+      "title": "テンプレート・式 injection",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-03/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/2",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INJ-04",
+      "title": "危険なdeserialization",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-04/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/3",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INJ-05",
+      "title": "path traversal・任意読取",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-05/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/4",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INJ-06",
+      "title": "SSRF・metadata到達",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-06/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/5",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INJ-07",
+      "title": "XML外部実体・entity展開",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-07/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/6",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INJ-08",
+      "title": "uploadと危険ファイル処理",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-08/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/7",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INJ-09",
+      "title": "prototype pollution・object merge",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-09/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/8",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INJ-10",
+      "title": "ReDoS・巨大入力・展開爆弾",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/api/advanced.py",
+        "apps/web/app.js"
+      ],
+      "case_ref": "apps/review-cases/INJ.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INJ-10/S1",
+          "case_ref": "apps/review-cases/INJ.json#/cases/9",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/api/advanced.py",
+            "apps/web/app.js"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "WEB-01",
+      "title": "XSSと出力エンコード",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-01/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/0",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        },
+        {
+          "criterion_id": "WEB-01/S2",
+          "case_ref": "apps/review-cases/WEB.json#/cases/0",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "WEB-01/MAIL-1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/13"
+        }
+      ]
+    },
+    {
+      "control_id": "WEB-02",
+      "title": "CSRF・cross-site操作",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-02/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/1",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "WEB-03",
+      "title": "CORSの実効許可範囲",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-03/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/2",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "WEB-04",
+      "title": "CSPと第三者script",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-04/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/3",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "WEB-05",
+      "title": "HTTPS・TLS・証明書検証",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-05/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/4",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "WEB-06",
+      "title": "公開API docs・debug endpoint",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-06/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/5",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "WEB-07",
+      "title": "cache headerと機密応答",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-07/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/6",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "WEB-08",
+      "title": "redirect・host headerの信頼",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-08/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/7",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        },
+        {
+          "criterion_id": "WEB-08/S2",
+          "case_ref": "apps/review-cases/WEB.json#/cases/7",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "WEB-08/AR8-1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/14"
+        }
+      ]
+    },
+    {
+      "control_id": "WEB-09",
+      "title": "API濫用・ページング・query制限",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-09/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        },
+        {
+          "criterion_id": "WEB-09/S2",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        },
+        {
+          "criterion_id": "WEB-09/S3",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        },
+        {
+          "criterion_id": "WEB-09/S4",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        },
+        {
+          "criterion_id": "WEB-09/S5",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "WEB-09/C1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/15"
+        },
+        {
+          "criterion_id": "WEB-09/C2",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/16"
+        },
+        {
+          "criterion_id": "WEB-09/AR8-1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/17"
+        },
+        {
+          "criterion_id": "WEB-09/AR8-2",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/18"
+        },
+        {
+          "criterion_id": "WEB-09/LAC-1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/19"
+        },
+        {
+          "criterion_id": "WEB-09/MAIL-1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/20"
+        }
+      ]
+    },
+    {
+      "control_id": "WEB-10",
+      "title": "HTTP parser・proxy境界",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/app.py",
+        "apps/web/app.js",
+        "apps/web/index.html",
+        "apps/policies/ingress.conf",
+        "apps/notifications/receipt.py"
+      ],
+      "case_ref": "apps/review-cases/WEB.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "WEB-10/S1",
+          "case_ref": "apps/review-cases/WEB.json#/cases/9",
+          "source_refs": [
+            "apps/api/app.py",
+            "apps/web/app.js",
+            "apps/web/index.html",
+            "apps/policies/ingress.conf",
+            "apps/notifications/receipt.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DAT-01",
+      "title": "データ分類・流れ・所有者",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-01/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/0",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DAT-02",
+      "title": "データ最小化",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-02/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/1",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DAT-03",
+      "title": "保存時暗号化と鍵分離",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-03/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/2",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DAT-04",
+      "title": "テスト環境への本番データ持込",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-04/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/3",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DAT-05",
+      "title": "保存期限・削除・派生データ",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-05/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/4",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "DAT-05/C1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/21"
+        },
+        {
+          "criterion_id": "DAT-05/C2",
+          "case_ref": "apps/review-cases/DAT.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/22"
+        }
+      ]
+    },
+    {
+      "control_id": "DAT-06",
+      "title": "export・download保護",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-06/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/5",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DAT-07",
+      "title": "暗号方式・乱数・nonce",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-07/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/6",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DAT-08",
+      "title": "backup・snapshotの公開と権限",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-08/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/7",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DAT-09",
+      "title": "一時ファイル・crash dump",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-09/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/8",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "DAT-09/C1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/23"
+        },
+        {
+          "criterion_id": "DAT-09/C2",
+          "case_ref": "apps/review-cases/DAT.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/24"
+        }
+      ]
+    },
+    {
+      "control_id": "DAT-10",
+      "title": "第三者処理とデータ送信先",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/schema.sql",
+        "apps/api/workers.py",
+        "apps/policies/data-lifecycle.json",
+        "apps/terraform/data.tf"
+      ],
+      "case_ref": "apps/review-cases/DAT.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DAT-10/S1",
+          "case_ref": "apps/review-cases/DAT.json#/cases/9",
+          "source_refs": [
+            "apps/api/schema.sql",
+            "apps/api/workers.py",
+            "apps/policies/data-lifecycle.json",
+            "apps/terraform/data.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-01",
+      "title": "ストレージ公開・ACL",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CLD-01/S1",
+          "case_ref": "apps/review-cases/CLD.json#/cases/0",
+          "source_refs": [
+            "apps/terraform/network.tf",
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-02",
+      "title": "DB・管理portの外部公開",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CLD-02/S1",
+          "case_ref": "apps/review-cases/CLD.json#/cases/1",
+          "source_refs": [
+            "apps/terraform/network.tf",
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-03",
+      "title": "IAM wildcard・権限昇格",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CLD-03/S1",
+          "case_ref": "apps/review-cases/CLD.json#/cases/2",
+          "source_refs": [
+            "apps/terraform/network.tf",
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-04",
+      "title": "環境間・アカウント間分離",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CLD-04/S1",
+          "case_ref": "apps/review-cases/CLD.json#/cases/3",
+          "source_refs": [
+            "apps/terraform/network.tf",
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-05",
+      "title": "metadata・workload identity",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CLD-05/S1",
+          "case_ref": "apps/review-cases/CLD.json#/cases/4",
+          "source_refs": [
+            "apps/terraform/network.tf",
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-06",
+      "title": "Terraform state・plan保護",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CLD-06/S1",
+          "case_ref": "apps/review-cases/CLD.json#/cases/5",
+          "source_refs": [
+            "apps/terraform/network.tf",
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-07",
+      "title": "IaCと実環境のdrift",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/6",
+      "external_model_ref": "apps/operations/external-controls.json#/records/8",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-08",
+      "title": "serverless・API gateway権限",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CLD-08/S1",
+          "case_ref": "apps/review-cases/CLD.json#/cases/7",
+          "source_refs": [
+            "apps/terraform/network.tf",
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-09",
+      "title": "クラウド監査ログの独立保管",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CLD-09/S1",
+          "case_ref": "apps/review-cases/CLD.json#/cases/8",
+          "source_refs": [
+            "apps/terraform/network.tf",
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CLD-10",
+      "title": "DNS・TLS・放置資産",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/terraform/network.tf",
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/CLD.json#/cases/9",
+      "external_model_ref": "apps/operations/external-controls.json#/records/9",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-01",
+      "title": "base imageのdigest固定",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-01/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/0",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-02",
+      "title": "非root実行・user namespace",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-02/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/1",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-03",
+      "title": "privileged・capability・昇格禁止",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-03/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/2",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-04",
+      "title": "host mount・socket共有",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-04/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/3",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-05",
+      "title": "read-only rootと書込領域",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-05/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/4",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-06",
+      "title": "Kubernetes RBAC",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-06/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/5",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-07",
+      "title": "service account token",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-07/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/6",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-08",
+      "title": "NetworkPolicyと境界",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-08/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/7",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-09",
+      "title": "secret管理とetcd保護",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-09/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/8",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "CTR-10",
+      "title": "admission・image検証・実行制限",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/containers/api.Dockerfile",
+        "apps/kubernetes/workload.yaml"
+      ],
+      "case_ref": "apps/review-cases/CTR.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "CTR-10/S1",
+          "case_ref": "apps/review-cases/CTR.json#/cases/9",
+          "source_refs": [
+            "apps/containers/api.Dockerfile",
+            "apps/kubernetes/workload.yaml"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "OBS-01",
+      "title": "認証情報のログ抑止",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-01/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/0",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "OBS-02",
+      "title": "個人情報・本文の最小化",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-02/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/1",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "OBS-03",
+      "title": "例外・stack traceの露出",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-03/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/2",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "OBS-04",
+      "title": "CI debug・環境dump",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-04/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/3",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "OBS-05",
+      "title": "APM・error tracking・session replay",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-05/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/4",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "OBS-06",
+      "title": "ログの閲覧権限・保持期間",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-06/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/5",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "OBS-06/C1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/25"
+        }
+      ]
+    },
+    {
+      "control_id": "OBS-07",
+      "title": "監査eventの網羅",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-07/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/6",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "OBS-07/C1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/26"
+        },
+        {
+          "criterion_id": "OBS-07/C2",
+          "case_ref": "apps/review-cases/OBS.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/27"
+        }
+      ]
+    },
+    {
+      "control_id": "OBS-08",
+      "title": "ログ改ざん・injection",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-08/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/7",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "OBS-09",
+      "title": "異常な大量取得の検知",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-09/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/8",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        },
+        {
+          "criterion_id": "OBS-09/S2",
+          "case_ref": "apps/review-cases/OBS.json#/cases/8",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "OBS-09/C1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/28"
+        },
+        {
+          "criterion_id": "OBS-09/C2",
+          "case_ref": "apps/review-cases/OBS.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/29"
+        },
+        {
+          "criterion_id": "OBS-09/C3",
+          "case_ref": "apps/review-cases/OBS.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/30"
+        },
+        {
+          "criterion_id": "OBS-09/AR8-1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/31"
+        }
+      ]
+    },
+    {
+      "control_id": "OBS-10",
+      "title": "サポート添付・HARのサニタイズ",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/api/security.py",
+        "apps/operations/monitoring-rules.json",
+        "apps/policies/data-lifecycle.json"
+      ],
+      "case_ref": "apps/review-cases/OBS.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "OBS-10/S1",
+          "case_ref": "apps/review-cases/OBS.json#/cases/9",
+          "source_refs": [
+            "apps/api/security.py",
+            "apps/operations/monitoring-rules.json",
+            "apps/policies/data-lifecycle.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INT-01",
+      "title": "外部連携の台帳・所有者",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-01/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/0",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "INT-01/C1",
+          "case_ref": "apps/review-cases/INT.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/32"
+        }
+      ]
+    },
+    {
+      "control_id": "INT-02",
+      "title": "OAuth scope最小化",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-02/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/1",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INT-03",
+      "title": "refresh token・連携秘密値の保管",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-03/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/2",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INT-04",
+      "title": "連携解除と退職後失効",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-04/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/3",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "INT-04/C1",
+          "case_ref": "apps/review-cases/INT.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/33"
+        }
+      ]
+    },
+    {
+      "control_id": "INT-05",
+      "title": "webhook署名・時刻・replay",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-05/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/4",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INT-06",
+      "title": "外部responseの検証",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-06/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/5",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INT-07",
+      "title": "外向きwebhookのSSRFとpayload",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-07/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/6",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INT-08",
+      "title": "service-to-service認証",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-08/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/7",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INT-09",
+      "title": "第三者障害・侵害時の遮断",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-09/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/8",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "INT-10",
+      "title": "送信データと再利用・保持設定",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/integrations/boundaries.py",
+        "apps/policies/integrations.json",
+        "apps/api/security.py"
+      ],
+      "case_ref": "apps/review-cases/INT.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "INT-10/S1",
+          "case_ref": "apps/review-cases/INT.json#/cases/9",
+          "source_refs": [
+            "apps/integrations/boundaries.py",
+            "apps/policies/integrations.json",
+            "apps/api/security.py"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-01",
+      "title": "直接・間接prompt injection",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AIM-01/S1",
+          "case_ref": "apps/review-cases/AIM.json#/cases/0",
+          "source_refs": [
+            "apps/ai/policy.py",
+            "apps/policies/ai-runtime.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-02",
+      "title": "tool実行権限と人の承認",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AIM-02/S1",
+          "case_ref": "apps/review-cases/AIM.json#/cases/1",
+          "source_refs": [
+            "apps/ai/policy.py",
+            "apps/policies/ai-runtime.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-03",
+      "title": "prompt・contextの秘密情報",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AIM-03/S1",
+          "case_ref": "apps/review-cases/AIM.json#/cases/2",
+          "source_refs": [
+            "apps/ai/policy.py",
+            "apps/policies/ai-runtime.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-04",
+      "title": "RAG・vector storeのACL",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AIM-04/S1",
+          "case_ref": "apps/review-cases/AIM.json#/cases/3",
+          "source_refs": [
+            "apps/ai/policy.py",
+            "apps/policies/ai-runtime.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-05",
+      "title": "生成結果のコード・HTML安全性",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AIM-05/S1",
+          "case_ref": "apps/review-cases/AIM.json#/cases/4",
+          "source_refs": [
+            "apps/ai/policy.py",
+            "apps/policies/ai-runtime.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-06",
+      "title": "MCP・pluginの供給元とscope",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AIM-06/S1",
+          "case_ref": "apps/review-cases/AIM.json#/cases/5",
+          "source_refs": [
+            "apps/ai/policy.py",
+            "apps/policies/ai-runtime.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-07",
+      "title": "agent sandboxとegress",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AIM-07/S1",
+          "case_ref": "apps/review-cases/AIM.json#/cases/6",
+          "source_refs": [
+            "apps/ai/policy.py",
+            "apps/policies/ai-runtime.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-08",
+      "title": "memory・会話・cache分離",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AIM-08/S1",
+          "case_ref": "apps/review-cases/AIM.json#/cases/7",
+          "source_refs": [
+            "apps/ai/policy.py",
+            "apps/policies/ai-runtime.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-09",
+      "title": "AI提供者の保存・再利用",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/8",
+      "external_model_ref": "apps/operations/external-controls.json#/records/10",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "AIM-10",
+      "title": "agent濫用・監査と停止",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/ai/policy.py",
+        "apps/policies/ai-runtime.json"
+      ],
+      "case_ref": "apps/review-cases/AIM.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "AIM-10/S1",
+          "case_ref": "apps/review-cases/AIM.json#/cases/9",
+          "source_refs": [
+            "apps/ai/policy.py",
+            "apps/policies/ai-runtime.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DEV-01",
+      "title": "IDE拡張の承認と更新",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DEV-01/S1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/0",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DEV-02",
+      "title": "devcontainer・bootstrap実行",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DEV-02/S1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/1",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DEV-03",
+      "title": "Git hook・filter・fsmonitor",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DEV-03/S1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/2",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DEV-04",
+      "title": "端末上の本番資格情報",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/3",
+      "external_model_ref": "apps/operations/external-controls.json#/records/11",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DEV-05",
+      "title": "curl pipe shell・動的実行",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DEV-05/S1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/4",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DEV-06",
+      "title": "監査ツールの供給元・固定",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DEV-06/S1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/5",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DEV-07",
+      "title": "リポジトリ内の監査妨害命令",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DEV-07/S1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/6",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        },
+        {
+          "criterion_id": "DEV-07/S2",
+          "case_ref": "apps/review-cases/DEV.json#/cases/6",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "DEV-07/AR8-1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/34"
+        }
+      ]
+    },
+    {
+      "control_id": "DEV-08",
+      "title": "symlink・巨大ファイル・archive",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DEV-08/S1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/7",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DEV-09",
+      "title": "scannerの通信・telemetry",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DEV-09/S1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/8",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "DEV-10",
+      "title": "証拠・HTMLの二次漏えい防止",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/developer-environment.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/DEV.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "DEV-10/S1",
+          "case_ref": "apps/review-cases/DEV.json#/cases/9",
+          "source_refs": [
+            "apps/policies/developer-environment.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "TST-01",
+      "title": "脅威モデルと適用範囲",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "TST-01/S1",
+          "case_ref": "apps/review-cases/TST.json#/cases/0",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        },
+        {
+          "criterion_id": "TST-01/S2",
+          "case_ref": "apps/review-cases/TST.json#/cases/0",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "TST-01/AR8-1",
+          "case_ref": "apps/review-cases/TST.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/35"
+        }
+      ]
+    },
+    {
+      "control_id": "TST-02",
+      "title": "認証・認可の否定テスト",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "TST-02/S1",
+          "case_ref": "apps/review-cases/TST.json#/cases/1",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "TST-03",
+      "title": "SASTの範囲とエラー",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "TST-03/S1",
+          "case_ref": "apps/review-cases/TST.json#/cases/2",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "TST-04",
+      "title": "SCAの更新とゲート",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/3",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "TST-04/S1",
+          "case_ref": "apps/review-cases/TST.json#/cases/3",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "TST-05",
+      "title": "秘密情報検査の多段化",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "TST-05/S1",
+          "case_ref": "apps/review-cases/TST.json#/cases/4",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "TST-06",
+      "title": "IaC・containerの検査",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "TST-06/S1",
+          "case_ref": "apps/review-cases/TST.json#/cases/5",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "TST-07",
+      "title": "DAST・APIテストの安全実行",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/6",
+      "external_model_ref": "apps/operations/external-controls.json#/records/12",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "TST-08",
+      "title": "例外・抑制の期限管理",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "TST-08/S1",
+          "case_ref": "apps/review-cases/TST.json#/cases/7",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "TST-09",
+      "title": "修正の回帰テスト",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "TST-09/S1",
+          "case_ref": "apps/review-cases/TST.json#/cases/8",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "TST-10",
+      "title": "監査証拠の完全性と新鮮さ",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/policies/testing.json",
+        "apps/policies/BOUNDARIES.md"
+      ],
+      "case_ref": "apps/review-cases/TST.json#/cases/9",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "TST-10/S1",
+          "case_ref": "apps/review-cases/TST.json#/cases/9",
+          "source_refs": [
+            "apps/policies/testing.json",
+            "apps/policies/BOUNDARIES.md"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "IR-01",
+      "title": "漏えい対応の連絡・責任者",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "IR-01/S1",
+          "case_ref": "apps/review-cases/IR.json#/cases/0",
+          "source_refs": [
+            "apps/operations/incident-response.md",
+            "apps/operations/recovery-plan.json",
+            "apps/operations/monitoring-rules.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "IR-01/C1",
+          "case_ref": "apps/review-cases/IR.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/36"
+        }
+      ]
+    },
+    {
+      "control_id": "IR-02",
+      "title": "秘密値の緊急失効",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/1",
+      "external_model_ref": "apps/operations/external-controls.json#/records/13",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "IR-02/C1",
+          "case_ref": "apps/review-cases/IR.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/37"
+        },
+        {
+          "criterion_id": "IR-02/C2",
+          "case_ref": "apps/review-cases/IR.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/38"
+        }
+      ]
+    },
+    {
+      "control_id": "IR-03",
+      "title": "端末・runnerの隔離と再構築",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/2",
+      "external_model_ref": "apps/operations/external-controls.json#/records/14",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "IR-04",
+      "title": "影響版・顧客・データの追跡",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/3",
+      "external_model_ref": "apps/operations/external-controls.json#/records/15",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "IR-04/C1",
+          "case_ref": "apps/review-cases/IR.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/39"
+        },
+        {
+          "criterion_id": "IR-04/C2",
+          "case_ref": "apps/review-cases/IR.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/40"
+        }
+      ]
+    },
+    {
+      "control_id": "IR-05",
+      "title": "証拠保全と変更記録",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "IR-05/S1",
+          "case_ref": "apps/review-cases/IR.json#/cases/4",
+          "source_refs": [
+            "apps/operations/incident-response.md",
+            "apps/operations/recovery-plan.json",
+            "apps/operations/monitoring-rules.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "IR-05/C1",
+          "case_ref": "apps/review-cases/IR.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/41"
+        },
+        {
+          "criterion_id": "IR-05/C2",
+          "case_ref": "apps/review-cases/IR.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/42"
+        }
+      ]
+    },
+    {
+      "control_id": "IR-06",
+      "title": "安全なbuild・配布復旧",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/5",
+      "external_model_ref": "apps/operations/external-controls.json#/records/16",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "IR-07",
+      "title": "backup復元と復旧目標",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/6",
+      "external_model_ref": "apps/operations/external-controls.json#/records/17",
+      "static_criteria": [],
+      "full_criteria": []
+    },
+    {
+      "control_id": "IR-08",
+      "title": "利用者・関係者への通知判断",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/7",
+      "external_model_ref": "apps/operations/external-controls.json#/records/18",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "IR-08/LAC-1",
+          "case_ref": "apps/review-cases/IR.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/43"
+        }
+      ]
+    },
+    {
+      "control_id": "IR-09",
+      "title": "侵害通知の受信と継続監視",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "IR-09/S1",
+          "case_ref": "apps/review-cases/IR.json#/cases/8",
+          "source_refs": [
+            "apps/operations/incident-response.md",
+            "apps/operations/recovery-plan.json",
+            "apps/operations/monitoring-rules.json"
+          ]
+        }
+      ],
+      "full_criteria": []
+    },
+    {
+      "control_id": "IR-10",
+      "title": "事後分析と是正の検証",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/incident-response.md",
+        "apps/operations/recovery-plan.json",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/IR.json#/cases/9",
+      "external_model_ref": "apps/operations/external-controls.json#/records/19",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "IR-10/C1",
+          "case_ref": "apps/review-cases/IR.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/44"
+        },
+        {
+          "criterion_id": "IR-10/C2",
+          "case_ref": "apps/review-cases/IR.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/45"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-01",
+      "title": "VPN・ZTNAの公開管理面",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-01-01/S1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/0",
+          "source_refs": [
+            "apps/operations/network-and-privilege.json",
+            "apps/terraform/network.tf",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-01/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/46"
+        },
+        {
+          "criterion_id": "RAN-01-01/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/47"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-02",
+      "title": "RDP・SSHの外部公開",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-01-02/S1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/1",
+          "source_refs": [
+            "apps/operations/network-and-privilege.json",
+            "apps/terraform/network.tf",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-02/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/48"
+        },
+        {
+          "criterion_id": "RAN-01-02/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/49"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-03",
+      "title": "未修正の境界機器脆弱性",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/2",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-01-03/S1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/2",
+          "source_refs": [
+            "apps/operations/network-and-privilege.json",
+            "apps/terraform/network.tf",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-03/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/2",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/50"
+        },
+        {
+          "criterion_id": "RAN-01-03/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/2",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/51"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-04",
+      "title": "認証基盤のMFA耐フィッシング",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/3",
+      "external_model_ref": "apps/operations/external-controls.json#/records/20",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-04/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/52"
+        },
+        {
+          "criterion_id": "RAN-01-04/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/53"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-05",
+      "title": "サービスアカウントの過剰権限",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/4",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-01-05/S1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/4",
+          "source_refs": [
+            "apps/operations/network-and-privilege.json",
+            "apps/terraform/network.tf",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-05/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/54"
+        },
+        {
+          "criterion_id": "RAN-01-05/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/55"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-06",
+      "title": "初期アクセスブローカー由来の認証情報",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/5",
+      "external_model_ref": "apps/operations/external-controls.json#/records/21",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-06/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/56"
+        },
+        {
+          "criterion_id": "RAN-01-06/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/57"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-07",
+      "title": "開発者端末から本番への到達性",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/6",
+      "external_model_ref": "apps/operations/external-controls.json#/records/22",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-07/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/58"
+        },
+        {
+          "criterion_id": "RAN-01-07/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/59"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-08",
+      "title": "サポート用リモートツールの統制",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/7",
+      "external_model_ref": "apps/operations/external-controls.json#/records/23",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-08/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/60"
+        },
+        {
+          "criterion_id": "RAN-01-08/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/61"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-09",
+      "title": "外部公開資産の棚卸し",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-01-09/S1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/8",
+          "source_refs": [
+            "apps/operations/network-and-privilege.json",
+            "apps/terraform/network.tf",
+            "apps/policies/identity.json"
+          ]
+        },
+        {
+          "criterion_id": "RAN-01-09/S2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/8",
+          "source_refs": [
+            "apps/operations/network-and-privilege.json",
+            "apps/terraform/network.tf",
+            "apps/policies/identity.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-09/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/62"
+        },
+        {
+          "criterion_id": "RAN-01-09/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/63"
+        },
+        {
+          "criterion_id": "RAN-01-09/AR8-1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/64"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-01-10",
+      "title": "ブレークグラス認証の監査",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/terraform/network.tf",
+        "apps/policies/identity.json"
+      ],
+      "case_ref": "apps/review-cases/RAN1.json#/cases/9",
+      "external_model_ref": "apps/operations/external-controls.json#/records/24",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-01-10/C1",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/65"
+        },
+        {
+          "criterion_id": "RAN-01-10/C2",
+          "case_ref": "apps/review-cases/RAN1.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/66"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-01",
+      "title": "管理者権限の分離",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/0",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-02-01/S1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/0",
+          "source_refs": [
+            "apps/operations/network-and-privilege.json",
+            "apps/kubernetes/workload.yaml",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-01/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/67"
+        },
+        {
+          "criterion_id": "RAN-02-01/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/68"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-02",
+      "title": "ドメイン管理者認証の露出",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/1",
+      "external_model_ref": "apps/operations/external-controls.json#/records/25",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-02/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/69"
+        },
+        {
+          "criterion_id": "RAN-02-02/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/70"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-03",
+      "title": "特権セッションの短期化",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/2",
+      "external_model_ref": "apps/operations/external-controls.json#/records/26",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-03/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/2",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/71"
+        },
+        {
+          "criterion_id": "RAN-02-03/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/2",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/72"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-04",
+      "title": "端末間リモート実行の制御",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/3",
+      "external_model_ref": "apps/operations/external-controls.json#/records/27",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-04/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/73"
+        },
+        {
+          "criterion_id": "RAN-02-04/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/74"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-05",
+      "title": "SMB管理共有の到達性",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/4",
+      "external_model_ref": "apps/operations/external-controls.json#/records/28",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-05/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/75"
+        },
+        {
+          "criterion_id": "RAN-02-05/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/76"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-06",
+      "title": "ネットワークセグメンテーション",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-02-06/S1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/5",
+          "source_refs": [
+            "apps/operations/network-and-privilege.json",
+            "apps/kubernetes/workload.yaml",
+            "apps/terraform/identity-monitoring.tf"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-06/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/77"
+        },
+        {
+          "criterion_id": "RAN-02-06/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/78"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-07",
+      "title": "横移動に使える共通鍵の排除",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/6",
+      "external_model_ref": "apps/operations/external-controls.json#/records/29",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-07/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/79"
+        },
+        {
+          "criterion_id": "RAN-02-07/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/80"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-08",
+      "title": "端末EDRの改ざん防止",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/7",
+      "external_model_ref": "apps/operations/external-controls.json#/records/30",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-08/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/81"
+        },
+        {
+          "criterion_id": "RAN-02-08/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/82"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-09",
+      "title": "管理プレーンのアクセスログ",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/8",
+      "external_model_ref": "apps/operations/external-controls.json#/records/31",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-09/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/83"
+        },
+        {
+          "criterion_id": "RAN-02-09/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/84"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-02-10",
+      "title": "権限昇格経路の継続評価",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/network-and-privilege.json",
+        "apps/kubernetes/workload.yaml",
+        "apps/terraform/identity-monitoring.tf"
+      ],
+      "case_ref": "apps/review-cases/RAN2.json#/cases/9",
+      "external_model_ref": "apps/operations/external-controls.json#/records/32",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-02-10/C1",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/85"
+        },
+        {
+          "criterion_id": "RAN-02-10/C2",
+          "case_ref": "apps/review-cases/RAN2.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/86"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-01",
+      "title": "重要ファイルの大量変更検知",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/0",
+      "external_model_ref": "apps/operations/external-controls.json#/records/33",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-01/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/87"
+        },
+        {
+          "criterion_id": "RAN-03-01/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/88"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-02",
+      "title": "バックアップ削除権限の分離",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/1",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-03-02/S1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/1",
+          "source_refs": [
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf",
+            "apps/operations/monitoring-rules.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-02/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/89"
+        },
+        {
+          "criterion_id": "RAN-03-02/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/90"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-03",
+      "title": "シャドウコピー削除の監視",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/2",
+      "external_model_ref": "apps/operations/external-controls.json#/records/34",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-03/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/2",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/91"
+        },
+        {
+          "criterion_id": "RAN-03-03/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/2",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/92"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-04",
+      "title": "大量暗号化の振る舞い検知",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/3",
+      "external_model_ref": "apps/operations/external-controls.json#/records/35",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-04/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/93"
+        },
+        {
+          "criterion_id": "RAN-03-04/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/94"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-05",
+      "title": "異常なプロセス起動の監視",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/4",
+      "external_model_ref": "apps/operations/external-controls.json#/records/36",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-05/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/95"
+        },
+        {
+          "criterion_id": "RAN-03-05/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/96"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-06",
+      "title": "重要DBの破壊操作保護",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/5",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-03-06/S1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/5",
+          "source_refs": [
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf",
+            "apps/operations/monitoring-rules.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-06/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/97"
+        },
+        {
+          "criterion_id": "RAN-03-06/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/98"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-07",
+      "title": "ストレージ管理APIの破壊権限",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/6",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-03-07/S1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/6",
+          "source_refs": [
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf",
+            "apps/operations/monitoring-rules.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-07/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/99"
+        },
+        {
+          "criterion_id": "RAN-03-07/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/100"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-08",
+      "title": "オブジェクトストレージの版管理",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/7",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-03-08/S1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/7",
+          "source_refs": [
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf",
+            "apps/operations/monitoring-rules.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-08/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/101"
+        },
+        {
+          "criterion_id": "RAN-03-08/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/102"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-09",
+      "title": "バックアップの不変性・WORM",
+      "static_in_scope": true,
+      "materials": "SOURCE_DECLARATION_AND_CASE",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/8",
+      "external_model_ref": null,
+      "static_criteria": [
+        {
+          "criterion_id": "RAN-03-09/S1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/8",
+          "source_refs": [
+            "apps/terraform/data.tf",
+            "apps/terraform/identity-monitoring.tf",
+            "apps/operations/monitoring-rules.json"
+          ]
+        }
+      ],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-09/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/103"
+        },
+        {
+          "criterion_id": "RAN-03-09/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/104"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-03-10",
+      "title": "保護機能停止の検出と通知",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/terraform/data.tf",
+        "apps/terraform/identity-monitoring.tf",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN3.json#/cases/9",
+      "external_model_ref": "apps/operations/external-controls.json#/records/37",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-03-10/C1",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/105"
+        },
+        {
+          "criterion_id": "RAN-03-10/C2",
+          "case_ref": "apps/review-cases/RAN3.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/106"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-01",
+      "title": "大量持ち出しと暗号化の相関検知",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/0",
+      "external_model_ref": "apps/operations/external-controls.json#/records/38",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-01/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/107"
+        },
+        {
+          "criterion_id": "RAN-04-01/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/0",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/108"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-02",
+      "title": "外向き大容量転送の異常検知",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/1",
+      "external_model_ref": "apps/operations/external-controls.json#/records/39",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-02/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/109"
+        },
+        {
+          "criterion_id": "RAN-04-02/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/1",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/110"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-03",
+      "title": "外部共有リンクの一括発行監視",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/2",
+      "external_model_ref": "apps/operations/external-controls.json#/records/40",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-03/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/2",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/111"
+        },
+        {
+          "criterion_id": "RAN-04-03/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/2",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/112"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-04",
+      "title": "ランサム対応の封じ込め手順",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/3",
+      "external_model_ref": "apps/operations/external-controls.json#/records/41",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-04/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/113"
+        },
+        {
+          "criterion_id": "RAN-04-04/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/3",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/114"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-05",
+      "title": "クリーンルーム復旧手順",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/4",
+      "external_model_ref": "apps/operations/external-controls.json#/records/42",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-05/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/115"
+        },
+        {
+          "criterion_id": "RAN-04-05/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/4",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/116"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-06",
+      "title": "オフライン復旧経路",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/5",
+      "external_model_ref": "apps/operations/external-controls.json#/records/43",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-06/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/117"
+        },
+        {
+          "criterion_id": "RAN-04-06/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/5",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/118"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-07",
+      "title": "RPO・RTOの実測",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/6",
+      "external_model_ref": "apps/operations/external-controls.json#/records/44",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-07/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/119"
+        },
+        {
+          "criterion_id": "RAN-04-07/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/6",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/120"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-08",
+      "title": "復元テストの成功証跡",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/7",
+      "external_model_ref": "apps/operations/external-controls.json#/records/45",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-08/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/121"
+        },
+        {
+          "criterion_id": "RAN-04-08/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/7",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/122"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-09",
+      "title": "復旧用IDと鍵の独立保管",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/8",
+      "external_model_ref": "apps/operations/external-controls.json#/records/46",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-09/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/123"
+        },
+        {
+          "criterion_id": "RAN-04-09/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/8",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/124"
+        }
+      ]
+    },
+    {
+      "control_id": "RAN-04-10",
+      "title": "二重恐喝時の法務・通知手順",
+      "static_in_scope": false,
+      "materials": "EXTERNAL_RECORD_MODEL_ONLY",
+      "source_refs": [
+        "apps/operations/recovery-plan.json",
+        "apps/operations/incident-response.md",
+        "apps/operations/monitoring-rules.json"
+      ],
+      "case_ref": "apps/review-cases/RAN4.json#/cases/9",
+      "external_model_ref": "apps/operations/external-controls.json#/records/47",
+      "static_criteria": [],
+      "full_criteria": [
+        {
+          "criterion_id": "RAN-04-10/C1",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/125"
+        },
+        {
+          "criterion_id": "RAN-04-10/C2",
+          "case_ref": "apps/review-cases/RAN4.json#/cases/9",
+          "record_model_ref": "apps/operations/full-criteria.json#/records/126"
+        }
+      ]
+    }
+  ]
+}

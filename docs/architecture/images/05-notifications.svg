@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img">
+<rect x="0" y="0" width="1600" height="1120" rx="0" fill="#f3f6f7"/>
+<title>問い合わせ・受付メール</title>
+<desc>受付APIは原文をinquiriesに保存し、outboxには固定種別とサーバー生成IDだけを登録します。通知生成関数は検証済み宛先を別に参照し、固定文面・受付番号・固定URLを使います。原文はメールへ渡しません。workerの配線と配信権限は未提供です。</desc>
+<text x="48" y="46.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="600" fill="#536c7a">ATLAS NOTES  /  合成アプリのアーキテクチャ</text>
+<text x="48" y="106.80" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="42" font-weight="600" fill="#172f3c">05  問い合わせ・受付メール</text>
+<text x="48" y="147.80" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="22" font-weight="400" fill="#536c7a">問い合わせ本文の保存と、公式通知の生成に渡す情報を分ける。</text>
+<rect x="32" y="180" width="1536" height="300" rx="18" fill="#e8eef1"/>
+<text x="50" y="208.20" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="18" font-weight="600" fill="#536c7a">本文の保存と固定eventの登録</text>
+<rect x="32" y="540" width="1536" height="310" rx="18" fill="#e8eef1"/>
+<text x="50" y="568.20" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="18" font-weight="600" fill="#536c7a">通知用の情報・固定本文・未接続の配信</text>
+<polyline points="376,340 440,340" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="440.00,340.00 428.00,334.00 428.00,346.00" fill="#a96916"/>
+<polyline points="768,340 832,340" fill="none" stroke="#426174" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="832.00,340.00 820.00,334.00 820.00,346.00" fill="#426174"/>
+<polyline points="604,460 604,495 1388,495 1388,460" fill="none" stroke="#426174" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1388.00,460.00 1382.00,472.00 1394.00,472.00" fill="#426174"/>
+<polyline points="1552,340 1584,340 1584,525 604,525 604,580" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="604.00,580.00 610.00,568.00 598.00,568.00" fill="#a96916"/>
+<rect x="972.4453125" y="520" width="195.109375" height="29" rx="6" fill="#ffffff"/>
+<text x="981.4453125" y="540.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="400" fill="#a96916">workerの接続は未実装</text>
+<polyline points="376,700 440,700" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="440.00,700.00 428.00,694.00 428.00,706.00" fill="#a96916"/>
+<polyline points="768,700 832,700" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="832.00,700.00 820.00,694.00 820.00,706.00" fill="#a96916"/>
+<polyline points="1160,700 1224,700" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="1224.00,700.00 1212.00,694.00 1212.00,706.00" fill="#a96916"/>
+<rect x="48" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#a96916" stroke-width="2"/>
+<rect x="66" y="235" width="118.0" height="28" rx="7" fill="#fff1d9"/>
+<text x="76" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#a96916">未接続・未実施</text>
+<text x="68" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">問い合わせ入力</text>
+<text x="68" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">接続時の任意本文を想定</text>
+<text x="68" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">UIの既定はローカルデモ</text>
+<text x="68" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">APIでは主体を認証する</text>
+<rect x="440" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="458" y="235" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="468" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="460" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">受付API</text>
+<text x="460" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">本文の型と長さを検査</text>
+<text x="460" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">主体別の受付予算</text>
+<text x="460" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">保存とoutboxを同じ取引で</text>
+<rect x="832" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="850" y="235" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="860" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="852" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">原文の保存</text>
+<text x="852" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">inquiries.body</text>
+<text x="852" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">tenant / ownerを保持</text>
+<text x="852" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">原文はここで扱う</text>
+<rect x="1224" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="1242" y="235" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="1252" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="1244" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">固定event</text>
+<text x="1244" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">event_id / receipt_id</text>
+<text x="1244" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">kind / recipient_id</text>
+<text x="1244" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">本文・任意URLは含めない</text>
+<rect x="48" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#a96916" stroke-width="2"/>
+<rect x="66" y="595" width="118.0" height="28" rx="7" fill="#fff1d9"/>
+<text x="76" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#a96916">未接続・未実施</text>
+<text x="68" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">検証済み宛先</text>
+<text x="68" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">IDから宛先を取得する設計</text>
+<text x="68" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">登録・検証の実装は別</text>
+<text x="68" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">本文へのDB権限も要確認</text>
+<rect x="440" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="458" y="595" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="468" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="460" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">受付メール生成</text>
+<text x="460" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">固定文面・受付番号のみ</text>
+<text x="460" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">URLは固定のポータル</text>
+<text x="460" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">HTMLパートを作らない</text>
+<rect x="832" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#a96916" stroke-width="2"/>
+<rect x="850" y="595" width="118.0" height="28" rx="7" fill="#fff1d9"/>
+<text x="860" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#a96916">未接続・未実施</text>
+<text x="852" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">配信adapter</text>
+<text x="852" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">資格情報・roleを分離</text>
+<text x="852" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">重複排除と失敗時の整合</text>
+<text x="852" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">具体的な接続は未提供</text>
+<rect x="1224" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#a96916" stroke-width="2"/>
+<rect x="1242" y="595" width="118.0" height="28" rx="7" fill="#fff1d9"/>
+<text x="1252" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#a96916">未接続・未実施</text>
+<text x="1244" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">署名・実配信</text>
+<text x="1244" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">外部配信設定は未提供</text>
+<text x="1244" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">実テンプレートも別確認</text>
+<text x="1244" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">実送信は行っていない</text>
+<rect x="48" y="905" width="1504" height="82" rx="12" fill="#ffffff"/>
+<text x="67" y="934.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="600" fill="#087f78">この図の要点</text>
+<text x="245" y="936.10" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="19" font-weight="600" fill="#172f3c">自由本文・任意URLを通知へ渡さず、固定文面と受付番号だけを生成します。</text>
+<text x="67" y="968.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="600" fill="#a96916">残る確認・接続</text>
+<text x="245" y="969.20" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="18" font-weight="400" fill="#536c7a">宛先検証、配信role、重複排除、外部テンプレート・署名設定は未確認です。</text>
+<rect x="48" y="1004" width="205" height="34" rx="8" fill="#e5f5f1"/>
+<text x="61" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="600" fill="#087f78">参照コード</text>
+<rect x="268" y="1004" width="205" height="34" rx="8" fill="#eaf1fd"/>
+<text x="281" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="600" fill="#2b61af">設定・ひな形</text>
+<rect x="488" y="1004" width="205" height="34" rx="8" fill="#fff1d9"/>
+<text x="501" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="600" fill="#a96916">未接続・未実施</text>
+<polyline points="740,1021 804,1021" fill="none" stroke="#426174" stroke-width="3" stroke-linejoin="round"/>
+<text x="819" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="400" fill="#536c7a">ソース上の参照・処理</text>
+<polyline points="1080,1021 1144,1021" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<text x="1159" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="400" fill="#536c7a">設計上の接続・未実施</text>
+<text x="48" y="1068.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="400" fill="#536c7a">図は合成ソースの説明です。参照コード・設定の存在は、動作確認や監査PASSを意味しません。</text>
+<text x="48" y="1097.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="400" fill="#536c7a">確認先: examples/apps/notifications/receipt.py  /  examples/apps/api/app.py</text>
+</svg>

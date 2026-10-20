@@ -1,0 +1,185 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "SEC",
+  "cases": [
+    {
+      "control_id": "SEC-01",
+      "title": "現在のソース内の秘密情報",
+      "counterexample": "APIへサーバー用秘密値の文字列を直接埋め込む",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SEC-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/0",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SEC-02",
+      "title": "秘密鍵・署名鍵の混入",
+      "counterexample": "配布対象へ署名秘密鍵コンテナを混入させる",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SEC-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/1",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SEC-03",
+      "title": ".env・認証設定の混入",
+      "counterexample": "本番用envを配布許可リストへ追加する",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SEC-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/2",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SEC-04",
+      "title": "接続文字列・URL内の資格情報",
+      "counterexample": "DB接続URLのuserinfoへ平文パスワードを付ける",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SEC-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/3",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SEC-05",
+      "title": "ブラウザ・モバイル公開設定",
+      "counterexample": "Web/Flutter公開設定へサーバー用tokenを追加する",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SEC-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/4",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SEC-06",
+      "title": "テスト・ノートブック・fixtureの秘密情報",
+      "counterexample": "テストfixtureへ実運用資格情報を流用する",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SEC-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/5",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SEC-07",
+      "title": "シークレットの権限・有効期限",
+      "counterexample": "通知資格情報を全用途・無期限で発行する",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SEC-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/6",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SEC-08",
+      "title": "OIDC・ワークロードIDの信頼条件",
+      "counterexample": "OIDC trustからaudience/subjectの拘束を外す",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SEC-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/7",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SEC-09",
+      "title": "シークレット注入と平文露出",
+      "counterexample": "secret注入値を環境dumpへ出力する",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SEC-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/8",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SEC-10",
+      "title": "失効・ローテーションの実効性",
+      "counterexample": "鍵を交換するが派生token/既存sessionを失効しない",
+      "inspect_files": [
+        "api/security.py",
+        "notifications/receipt.py",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/9",
+      "additional_condition_focus": []
+    }
+  ]
+}

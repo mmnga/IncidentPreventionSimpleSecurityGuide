@@ -1,0 +1,178 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "DEV",
+  "cases": [
+    {
+      "control_id": "DEV-01",
+      "title": "IDE拡張の承認と更新",
+      "counterexample": "未審査IDE拡張を推奨から自動インストールする",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DEV-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/150",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DEV-02",
+      "title": "devcontainer・bootstrap実行",
+      "counterexample": "devcontainerのpostCreate/bootstrapを暗黙実行する",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DEV-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/151",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DEV-03",
+      "title": "Git hook・filter・fsmonitor",
+      "counterexample": "対象repoのhook/filter/fsmonitorを有効化する",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DEV-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/152",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DEV-04",
+      "title": "端末上の本番資格情報",
+      "counterexample": "監査端末へ本番万能資格情報を配置する",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/153",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DEV-05",
+      "title": "curl pipe shell・動的実行",
+      "counterexample": "未検証downloadをそのままshellへ流す",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DEV-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/154",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DEV-06",
+      "title": "監査ツールの供給元・固定",
+      "counterexample": "監査tool/rule/DBのdigestと出所を未確認にする",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DEV-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/155",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DEV-07",
+      "title": "リポジトリ内の監査妨害命令",
+      "counterexample": "対象内の合格強制文やMCP設定を監査指示として採用する",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DEV-07/S1",
+        "DEV-07/S2"
+      ],
+      "full_criteria": [
+        "DEV-07/AR8-1"
+      ],
+      "definition_pointer": "checks.json#/156",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DEV-08",
+      "title": "symlink・巨大ファイル・archive",
+      "counterexample": "symlink/archive/非UTF8/巨大fileを黙って除外する",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DEV-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/157",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DEV-09",
+      "title": "scannerの通信・telemetry",
+      "counterexample": "scannerへソース/secretを送るtelemetryを有効化する",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DEV-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/158",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "DEV-10",
+      "title": "証拠・HTMLの二次漏えい防止",
+      "counterexample": "証拠HTML/JSONを未redactionで一般公開する",
+      "inspect_files": [
+        "policies/developer-environment.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "DEV-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/159",
+      "additional_condition_focus": []
+    }
+  ]
+}

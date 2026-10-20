@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img">
+<rect x="0" y="0" width="1600" height="1120" rx="0" fill="#f3f6f7"/>
+<title>コンテナ・Kubernetes・CI/CD</title>
+<desc>CI例は自動実行場所の外にあり、固定snapshotを信頼済み監査ツールで読む想定です。コンテナとKubernetesには非root、read-only、resource上限、NetworkPolicy等を宣言します。imageは無効なdigest例で、ビルド・配備の成功は未確認です。</desc>
+<text x="48" y="46.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="600" fill="#536c7a">ATLAS NOTES  /  合成アプリのアーキテクチャ</text>
+<text x="48" y="106.80" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="42" font-weight="600" fill="#172f3c">09  コンテナ・Kubernetes・CI/CD</text>
+<text x="48" y="147.80" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="22" font-weight="400" fill="#536c7a">監査用の読み取り経路と、アプリをビルド・配備する経路を分けて示す。</text>
+<rect x="32" y="180" width="1536" height="300" rx="18" fill="#e8eef1"/>
+<text x="50" y="208.20" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="18" font-weight="600" fill="#536c7a">監査用の読み取り経路（CIの取得・配線は未実装）</text>
+<rect x="32" y="540" width="1536" height="310" rx="18" fill="#e8eef1"/>
+<text x="50" y="568.20" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="18" font-weight="600" fill="#536c7a">アプリを配布・配備する経路（未実行）</text>
+<polyline points="376,340 440,340" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="440.00,340.00 428.00,334.00 428.00,346.00" fill="#a96916"/>
+<polyline points="768,340 832,340" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="832.00,340.00 820.00,334.00 820.00,346.00" fill="#a96916"/>
+<polyline points="1160,340 1224,340" fill="none" stroke="#426174" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1224.00,340.00 1212.00,334.00 1212.00,346.00" fill="#426174"/>
+<polyline points="376,700 440,700" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="440.00,700.00 428.00,694.00 428.00,706.00" fill="#a96916"/>
+<polyline points="768,700 832,700" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="832.00,700.00 820.00,694.00 820.00,706.00" fill="#a96916"/>
+<polyline points="1160,700 1224,700" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="1224.00,700.00 1212.00,694.00 1212.00,706.00" fill="#a96916"/>
+<rect x="48" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#2b61af" stroke-width="2"/>
+<rect x="66" y="235" width="104.0" height="28" rx="7" fill="#eaf1fd"/>
+<text x="76" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#2b61af">設定・ひな形</text>
+<text x="68" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">CI定義の例</text>
+<text x="68" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">pull_request・read権限</text>
+<text x="68" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">時間上限は10分</text>
+<text x="68" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">自動実行の配置外に置く</text>
+<rect x="440" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#a96916" stroke-width="2"/>
+<rect x="458" y="235" width="118.0" height="28" rx="7" fill="#fff1d9"/>
+<text x="468" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#a96916">未接続・未実施</text>
+<text x="460" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">固定snapshotの供給</text>
+<text x="460" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">別の取得処理が必要</text>
+<text x="460" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">読み取り専用で渡す</text>
+<text x="460" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">対象repoの指示はデータ</text>
+<rect x="832" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="850" y="235" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="860" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="852" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">静的トリアージ</text>
+<text x="852" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">信頼済みaudit.py</text>
+<text x="852" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">対象コードを実行しない</text>
+<text x="852" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">証拠不足はINCOMPLETE</text>
+<rect x="1224" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="1242" y="235" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="1252" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="1244" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">HTML・JSONの出力</text>
+<text x="1244" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">対象の外へ新規に生成</text>
+<text x="1244" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">STATIC ONLYを明記</text>
+<text x="1244" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">CLIはagentを起動しない</text>
+<rect x="48" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#2b61af" stroke-width="2"/>
+<rect x="66" y="595" width="104.0" height="28" rx="7" fill="#eaf1fd"/>
+<text x="76" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#2b61af">設定・ひな形</text>
+<text x="68" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">Dockerfile</text>
+<text x="68" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">apiをcopy・非root</text>
+<text x="68" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">起動serverは別途必要</text>
+<text x="68" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">imageは無効なdigest例</text>
+<rect x="440" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#a96916" stroke-width="2"/>
+<rect x="458" y="595" width="118.0" height="28" rx="7" fill="#fff1d9"/>
+<text x="468" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#a96916">未接続・未実施</text>
+<text x="460" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">imageの承認・検証</text>
+<text x="460" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">実digest・SBOM・署名</text>
+<text x="460" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">provenanceの確認が必要</text>
+<text x="460" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">実imageは未取得</text>
+<rect x="832" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#2b61af" stroke-width="2"/>
+<rect x="850" y="595" width="104.0" height="28" rx="7" fill="#eaf1fd"/>
+<text x="860" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#2b61af">設定・ひな形</text>
+<text x="852" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">Kubernetes宣言</text>
+<text x="852" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">非root・read-only</text>
+<text x="852" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">権限削減・NetworkPolicy</text>
+<text x="852" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">CPU / memoryの上限</text>
+<rect x="1224" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#a96916" stroke-width="2"/>
+<rect x="1242" y="595" width="118.0" height="28" rx="7" fill="#fff1d9"/>
+<text x="1252" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#a96916">未接続・未実施</text>
+<text x="1244" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">実配備に必要なもの</text>
+<text x="1244" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">TLS・WSGI・DB volume</text>
+<text x="1244" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">SQLiteの共有・複製方針</text>
+<text x="1244" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">配備と挙動は未確認</text>
+<rect x="48" y="905" width="1504" height="82" rx="12" fill="#ffffff"/>
+<text x="67" y="934.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="600" fill="#087f78">この図の要点</text>
+<text x="245" y="936.10" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="19" font-weight="600" fill="#172f3c">監査は対象を読み、配備は別の承認・供給物・実環境を必要とする構成です。</text>
+<text x="67" y="968.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="600" fill="#a96916">残る確認・接続</text>
+<text x="245" y="969.20" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="18" font-weight="400" fill="#536c7a">実image・server・DB永続化が未提供。build、Kubernetes適用、実CIは未実施です。</text>
+<rect x="48" y="1004" width="205" height="34" rx="8" fill="#e5f5f1"/>
+<text x="61" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="600" fill="#087f78">参照コード</text>
+<rect x="268" y="1004" width="205" height="34" rx="8" fill="#eaf1fd"/>
+<text x="281" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="600" fill="#2b61af">設定・ひな形</text>
+<rect x="488" y="1004" width="205" height="34" rx="8" fill="#fff1d9"/>
+<text x="501" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="600" fill="#a96916">未接続・未実施</text>
+<polyline points="740,1021 804,1021" fill="none" stroke="#426174" stroke-width="3" stroke-linejoin="round"/>
+<text x="819" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="400" fill="#536c7a">ソース上の参照・処理</text>
+<polyline points="1080,1021 1144,1021" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<text x="1159" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="400" fill="#536c7a">設計上の接続・未実施</text>
+<text x="48" y="1068.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="400" fill="#536c7a">図は合成ソースの説明です。参照コード・設定の存在は、動作確認や監査PASSを意味しません。</text>
+<text x="48" y="1097.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="400" fill="#536c7a">確認先: examples/apps/ci/review.workflow.yaml  /  examples/apps/containers/api.Dockerfile</text>
+</svg>

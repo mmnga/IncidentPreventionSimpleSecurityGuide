@@ -1,0 +1,3945 @@
+{
+  "schema_version": 3,
+  "scope_id": "a27591a1d25a17f21f3518bd33b7a85e85e05b130db66556d33bd3f128d81407",
+  "profile": "static",
+  "created_at": "2026-10-15T22:32:47+00:00",
+  "instructions": "NOT_RUNのまま保存可能。PASS/FAIL/N/A/WAIVEDには証拠artifact、hash、日時、reviewer、根拠が必要。N/Aはapproved_byも必要。現在のprofileの全criteria_resultsの検証も必要。別profileへの証拠流用は禁止。自動合格は禁止。",
+  "checks": [
+    {
+      "id": "SEC-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SEC-01/S1",
+          "expectation": "ソース/設定に認証情報の形式・秘密用途の値が残っていないかを全ファイルで確認し、サンプルかどうかをレビューする。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SEC-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SEC-02/S1",
+          "expectation": "秘密鍵ヘッダー・鍵コンテナの混入を検査し、バイナリの未解析範囲は別の安全な静的検査で補完する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SEC-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SEC-03/S1",
+          "expectation": ".env・registry認証・kubeconfig等の保存先、無効サンプル、配布除外を照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SEC-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SEC-04/S1",
+          "expectation": "URL/接続文字列に資格情報が直接埋め込まれないか確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SEC-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SEC-05/S1",
+          "expectation": "公開環境変数とクライアント設定への秘密値の流入を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SEC-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SEC-06/S1",
+          "expectation": "fixture・ノートブック出力・HAR等を静的に解析し、実値の混入を調べる。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SEC-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SEC-07/S1",
+          "expectation": "トークンの要求権限・有効期限・発行先が宣言的設定と実装で制限されるか確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SEC-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SEC-08/S1",
+          "expectation": "OIDC信頼ポリシーのissuer・audience・subject・環境/ブランチ境界を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SEC-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SEC-09/S1",
+          "expectation": "秘密値の注入元から一時ファイル・引数・ログ・image層へ残らないか追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "GIT-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "GIT-01/S1",
+          "expectation": "信頼済み手順で取得済みのGit履歴を静的検査し、取得refsと未取得履歴を記録する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "GIT-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "GIT-02/S1",
+          "expectation": "取得履歴の浅さ・欠落を信頼済み取得記録で確認し、履歴全体と誤認しない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "GIT-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "GIT-03/S1",
+          "expectation": "未追跡・ignoredを含むスナップショットのファイル一覧と検査manifestを突合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "GIT-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "GIT-04/S1",
+          "expectation": "submodule・LFSのポインタと取得済み実体を突合し、未取得を安全としない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "GIT-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "GIT-07/S1",
+          "expectation": "CODEOWNERS等がCI・認証・配布・IaCの重要pathを覆うか静的に照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-01/S1",
+          "expectation": "Action・再利用workflow・Docker参照を不変のcommit/digestへ固定する宣言を照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-02/S1",
+          "expectation": "workflow/jobごとのtoken権限が用途に限定され、包括write指定がないか読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-03/S1",
+          "expectation": "特権イベントから未信頼checkout/入力へ至る経路を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-04/S1",
+          "expectation": "event値がrun/scriptへ式展開される経路と引用・入力分離を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-05/S1",
+          "expectation": "checkoutの資格情報保持・後処理・artifactへの混入経路を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-06/S1",
+          "expectation": "継承secretとPR・再利用workflowへの配布先を列挙する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-07/S1",
+          "expectation": "runner選択・使い捨て構成・権限境界の宣言を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-08/S1",
+          "expectation": "ビルドjobの送信先・proxy・egress制限の宣言を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-09/S1",
+          "expectation": "cache/artifactの保存元と利用先の信頼レベルを追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CIC-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CIC-10/S1",
+          "expectation": "承認environment・署名job・配布jobの分離を宣言上で確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-01/S1",
+          "expectation": "全manifest/lock、管理用コンポーネント、toolingと所有者台帳を突合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-02/S1",
+          "expectation": "承認済み最新DBをlock/SBOMへ照合し、悪用実績と除外根拠を記録する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-03/S1",
+          "expectation": "悪性パッケージ・侵害版情報を取得済み依存一覧へ照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-04/S1",
+          "expectation": "install/build lifecycleのスクリプトを実行せず読み、取得/送信/秘密値参照を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-05/S1",
+          "expectation": "registry・名前空間・fallback indexの選択と認証を宣言上で確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-06/S1",
+          "expectation": "lockのintegrityと署名/provenance検証ポリシーを確認し、供給物を静的に照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-07/S1",
+          "expectation": "Git/URL依存と可変参照を列挙し、固定版・固定取得元を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-08/S1",
+          "expectation": "runtimeと依存版を供給元のサポート情報と照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-09/S1",
+          "expectation": "更新設定・自動マージ条件・差分確認ゲートを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SUP-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "SUP-10/S1",
+          "expectation": "提供されたSBOMと配布物一覧を静的比較する。未提供は未確認とする。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "REL-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "REL-01/S1",
+          "expectation": "package files/ignore等の配布許可リストと提供済みファイルを比較する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "REL-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "REL-02/S1",
+          "expectation": "公開map・sourcesContent・debug symbolの内容と公開設定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "REL-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "REL-03/S1",
+          "expectation": "配布対象に.git・backup・dump・設定・鍵ファイルが入らないか照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "REL-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "REL-04/S1",
+          "expectation": "提供されたフロントbundleを秘密情報検査する。buildは実行しない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "REL-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "REL-05/S1",
+          "expectation": "DockerfileのARG/ENV/COPYと提供済みimage層を静的検査する。imageを起動しない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "REL-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "REL-06/S1",
+          "expectation": "署名生成と配布先での署名検証の設定・実装を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "REL-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "REL-08/S1",
+          "expectation": "preview/stagingの公開route・認証・環境注入の宣言を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "REL-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "REL-09/S1",
+          "expectation": "artifact uploadとrelease添付のglob・除外・対象実体を比較する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-01/S1",
+          "expectation": "全保護route/RPCの認証middlewareと例外・method・内部headerの迂回分岐を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-02/S1",
+          "expectation": "MFA要求と登録/回復/管理例外の実装・宣言を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-03/S1",
+          "expectation": "passwordのhash方式・salt・work factorと平文への流れを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-04/S1",
+          "expectation": "ログインの共有レート制限、失敗計数と凍結解除の実装を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "AUT-04/S2",
+          "expectation": "認証・OTP・再設定の制限は、IP単独でなくサーバー側で正規化したアカウント等の軸を持つ。共有カウンタの加算/期限設定/判定が同時実行で抜けず、ノード再起動や制限ストア障害で無条件許可に落ちない設計と、正規利用者へのロックアウト悪用を抑える設計が確認できる。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-05/S1",
+          "expectation": "存在/非存在ユーザーの応答分岐とエラーメッセージを比較する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-06/S1",
+          "expectation": "reset・招待tokenの乱数・有効期限・単回性・宛先変更認可を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-07/S1",
+          "expectation": "JWT/OIDCの署名検証、許可algorithm、issuer/audience/expiryの検証分岐を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-08/S1",
+          "expectation": "OAuthのstate・PKCE・redirect許可リストとtoken交換の境界を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-09/S1",
+          "expectation": "cookie属性・session生成/再発行・固定化防止の実装を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AUT-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AUT-10/S1",
+          "expectation": "logout・権限変更・無効化イベントがsession/tokenを拒否するコードへ届くか追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-01/S1",
+          "expectation": "endpoint/RPC一覧とサーバー側の認可関数を照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-02/S1",
+          "expectation": "利用者入力のobject IDから所有者確認・query絞り込みまで追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-03/S1",
+          "expectation": "テナントIDの信頼元とDB/cache/searchへの一貫した絞り込みを追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-04/S1",
+          "expectation": "管理API・role変更・代理操作の認可を確認し、UI非表示だけの制御を除く。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-05/S1",
+          "expectation": "更新可能fieldの許可リストとrole/owner/tenant等の書換え防止を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-06/S1",
+          "expectation": "batch/exportの受付・queue payload・worker query・結果取得を横断し主体/tenant認可を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-07/S1",
+          "expectation": "GraphQL resolver・WebSocket購読・RPCの個別認可を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-08/S1",
+          "expectation": "queueへ渡す主体情報とworker側の信頼検証・再認可を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-09/S1",
+          "expectation": "RLS policy・DB接続role・bypass属性の宣言とqueryを比較する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AZ-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AZ-10/S1",
+          "expectation": "cache key・検索filter・署名共有URLの所有者/tenant境界を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "AZ-10/S2",
+          "expectation": "非公開データのcache/loaderはrequestまたは同等に分離された認可コンテキストに限定される。共有する場合は主体/tenant/必要な権限版をキーに含め、失効・権限変更・負のキャッシュ・購読継続でも別主体の結果を再利用しない。cache hitでも必要な認可を省略しない。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-01/S1",
+          "expectation": "SQL/NoSQLの外部入力からquery構築まで追跡し、値parameter化と型/演算子制約を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-02/S1",
+          "expectation": "外部入力からshell/exec引数まで追跡し、shell介在と許可リストを確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-03/S1",
+          "expectation": "template/eval/式評価の入力元と固定構文・出力境界を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-04/S1",
+          "expectation": "deserializerの型制限・信頼元・危険loader使用を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-05/S1",
+          "expectation": "path入力の正規化と許可root判定、symlink考慮を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-06/S1",
+          "expectation": "URL入力、DNS/redirect、metadata/private宛ての制限宣言と実装を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-07/S1",
+          "expectation": "XML parserの外部entity/DTD/network機能の無効化設定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-08/S1",
+          "expectation": "uploadの拡張子・MIME・内容・保存先・容量・後処理を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-09/S1",
+          "expectation": "merge/setの外部keyとprototype関連keyの制約を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INJ-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INJ-10/S1",
+          "expectation": "regex・展開・再帰・parseの入力上限と時間/容量制限を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-01/S1",
+          "expectation": "HTML出力sinkへ至る値と文脈別escape/sanitizeを追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-02/S1",
+          "expectation": "状態変更routeのCSRF token・origin検証・cookie送信条件を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-03/S1",
+          "expectation": "CORS origin/method/headerと資格情報許可の組合せを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-04/S1",
+          "expectation": "CSPと外部scriptの許可範囲・nonce/hash・integrity設定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-05/S1",
+          "expectation": "TLS強制・証明書検証の無効化分岐・proxy宣言を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-06/S1",
+          "expectation": "管理/debug/診断/API docsのroute一覧と公開/認証/環境条件を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-07/S1",
+          "expectation": "機密応答のcache headerと共有cacheのキー設計を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-08/S1",
+          "expectation": "redirect先・Host/Forwarded headerの信頼元と許可リストを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "WEB-08/S2",
+          "expectation": "client IP・scheme・hostの判定は信頼するproxy範囲と接続順序を限定し、外部入力のForwarded/X-Forwarded-*を無条件に信用しない。エッジの上書きと直通経路の遮断が宣言され、経路長の違いで制限キーや監査主体が入力依存にならない。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-09/S1",
+          "expectation": "検索/export/batchの省略・負数・過大入力、上限clamp、非同期/分散経路の制限を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "WEB-09/S2",
+          "expectation": "高リスクな検索/一覧/exportで、1回のlimitだけでなく主体・テナント・機能等に応じた時間窓内の累積取得量と同時ジョブ数が設計される。ページ/カーソル/別経路/再試行でも予算を共有し、受付時の原子的な予約と終了・失敗時の精算で上限が抜けない。値は業務リスクに基づき、機械的な一律閾値にしない。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "WEB-09/S3",
+          "expectation": "GraphQL/batch/RPC等ではHTTP件数だけでなく、alias/配列/複数operation/深さ/返却量/実行時間等の実コストに対する上限を持つ。WebSocketのメッセージ・購読等も適用経路を確認する。未使用方式の非該当は根拠を残す。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "WEB-09/S4",
+          "expectation": "クラウドの課金対象APIを利用する場合、アカウント・プロジェクト・サービス・主体ごとの費用または利用量の監視、異常通知、担当者と停止・失効への接続が定義される。生成AIを製品に搭載していなくても、取得されたクラウドIDからの課金サービス悪用を評価する。予算通知と強制上限・停止は区別する。非該当には利用・権限範囲の根拠を残す。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "WEB-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "WEB-10/S1",
+          "expectation": "proxy/backendのHTTP parser設定・header正規化・曖昧入力の拒否方針を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-01/S1",
+          "expectation": "収集からDB/cache/queue/分析/外部送信までデータ分類・目的・所有者・保存先を照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-02/S1",
+          "expectation": "DB列・serializer・API応答・分析eventの項目が業務目的の許可リストに限定されるか追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-03/S1",
+          "expectation": "保存時暗号化と鍵アクセス分離がIaC/設定で宣言されているか読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-04/S1",
+          "expectation": "seed/fixture/migration/同期jobに本番データを取り込む経路がないか読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-05/S1",
+          "expectation": "保持期限・削除job・cache/index/export削除・復元時の再削除のコードと設定を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-06/S1",
+          "expectation": "exportの保存先ACL・期限・受取者確認・署名URLと監査eventを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-07/S1",
+          "expectation": "暗号API・乱数源・nonce/IV生成・鍵の使い回しを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-08/S1",
+          "expectation": "backup/snapshotのACL・外部共有・保存先の宣言を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-09/S1",
+          "expectation": "一時/同期/キャッシュ/crash dumpの保存先・権限・掃除処理を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DAT-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DAT-10/S1",
+          "expectation": "外部転送先・送信field・転送条件が承認されたデータフローと一致するか読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CLD-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CLD-01/S1",
+          "expectation": "storage ACL・公開block・bucket policyの宣言を解析する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CLD-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CLD-02/S1",
+          "expectation": "DB/管理portのCIDR・firewall・security group・公開listenerを解析する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CLD-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CLD-03/S1",
+          "expectation": "IAMのAction/Resource/Conditionと権限昇格操作の許可を解析する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CLD-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CLD-04/S1",
+          "expectation": "環境別account/namespace/role/secret参照を照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CLD-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CLD-05/S1",
+          "expectation": "metadata保護とworkload identityの信頼条件を宣言上で読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CLD-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CLD-06/S1",
+          "expectation": "state/planの保存先・ACL・暗号化・CI添付の設定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CLD-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CLD-08/S1",
+          "expectation": "serverless/API gatewayの呼出権限・匿名公開・stage境界を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CLD-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CLD-09/S1",
+          "expectation": "cloud監査ログの有効化・独立保存先・削除権限の宣言を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-01/S1",
+          "expectation": "base imageと間接stageのdigest固定を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-02/S1",
+          "expectation": "USER・runAsUser・user namespace宣言と実行権限を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-03/S1",
+          "expectation": "privileged・capabilities・allowPrivilegeEscalation・seccompの宣言を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-04/S1",
+          "expectation": "hostPath・hostNetwork・PID・Docker socket共有設定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-05/S1",
+          "expectation": "readOnlyRootFilesystemと必要な書込mount範囲を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-06/S1",
+          "expectation": "Role/ClusterRoleとBindingの対象・verb・resourceを解析する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-07/S1",
+          "expectation": "token automount・audience・service account使い回しを宣言上で読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-08/S1",
+          "expectation": "NetworkPolicyのdefault deny・ingress/egress例外を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-09/S1",
+          "expectation": "secret参照先・manifestへの平文混入・etcd暗号化宣言を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CTR-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "CTR-10/S1",
+          "expectation": "admission・image署名検証・不許可imageの宣言を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-01/S1",
+          "expectation": "ログ呼出と構造化fieldへ秘密値が流れないか追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-02/S1",
+          "expectation": "本文・PII・queryを記録する箇所とfieldごとの最小化を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-03/S1",
+          "expectation": "例外handlerの応答とstack trace出力先を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-04/S1",
+          "expectation": "CI debug・env dump・shell trace・secret展開を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-05/S1",
+          "expectation": "telemetry SDKの送信項目・mask設定・再送cacheを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-06/S1",
+          "expectation": "ログの閲覧/削除/保有期間の宣言とサービス別の取得担当・窓口を文書で照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-07/S1",
+          "expectation": "認証・状態変更・権限変更・参照/exportのevent発行箇所、主体/対象/件数/時刻/結果とredactionを照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-08/S1",
+          "expectation": "ログ入力の改行/制御文字処理・構造化・時刻・独立保存宣言を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-09/S1",
+          "expectation": "参照量/利用元/時間帯の監視query・通常基準・期間切替・通知先の定義を読む。実ログの異常調査は行わない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "OBS-09/S2",
+          "expectation": "監視定義がIPやUser-Agentだけでなく検証済み主体/tenant/機能を用い、短期急増と長期の累積取得・多数オブジェクト参照を扱う。認証/認可エラーから成功・exportへの変化、計数/ログ停止の欠損を扱い、検知が担当と抑止・失効の手順へ接続する。秘密tokenや全PIIの記録は要求しない。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "OBS-10/S1",
+          "expectation": "HAR/診断/サポート添付の収集前mask・送信先・短期保存処理を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-01/S1",
+          "expectation": "コード/設定/環境変数名のSaaS・cloud・VPN・API参照を所有者/用途/データ台帳へ紐付け、repo外は未確認と記録する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-02/S1",
+          "expectation": "要求OAuth scope・実利用API・同意条件が最小権限か静的に比較する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-03/S1",
+          "expectation": "refresh tokenの保管/暗号化/ログ排除/失効呼出の実装を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-04/S1",
+          "expectation": "解除・退職・権限縮小・再同期・再有効化の分岐と派生session失効を追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-05/S1",
+          "expectation": "webhook署名・時刻・replay ID・raw body検証の実装を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-06/S1",
+          "expectation": "外部responseの型・サイズ・信頼性・エラー処理を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-07/S1",
+          "expectation": "webhook送信先URLとpayload、再試行時の境界検証を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-08/S1",
+          "expectation": "service間認証のissuer/audience・mTLS・API keyの用途制限を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-09/S1",
+          "expectation": "第三者連携の停止flag・fallback・再接続承認のコードを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "INT-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "INT-10/S1",
+          "expectation": "第三者へ送るfieldと保持/再利用オプションの明示設定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AIM-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AIM-01/S1",
+          "expectation": "未信頼contextからtool/秘密値への経路と指示/データ分離の設計を読む。攻撃耐性の実証とはしない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AIM-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AIM-02/S1",
+          "expectation": "tool許可リスト・引数schema・承認境界・破壊操作の拒否コードを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AIM-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AIM-03/S1",
+          "expectation": "prompt/context/logへ秘密情報を渡す経路とmask処理を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AIM-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AIM-04/S1",
+          "expectation": "RAG取得時の利用者/tenant ACLとindex投入時の権限情報を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AIM-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AIM-05/S1",
+          "expectation": "生成コード/HTMLの実行・表示前検証とsandbox指定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AIM-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AIM-06/S1",
+          "expectation": "MCP/pluginの供給元・固定参照・要求scope・起動コマンドを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AIM-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AIM-07/S1",
+          "expectation": "agentのmount・資格情報・network・process制約の設定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AIM-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AIM-08/S1",
+          "expectation": "memory/会話/cacheの利用者/tenant分離keyと削除処理を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AIM-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "AIM-10/S1",
+          "expectation": "tool利用の上限・監査event・停止スイッチのコードを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DEV-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DEV-01/S1",
+          "expectation": "推奨IDE拡張の識別子・固定/更新方針と承認台帳が照合され、未管理の拡張を自動導入する宣言がない。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DEV-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DEV-02/S1",
+          "expectation": "devcontainer/bootstrapの自動実行hookを起動せず読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DEV-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DEV-03/S1",
+          "expectation": "hook/filter/fsmonitorの設定と外部実行参照を読む。Git hookを実行しない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DEV-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DEV-05/S1",
+          "expectation": "download直後のshell実行と署名/hash検証の有無を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DEV-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DEV-06/S1",
+          "expectation": "監査ツールの固定version/digest・配布元・検証手順を照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DEV-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DEV-07/S1",
+          "expectation": "対象内の監査指示・抑制を未信頼データとして分離する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "DEV-07/S2",
+          "expectation": "対象内のAGENTS/CLAUDE/skills/rules/memory/設定/hook/MCP定義を、合格強制・外部送信・範囲縮小の権限として扱わない。対象の自動実行を無効にした信頼済み監査workspaceから読み取り専用snapshotを読む。skill/証拠/レポートは対象から変更不能に分離し、対象内抑制や生成結果を親の承認に昇格させない。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DEV-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DEV-08/S1",
+          "expectation": "symlink・archive・巨大/非UTF8/バイナリによる検査欠落と補完根拠を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DEV-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DEV-09/S1",
+          "expectation": "scanner起動設定のtelemetry・upload・egressと資格情報引継ぎを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "DEV-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "DEV-10/S1",
+          "expectation": "証拠/HTML/JSONのmask・権限・出力先・公開upload設定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TST-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "TST-01/S1",
+          "expectation": "資産・攻撃面・信頼境界・対象外をソースと宣言的設定へ対応付ける。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "TST-01/S2",
+          "expectation": "公開入口→認証→オブジェクト/tenant認可→worker/DB→export/egressの経路を、存在する実装に沿って整理する。情報露出・低権限ID・SSRF等の起点からの組合せを検討し、阻止点をソース/設定へ紐付ける。前提不明の経路は未検証として残し、AIを採用していないプロダクトでも外部AI攻撃者の観点を非該当にしない。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TST-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "TST-02/S1",
+          "expectation": "認証/認可の否定テストのケース定義を読む。実行成功や網羅性の実証とはしない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TST-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "TST-03/S1",
+          "expectation": "SASTの対象言語/ファイル・parse error・timeout・除外の実行証跡を照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TST-04",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "TST-04/S1",
+          "expectation": "SCAのDB時点・対象lock・errorとゲート設定を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TST-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "TST-05/S1",
+          "expectation": "秘密情報検査のCI/履歴/配布物に対する設定と走査記録を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TST-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "TST-06/S1",
+          "expectation": "IaC/container静的スキャナーの対象と未解析範囲を照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TST-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "TST-08/S1",
+          "expectation": "抑制ID・理由・所有者・期限と未解決リスクの扱いを読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TST-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "TST-09/S1",
+          "expectation": "修正差分と対応する回帰テスト定義を読む。テストは実行しない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TST-10",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "TST-10/S1",
+          "expectation": "静的検査証拠のscope/hash/日時/所有者と除外台帳を照合する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "IR-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "IR-01/S1",
+          "expectation": "異常ログ/アカウント発見から判定・連絡・専門家への調査依頼の手順と責任者を文書で確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "IR-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "IR-05/S1",
+          "expectation": "証拠保全対象・hash/時刻/取扱い・変更前保全の手順定義を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "IR-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "IR-09/S1",
+          "expectation": "脅威情報の確認先・資産照合・担当・更新時点の管理手順を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-01-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-01-01/S1",
+          "expectation": "VPN/ZTNA管理面の公開範囲と管理roleを宣言的設定で確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-01-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-01-02/S1",
+          "expectation": "RDP/SSH portの公開CIDRと踏み台経由制約を宣言的設定で確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-01-03",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-01-03/S1",
+          "expectation": "リポジトリで管理する境界機器の版を最新供給元情報へ照合する。実機適用は未確認。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-01-05",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-01-05/S1",
+          "expectation": "サービスIDに付与する管理/削除/広域アクセス権をIaCで追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-01-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-01-09/S1",
+          "expectation": "repo管理のdomain/ingress/listener/公開APIと所有者台帳を照合する。組織全資産の不存在は証明しない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        },
+        {
+          "id": "RAN-01-09/S2",
+          "expectation": "repo内に存在するfrontend/JS bundle/mobile設定/API schema/旧版・別host routeをbackend/ingressと突合し、台帳漏れの入口を残さない。管理・broker・業務用APIもサーバー側認証/認可に結び付ける。UI非表示、難読化、robots.txt、User-Agent名による秘匿を唯一の境界としない。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-02-01",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-02-01/S1",
+          "expectation": "IAM/role宣言で通常運用・特権管理・復旧の権限を分離する設計を確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-02-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-02-06/S1",
+          "expectation": "ネットワーク宣言上の環境/委託先/管理経路の分離と不要な通過許可を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-03-02",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-03-02/S1",
+          "expectation": "backup削除と本番運用roleの分離をIAM/ポリシー宣言で追跡する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-03-06",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-03-06/S1",
+          "expectation": "DBの削除保護・破壊操作権限・承認ゲートをIaCで確認する。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-03-07",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-03-07/S1",
+          "expectation": "storage/鍵/backupの削除・保持短縮を許す管理API権限を宣言上で読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-03-08",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-03-08/S1",
+          "expectation": "object versioningの有効化・旧版保存・停止可能roleの宣言を読む。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "RAN-03-09",
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "resolved_observations": [],
+      "criteria_results": [
+        {
+          "id": "RAN-03-09/S1",
+          "expectation": "WORM/Object Lockの保持・変更権限・独立管理の宣言を読む。復元や削除防止の実証とはしない。可視コード・宣言・提供済み静的資料の範囲で不備が残らず、適用対象と分岐を確認した根拠がある。",
+          "status": "NOT_RUN",
+          "reviewer": "",
+          "reviewed_at": "",
+          "redacted": false,
+          "rationale": "",
+          "evidence": []
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "source_tree": {
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": []
+    },
+    "history": {
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": []
+    },
+    "dependencies": {
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": []
+    },
+    "release_artifacts": {
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": []
+    },
+    "threat_intel": {
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": [],
+      "as_of": ""
+    },
+    "static_configs": {
+      "status": "NOT_RUN",
+      "reviewer": "",
+      "reviewed_at": "",
+      "redacted": false,
+      "rationale": "",
+      "evidence": []
+    }
+  },
+  "gap_resolutions": []
+}

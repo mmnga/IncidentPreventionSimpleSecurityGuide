@@ -1,0 +1,29 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "opaque_session": {
+    "storage": "hash only",
+    "ttl_seconds": 1800,
+    "revocation": "active/auth_version"
+  },
+  "admin": {
+    "phishing_resistant_mfa": "required at actual IdP",
+    "recovery": "independent approval",
+    "break_glass": "short-lived, logged, reviewed"
+  },
+  "oidc_model": {
+    "issuer": "https://id.atlas.invalid",
+    "audience": "atlas",
+    "algorithms": [
+      "RS256"
+    ],
+    "jwks_signature_verification": "external adapter required, not decode-only"
+  },
+  "reset_model": {
+    "token_hash_at_rest": true,
+    "ttl_seconds": 600,
+    "single_use": true,
+    "same_response_for_unknown_account": true,
+    "recipient_change_requires_reauth": true
+  },
+  "actual_idp_and_recovery_evidence": null
+}

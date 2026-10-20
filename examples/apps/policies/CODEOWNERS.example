@@ -1,0 +1,7 @@
+# Inert ownership example. Actual repository ruleset and account membership need evidence.
+/api/security.py       @synthetic-security
+/api/schema.sql        @synthetic-data
+/terraform/            @synthetic-platform @synthetic-security
+/ci/                   @synthetic-security
+/notifications/        @synthetic-security
+/ai/                   @synthetic-security

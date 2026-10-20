@@ -1,0 +1,198 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "OBS",
+  "cases": [
+    {
+      "control_id": "OBS-01",
+      "title": "認証情報のログ抑止",
+      "counterexample": "認証token/passwordをログfieldへ入れる",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/120",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "OBS-02",
+      "title": "個人情報・本文の最小化",
+      "counterexample": "問い合わせ本文と全個人情報を通常ログへ保存する",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/121",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "OBS-03",
+      "title": "例外・stack traceの露出",
+      "counterexample": "例外stack traceをAPI応答へ返す",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/122",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "OBS-04",
+      "title": "CI debug・環境dump",
+      "counterexample": "CIでprintenvやsecretsのJSON dumpを行う",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/123",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "OBS-05",
+      "title": "APM・error tracking・session replay",
+      "counterexample": "session replayへ秘密画面と入力を送る",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/124",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "OBS-06",
+      "title": "ログの閲覧権限・保持期間",
+      "counterexample": "保有期間・提供者へのログ取得窓口が未定義である",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-06/S1"
+      ],
+      "full_criteria": [
+        "OBS-06/C1"
+      ],
+      "definition_pointer": "checks.json#/125",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "OBS-07",
+      "title": "監査eventの網羅",
+      "counterexample": "参照/export/権限変更/無効化の監査eventを省略する",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-07/S1"
+      ],
+      "full_criteria": [
+        "OBS-07/C1",
+        "OBS-07/C2"
+      ],
+      "definition_pointer": "checks.json#/126",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "OBS-08",
+      "title": "ログ改ざん・injection",
+      "counterexample": "ログ文字列へ改行を混入でき独立保管もない",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/127",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "OBS-09",
+      "title": "異常な大量取得の検知",
+      "counterexample": "短期IP急増だけ見て長期累積/監視欠損/失敗後成功を見ない",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-09/S1",
+        "OBS-09/S2"
+      ],
+      "full_criteria": [
+        "OBS-09/C1",
+        "OBS-09/C2",
+        "OBS-09/C3",
+        "OBS-09/AR8-1"
+      ],
+      "definition_pointer": "checks.json#/128",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "OBS-10",
+      "title": "サポート添付・HARのサニタイズ",
+      "counterexample": "HAR/添付のcredentialを除去せず共有する",
+      "inspect_files": [
+        "api/security.py",
+        "operations/monitoring-rules.json",
+        "policies/data-lifecycle.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "OBS-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/129",
+      "additional_condition_focus": []
+    }
+  ]
+}

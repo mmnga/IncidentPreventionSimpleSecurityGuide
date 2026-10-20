@@ -1,0 +1,1275 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "records": [
+    {
+      "criterion_id": "SUP-01/C1",
+      "control_id": "SUP-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/30/criteria/0"
+    },
+    {
+      "criterion_id": "SUP-01/C2",
+      "control_id": "SUP-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/30/criteria/1"
+    },
+    {
+      "criterion_id": "SUP-02/C1",
+      "control_id": "SUP-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/31/criteria/0"
+    },
+    {
+      "criterion_id": "SUP-02/C2",
+      "control_id": "SUP-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/31/criteria/1"
+    },
+    {
+      "criterion_id": "AUT-01/C1",
+      "control_id": "AUT-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/50/criteria/0"
+    },
+    {
+      "criterion_id": "AUT-01/C2",
+      "control_id": "AUT-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/50/criteria/1"
+    },
+    {
+      "criterion_id": "AUT-04/AR8-1",
+      "control_id": "AUT-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/53/criteria/0"
+    },
+    {
+      "criterion_id": "AZ-04/C1",
+      "control_id": "AZ-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/63/criteria/0"
+    },
+    {
+      "criterion_id": "AZ-04/C2",
+      "control_id": "AZ-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/63/criteria/1"
+    },
+    {
+      "criterion_id": "AZ-06/C1",
+      "control_id": "AZ-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/65/criteria/0"
+    },
+    {
+      "criterion_id": "AZ-10/AR8-1",
+      "control_id": "AZ-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/69/criteria/0"
+    },
+    {
+      "criterion_id": "INJ-01/C1",
+      "control_id": "INJ-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/70/criteria/0"
+    },
+    {
+      "criterion_id": "INJ-01/C2",
+      "control_id": "INJ-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/70/criteria/1"
+    },
+    {
+      "criterion_id": "WEB-01/MAIL-1",
+      "control_id": "WEB-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/80/criteria/0"
+    },
+    {
+      "criterion_id": "WEB-08/AR8-1",
+      "control_id": "WEB-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/87/criteria/0"
+    },
+    {
+      "criterion_id": "WEB-09/C1",
+      "control_id": "WEB-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/88/criteria/0"
+    },
+    {
+      "criterion_id": "WEB-09/C2",
+      "control_id": "WEB-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/88/criteria/1"
+    },
+    {
+      "criterion_id": "WEB-09/AR8-1",
+      "control_id": "WEB-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/88/criteria/2"
+    },
+    {
+      "criterion_id": "WEB-09/AR8-2",
+      "control_id": "WEB-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/88/criteria/3"
+    },
+    {
+      "criterion_id": "WEB-09/LAC-1",
+      "control_id": "WEB-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/88/criteria/4"
+    },
+    {
+      "criterion_id": "WEB-09/MAIL-1",
+      "control_id": "WEB-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/88/criteria/5"
+    },
+    {
+      "criterion_id": "DAT-05/C1",
+      "control_id": "DAT-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/94/criteria/0"
+    },
+    {
+      "criterion_id": "DAT-05/C2",
+      "control_id": "DAT-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/94/criteria/1"
+    },
+    {
+      "criterion_id": "DAT-09/C1",
+      "control_id": "DAT-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/98/criteria/0"
+    },
+    {
+      "criterion_id": "DAT-09/C2",
+      "control_id": "DAT-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/98/criteria/1"
+    },
+    {
+      "criterion_id": "OBS-06/C1",
+      "control_id": "OBS-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/125/criteria/0"
+    },
+    {
+      "criterion_id": "OBS-07/C1",
+      "control_id": "OBS-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/126/criteria/0"
+    },
+    {
+      "criterion_id": "OBS-07/C2",
+      "control_id": "OBS-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/126/criteria/1"
+    },
+    {
+      "criterion_id": "OBS-09/C1",
+      "control_id": "OBS-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/128/criteria/0"
+    },
+    {
+      "criterion_id": "OBS-09/C2",
+      "control_id": "OBS-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/128/criteria/1"
+    },
+    {
+      "criterion_id": "OBS-09/C3",
+      "control_id": "OBS-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/128/criteria/2"
+    },
+    {
+      "criterion_id": "OBS-09/AR8-1",
+      "control_id": "OBS-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/128/criteria/3"
+    },
+    {
+      "criterion_id": "INT-01/C1",
+      "control_id": "INT-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/130/criteria/0"
+    },
+    {
+      "criterion_id": "INT-04/C1",
+      "control_id": "INT-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/133/criteria/0"
+    },
+    {
+      "criterion_id": "DEV-07/AR8-1",
+      "control_id": "DEV-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/156/criteria/0"
+    },
+    {
+      "criterion_id": "TST-01/AR8-1",
+      "control_id": "TST-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/160/criteria/0"
+    },
+    {
+      "criterion_id": "IR-01/C1",
+      "control_id": "IR-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/170/criteria/0"
+    },
+    {
+      "criterion_id": "IR-02/C1",
+      "control_id": "IR-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/171/criteria/0"
+    },
+    {
+      "criterion_id": "IR-02/C2",
+      "control_id": "IR-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/171/criteria/1"
+    },
+    {
+      "criterion_id": "IR-04/C1",
+      "control_id": "IR-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/173/criteria/0"
+    },
+    {
+      "criterion_id": "IR-04/C2",
+      "control_id": "IR-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/173/criteria/1"
+    },
+    {
+      "criterion_id": "IR-05/C1",
+      "control_id": "IR-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/174/criteria/0"
+    },
+    {
+      "criterion_id": "IR-05/C2",
+      "control_id": "IR-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/174/criteria/1"
+    },
+    {
+      "criterion_id": "IR-08/LAC-1",
+      "control_id": "IR-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/177/criteria/0"
+    },
+    {
+      "criterion_id": "IR-10/C1",
+      "control_id": "IR-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/179/criteria/0"
+    },
+    {
+      "criterion_id": "IR-10/C2",
+      "control_id": "IR-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/179/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-01/C1",
+      "control_id": "RAN-01-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/180/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-01/C2",
+      "control_id": "RAN-01-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/180/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-02/C1",
+      "control_id": "RAN-01-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/181/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-02/C2",
+      "control_id": "RAN-01-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/181/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-03/C1",
+      "control_id": "RAN-01-03",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/182/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-03/C2",
+      "control_id": "RAN-01-03",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/182/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-04/C1",
+      "control_id": "RAN-01-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/183/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-04/C2",
+      "control_id": "RAN-01-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/183/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-05/C1",
+      "control_id": "RAN-01-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/184/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-05/C2",
+      "control_id": "RAN-01-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/184/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-06/C1",
+      "control_id": "RAN-01-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/185/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-06/C2",
+      "control_id": "RAN-01-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/185/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-07/C1",
+      "control_id": "RAN-01-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/186/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-07/C2",
+      "control_id": "RAN-01-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/186/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-08/C1",
+      "control_id": "RAN-01-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/187/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-08/C2",
+      "control_id": "RAN-01-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/187/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-09/C1",
+      "control_id": "RAN-01-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/188/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-09/C2",
+      "control_id": "RAN-01-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/188/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-01-09/AR8-1",
+      "control_id": "RAN-01-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/188/criteria/2"
+    },
+    {
+      "criterion_id": "RAN-01-10/C1",
+      "control_id": "RAN-01-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/189/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-01-10/C2",
+      "control_id": "RAN-01-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/189/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-01/C1",
+      "control_id": "RAN-02-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/190/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-01/C2",
+      "control_id": "RAN-02-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/190/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-02/C1",
+      "control_id": "RAN-02-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/191/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-02/C2",
+      "control_id": "RAN-02-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/191/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-03/C1",
+      "control_id": "RAN-02-03",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/192/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-03/C2",
+      "control_id": "RAN-02-03",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/192/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-04/C1",
+      "control_id": "RAN-02-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/193/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-04/C2",
+      "control_id": "RAN-02-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/193/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-05/C1",
+      "control_id": "RAN-02-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/194/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-05/C2",
+      "control_id": "RAN-02-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/194/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-06/C1",
+      "control_id": "RAN-02-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/195/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-06/C2",
+      "control_id": "RAN-02-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/195/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-07/C1",
+      "control_id": "RAN-02-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/196/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-07/C2",
+      "control_id": "RAN-02-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/196/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-08/C1",
+      "control_id": "RAN-02-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/197/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-08/C2",
+      "control_id": "RAN-02-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/197/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-09/C1",
+      "control_id": "RAN-02-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/198/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-09/C2",
+      "control_id": "RAN-02-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/198/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-02-10/C1",
+      "control_id": "RAN-02-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/199/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-02-10/C2",
+      "control_id": "RAN-02-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/199/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-01/C1",
+      "control_id": "RAN-03-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/200/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-01/C2",
+      "control_id": "RAN-03-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/200/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-02/C1",
+      "control_id": "RAN-03-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/201/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-02/C2",
+      "control_id": "RAN-03-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/201/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-03/C1",
+      "control_id": "RAN-03-03",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/202/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-03/C2",
+      "control_id": "RAN-03-03",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/202/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-04/C1",
+      "control_id": "RAN-03-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/203/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-04/C2",
+      "control_id": "RAN-03-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/203/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-05/C1",
+      "control_id": "RAN-03-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/204/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-05/C2",
+      "control_id": "RAN-03-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/204/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-06/C1",
+      "control_id": "RAN-03-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/205/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-06/C2",
+      "control_id": "RAN-03-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/205/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-07/C1",
+      "control_id": "RAN-03-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/206/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-07/C2",
+      "control_id": "RAN-03-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/206/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-08/C1",
+      "control_id": "RAN-03-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/207/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-08/C2",
+      "control_id": "RAN-03-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/207/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-09/C1",
+      "control_id": "RAN-03-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/208/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-09/C2",
+      "control_id": "RAN-03-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/208/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-03-10/C1",
+      "control_id": "RAN-03-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/209/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-03-10/C2",
+      "control_id": "RAN-03-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/209/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-01/C1",
+      "control_id": "RAN-04-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/210/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-01/C2",
+      "control_id": "RAN-04-01",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/210/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-02/C1",
+      "control_id": "RAN-04-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/211/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-02/C2",
+      "control_id": "RAN-04-02",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/211/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-03/C1",
+      "control_id": "RAN-04-03",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/212/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-03/C2",
+      "control_id": "RAN-04-03",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/212/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-04/C1",
+      "control_id": "RAN-04-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/213/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-04/C2",
+      "control_id": "RAN-04-04",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/213/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-05/C1",
+      "control_id": "RAN-04-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/214/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-05/C2",
+      "control_id": "RAN-04-05",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/214/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-06/C1",
+      "control_id": "RAN-04-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/215/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-06/C2",
+      "control_id": "RAN-04-06",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/215/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-07/C1",
+      "control_id": "RAN-04-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/216/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-07/C2",
+      "control_id": "RAN-04-07",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/216/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-08/C1",
+      "control_id": "RAN-04-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/217/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-08/C2",
+      "control_id": "RAN-04-08",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/217/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-09/C1",
+      "control_id": "RAN-04-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/218/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-09/C2",
+      "control_id": "RAN-04-09",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/218/criteria/1"
+    },
+    {
+      "criterion_id": "RAN-04-10/C1",
+      "control_id": "RAN-04-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/219/criteria/0"
+    },
+    {
+      "criterion_id": "RAN-04-10/C2",
+      "control_id": "RAN-04-10",
+      "status": "NOT_RUN",
+      "actual_artifact": null,
+      "reviewed_at": null,
+      "reviewer": null,
+      "scope_hash": null,
+      "definition_pointer": "checks.json#/219/criteria/1"
+    }
+  ]
+}

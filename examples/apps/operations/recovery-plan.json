@@ -1,0 +1,34 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "tiers": {
+    "notes": {
+      "target_rpo_minutes": 60,
+      "target_rto_minutes": 240
+    }
+  },
+  "backup": {
+    "restore_role_separate": true,
+    "delete_permission_in_app_role": false,
+    "offline_key_custody": "independent and dual-controlled",
+    "actual_key_receipt": null
+  },
+  "sequence": [
+    "isolate",
+    "preserve evidence",
+    "revoke identities and sessions",
+    "prepare clean-room",
+    "verify clean source and dependencies",
+    "restore",
+    "reapply deletion tombstones",
+    "verify tenants and integrity",
+    "staged reopen"
+  ],
+  "actual_restore_started_at": null,
+  "actual_recovered_at": null,
+  "actual_write_point": null,
+  "rpo_seconds_measured": null,
+  "rto_seconds_measured": null,
+  "integrity_results": null,
+  "offline_access_test": null,
+  "actual_success": null
+}

@@ -1,0 +1,209 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "RAN1",
+  "cases": [
+    {
+      "control_id": "RAN-01-01",
+      "title": "VPN・ZTNAの公開管理面",
+      "counterexample": "VPN/ZTNA管理面を一般公開する",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-01-01/S1"
+      ],
+      "full_criteria": [
+        "RAN-01-01/C1",
+        "RAN-01-01/C2"
+      ],
+      "definition_pointer": "checks.json#/180",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-01-02",
+      "title": "RDP・SSHの外部公開",
+      "counterexample": "RDP/SSHを全送信元へ開放する",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-01-02/S1"
+      ],
+      "full_criteria": [
+        "RAN-01-02/C1",
+        "RAN-01-02/C2"
+      ],
+      "definition_pointer": "checks.json#/181",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-01-03",
+      "title": "未修正の境界機器脆弱性",
+      "counterexample": "境界機器の版・公表脆弱性・例外期限を照合しない",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-01-03/S1"
+      ],
+      "full_criteria": [
+        "RAN-01-03/C1",
+        "RAN-01-03/C2"
+      ],
+      "definition_pointer": "checks.json#/182",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-01-04",
+      "title": "認証基盤のMFA耐フィッシング",
+      "counterexample": "IdPの実MFA設定/復旧経路を確認せず有効とする",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-01-04/C1",
+        "RAN-01-04/C2"
+      ],
+      "definition_pointer": "checks.json#/183",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-01-05",
+      "title": "サービスアカウントの過剰権限",
+      "counterexample": "service accountへ管理者権限と長期共通鍵を付ける",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-01-05/S1"
+      ],
+      "full_criteria": [
+        "RAN-01-05/C1",
+        "RAN-01-05/C2"
+      ],
+      "definition_pointer": "checks.json#/184",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-01-06",
+      "title": "初期アクセスブローカー由来の認証情報",
+      "counterexample": "侵害済み認証情報の調査・失効根拠がない",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-01-06/C1",
+        "RAN-01-06/C2"
+      ],
+      "definition_pointer": "checks.json#/185",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-01-07",
+      "title": "開発者端末から本番への到達性",
+      "counterexample": "開発端末から本番管理面へ直接到達できる状態を未確認で許す",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-01-07/C1",
+        "RAN-01-07/C2"
+      ],
+      "definition_pointer": "checks.json#/186",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-01-08",
+      "title": "サポート用リモートツールの統制",
+      "counterexample": "遠隔サポートtoolを常時無承認で使えるようにする",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-01-08/C1",
+        "RAN-01-08/C2"
+      ],
+      "definition_pointer": "checks.json#/187",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-01-09",
+      "title": "外部公開資産の棚卸し",
+      "counterexample": "mobile/bundle/旧API/別hostとbackendの入口を突合しない",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-01-09/S1",
+        "RAN-01-09/S2"
+      ],
+      "full_criteria": [
+        "RAN-01-09/C1",
+        "RAN-01-09/C2",
+        "RAN-01-09/AR8-1"
+      ],
+      "definition_pointer": "checks.json#/188",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-01-10",
+      "title": "ブレークグラス認証の監査",
+      "counterexample": "break-glass利用後の失効・監査・承認を記録しない",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "terraform/network.tf",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-01-10/C1",
+        "RAN-01-10/C2"
+      ],
+      "definition_pointer": "checks.json#/189",
+      "additional_condition_focus": []
+    }
+  ]
+}

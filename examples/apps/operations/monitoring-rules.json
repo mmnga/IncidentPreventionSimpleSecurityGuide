@@ -1,0 +1,64 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "rules": [
+    {
+      "name": "sustained_export",
+      "keys": [
+        "tenant",
+        "actor",
+        "function"
+      ],
+      "windows": [
+        "5m",
+        "24h"
+      ],
+      "signals": [
+        "export_bytes",
+        "distinct_objects",
+        "auth_fail_then_success"
+      ]
+    },
+    {
+      "name": "receipt_abuse",
+      "keys": [
+        "recipient",
+        "actor"
+      ],
+      "signals": [
+        "send_rate",
+        "dedup_miss"
+      ]
+    },
+    {
+      "name": "protection_stopped",
+      "signals": [
+        "agent_heartbeat_missing",
+        "audit_stream_missing"
+      ]
+    },
+    {
+      "name": "egress_and_mutation",
+      "signals": [
+        "large_egress",
+        "bulk_file_mutation",
+        "share_link_burst"
+      ]
+    }
+  ],
+  "redaction": [
+    "authorization",
+    "password",
+    "message_body",
+    "raw_customer_records"
+  ],
+  "storage": {
+    "separate_admin_plane": true,
+    "retention_days": 90,
+    "actual_immutability_verified": false
+  },
+  "alert_route": {
+    "owner": "synthetic-oncall",
+    "acknowledgment": null,
+    "containment_runbook": "operations/incident-response.md"
+  }
+}

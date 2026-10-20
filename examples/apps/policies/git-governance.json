@@ -1,0 +1,37 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "repository": {
+    "visibility": "private",
+    "forks": "owner-approved",
+    "mirrors": "inventoried"
+  },
+  "ruleset_model": {
+    "required_reviews": 2,
+    "codeowner_review": true,
+    "force_push": false,
+    "deletion": false,
+    "admin_bypass": "time-bound independent approval"
+  },
+  "acquisition": {
+    "all_refs": null,
+    "shallow": null,
+    "partial_clone": null,
+    "ignored_inventory": null,
+    "untracked_inventory": null,
+    "lfs_objects": null,
+    "submodule_objects": null
+  },
+  "push_protection": {
+    "desired": true,
+    "actual_setting": null,
+    "bypass_audit": null
+  },
+  "history_export_model": [
+    {
+      "ref": "refs/heads/synthetic-main",
+      "commit": null,
+      "secret_scan_result": null
+    }
+  ],
+  "actual_host_settings_verified": false
+}

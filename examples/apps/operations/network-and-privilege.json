@@ -1,0 +1,38 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "zones": [
+    "user",
+    "application",
+    "database",
+    "management",
+    "backup",
+    "clean-room"
+  ],
+  "default_inbound": "deny",
+  "management_from_public": false,
+  "service_identity": {
+    "shared_admin_key": false,
+    "workload_identity": "required",
+    "short_lived": true
+  },
+  "management": {
+    "dedicated_accounts": true,
+    "standing_domain_admin": false,
+    "session_ttl_minutes": 15,
+    "remote_tools": "allowlist and time-bound approval",
+    "support_access": "revocable"
+  },
+  "edr_model": {
+    "tamper_protection": "required",
+    "heartbeat": "independent monitor",
+    "actual_state": null
+  },
+  "asset_inventory": {
+    "api": "api.atlas.invalid",
+    "web": "web.atlas.invalid",
+    "mobile": "invalid.atlas.notes",
+    "retired_hosts": [],
+    "external_dns_verified": false
+  },
+  "privilege_path_review": null
+}

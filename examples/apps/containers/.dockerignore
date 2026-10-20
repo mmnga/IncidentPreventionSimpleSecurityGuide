@@ -1,0 +1,8 @@
+.git
+.env
+*.pem
+*.key
+*.tfstate
+review-cases
+operations
+**/__pycache__

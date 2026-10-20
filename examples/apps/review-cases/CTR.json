@@ -1,0 +1,177 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "CTR",
+  "cases": [
+    {
+      "control_id": "CTR-01",
+      "title": "base imageのdigest固定",
+      "counterexample": "base imageを可変latestへ変更する",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/110",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CTR-02",
+      "title": "非root実行・user namespace",
+      "counterexample": "containerをrootで動かす",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/111",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CTR-03",
+      "title": "privileged・capability・昇格禁止",
+      "counterexample": "privileged/全capabilityを許可する",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/112",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CTR-04",
+      "title": "host mount・socket共有",
+      "counterexample": "docker socket/hostPath/hostPIDを共有する",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/113",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CTR-05",
+      "title": "read-only rootと書込領域",
+      "counterexample": "root filesystemを任意書込み可能にする",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/114",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CTR-06",
+      "title": "Kubernetes RBAC",
+      "counterexample": "app service accountへcluster-adminを付与する",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/115",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CTR-07",
+      "title": "service account token",
+      "counterexample": "不要なservice account tokenを自動mountする",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/116",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CTR-08",
+      "title": "NetworkPolicyと境界",
+      "counterexample": "全pod間・全外向き通信を許可する",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/117",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CTR-09",
+      "title": "secret管理とetcd保護",
+      "counterexample": "secret/etcdの実設定未確認のまま保護済みとする",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/118",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CTR-10",
+      "title": "admission・image検証・実行制限",
+      "counterexample": "未署名imageや特権podをadmissionで拒否しない",
+      "inspect_files": [
+        "containers/api.Dockerfile",
+        "kubernetes/workload.yaml"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CTR-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/119",
+      "additional_condition_focus": []
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "INJ",
+  "cases": [
+    {
+      "control_id": "INJ-01",
+      "title": "SQL・NoSQL injection",
+      "counterexample": "SQL条件へ入力値/演算子を文字列連結する",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-01/S1"
+      ],
+      "full_criteria": [
+        "INJ-01/C1",
+        "INJ-01/C2"
+      ],
+      "definition_pointer": "checks.json#/70",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INJ-02",
+      "title": "OSコマンド injection",
+      "counterexample": "入力値をshell引数ではなくshell構文へ渡す",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/71",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INJ-03",
+      "title": "テンプレート・式 injection",
+      "counterexample": "問い合わせ本文をテンプレートや式として評価する",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/72",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INJ-04",
+      "title": "危険なdeserialization",
+      "counterexample": "upload由来のobjectを危険なdeserializerへ渡す",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/73",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INJ-05",
+      "title": "path traversal・任意読取",
+      "counterexample": "保存pathを入力の絶対pathや親参照で選べるようにする",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/74",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INJ-06",
+      "title": "SSRF・metadata到達",
+      "counterexample": "外向き通知URLを任意入力・redirect追跡にする",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/75",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INJ-07",
+      "title": "XML外部実体・entity展開",
+      "counterexample": "XMLで外部entityとDOCTYPEを許す",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/76",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INJ-08",
+      "title": "uploadと危険ファイル処理",
+      "counterexample": "uploadの拡張子だけ確認して実行可能な場所へ公開する",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/77",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INJ-09",
+      "title": "prototype pollution・object merge",
+      "counterexample": "クライアントの任意objectを深いmergeで設定へ混ぜる",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/78",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INJ-10",
+      "title": "ReDoS・巨大入力・展開爆弾",
+      "counterexample": "巨大archive/正規表現に時間・展開量上限を設けない",
+      "inspect_files": [
+        "api/security.py",
+        "api/advanced.py",
+        "web/app.js"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INJ-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/79",
+      "additional_condition_focus": []
+    }
+  ]
+}

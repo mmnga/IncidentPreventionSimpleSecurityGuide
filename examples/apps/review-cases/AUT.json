@@ -1,0 +1,203 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "AUT",
+  "cases": [
+    {
+      "control_id": "AUT-01",
+      "title": "認証処理の一元化と迂回",
+      "counterexample": "旧API/別methodで認証middlewareを迂回する",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-01/S1"
+      ],
+      "full_criteria": [
+        "AUT-01/C1",
+        "AUT-01/C2"
+      ],
+      "definition_pointer": "checks.json#/50",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AUT-02",
+      "title": "管理者MFAと復旧経路",
+      "counterexample": "管理者のMFA復旧をメールだけで解除する",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/51",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AUT-03",
+      "title": "パスワード保存",
+      "counterexample": "passwordを高速hashか平文で保持する",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/52",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AUT-04",
+      "title": "総当たり・認証濫用",
+      "counterexample": "ログイン制限をprocess内IPカウンタだけへ変更する",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-04/S1",
+        "AUT-04/S2"
+      ],
+      "full_criteria": [
+        "AUT-04/AR8-1"
+      ],
+      "definition_pointer": "checks.json#/53",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AUT-05",
+      "title": "ユーザー列挙の抑制",
+      "counterexample": "存在するemailだけ異なる失敗応答を返す",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/54",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AUT-06",
+      "title": "reset・メール変更・招待token",
+      "counterexample": "reset/invite tokenを期限なし・複数回使用可能にする",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/55",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AUT-07",
+      "title": "JWT・OIDC署名とclaim",
+      "counterexample": "JWTを署名検証せずdecodeしたclaimで受け入れる",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/56",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AUT-08",
+      "title": "OAuth認証フロー",
+      "counterexample": "OAuth state/PKCE/固定redirectの照合を外す",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/57",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AUT-09",
+      "title": "session cookieと固定化",
+      "counterexample": "sessionを認証前後で再発行せずCookie属性も省く",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/58",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AUT-10",
+      "title": "logout・権限変更後の失効",
+      "counterexample": "無効化/権限変更後も旧auth_versionを受け入れる",
+      "inspect_files": [
+        "api/security.py",
+        "api/app.py",
+        "integrations/boundaries.py",
+        "policies/identity.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AUT-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/59",
+      "additional_condition_focus": []
+    }
+  ]
+}

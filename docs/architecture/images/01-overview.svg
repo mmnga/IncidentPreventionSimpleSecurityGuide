@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img">
+<rect x="0" y="0" width="1600" height="1120" rx="0" fill="#f3f6f7"/>
+<title>全体構成</title>
+<desc>WebとFlutterは既定でそれぞれメモリ内デモを使います。API接続用コードは別にあり、接続時はAPIが認証・認可します。APIの保存先はSQLiteです。TerraformのRDSや補助関数を、接続済みの一体アプリとしては扱いません。</desc>
+<text x="48" y="46.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="600" fill="#536c7a">ATLAS NOTES  /  合成アプリのアーキテクチャ</text>
+<text x="48" y="106.80" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="42" font-weight="600" fill="#172f3c">01  全体構成</text>
+<text x="48" y="147.80" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="22" font-weight="400" fill="#536c7a">クライアント、API、保存先、補助処理、インフラ・運用の関係。</text>
+<rect x="32" y="180" width="1536" height="300" rx="18" fill="#e8eef1"/>
+<text x="50" y="208.20" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="18" font-weight="600" fill="#536c7a">参照コードの主な関係</text>
+<rect x="32" y="540" width="1536" height="310" rx="18" fill="#e8eef1"/>
+<text x="50" y="568.20" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="18" font-weight="600" fill="#536c7a">別途接続する補助処理・設定・運用</text>
+<polyline points="376,340 440,340" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="440.00,340.00 428.00,334.00 428.00,346.00" fill="#a96916"/>
+<polyline points="768,340 832,340" fill="none" stroke="#426174" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="832.00,340.00 820.00,334.00 820.00,346.00" fill="#426174"/>
+<polyline points="1224,340 1160,340" fill="none" stroke="#426174" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1160.00,340.00 1172.00,346.00 1172.00,334.00" fill="#426174"/>
+<polyline points="376,700 408,700 408,340 440,340" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="440.00,340.00 428.00,334.00 428.00,346.00" fill="#a96916"/>
+<polyline points="604,460 604,580" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<polygon points="604.00,580.00 610.00,568.00 598.00,568.00" fill="#a96916"/>
+<rect x="518.5" y="505" width="171.0" height="29" rx="6" fill="#ffffff"/>
+<text x="527.5" y="525.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="400" fill="#a96916">呼出し基盤は未接続</text>
+<rect x="48" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="66" y="235" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="76" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="68" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">Web UI</text>
+<text x="68" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">既定はメモリ内デモ</text>
+<text x="68" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">API用クラスは別に存在</text>
+<text x="68" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">通信は自動で始めない</text>
+<rect x="440" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="458" y="235" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="468" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="460" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">Python API</text>
+<text x="460" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">WSGIのfactory</text>
+<text x="460" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">認証・認可・利用量制限</text>
+<text x="460" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">ノート・export・受付</text>
+<rect x="832" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="850" y="235" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="860" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="852" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">SQLite</text>
+<text x="852" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">users / sessions</text>
+<text x="852" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">notes / jobs / budgets</text>
+<text x="852" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">inquiries / outbox</text>
+<rect x="1224" y="220" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="1242" y="235" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="1252" y="253.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="1244" y="300.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">export worker</text>
+<text x="1244" y="341.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">同じDBで失効を再確認</text>
+<text x="1244" y="370.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">tenant / ownerで取得</text>
+<text x="1244" y="399.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">結果を依頼者に束縛</text>
+<rect x="48" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="66" y="595" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="76" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="68" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">Flutter UI</text>
+<text x="68" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">iOS / Android共通</text>
+<text x="68" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">既定はDemoGateway</text>
+<text x="68" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">HTTPSクライアントあり</text>
+<rect x="440" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#087f78" stroke-width="2"/>
+<rect x="458" y="595" width="90.0" height="28" rx="7" fill="#e5f5f1"/>
+<text x="468" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#087f78">参照コード</text>
+<text x="460" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">通知・連携・AI</text>
+<text x="460" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">固定通知や権限境界</text>
+<text x="460" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">個別の参照関数を用意</text>
+<text x="460" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">実行基盤への接続は別</text>
+<rect x="832" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#2b61af" stroke-width="2"/>
+<rect x="850" y="595" width="104.0" height="28" rx="7" fill="#eaf1fd"/>
+<text x="860" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#2b61af">設定・ひな形</text>
+<text x="852" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">Terraform / K8s</text>
+<text x="852" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">AWS資源と配備の例</text>
+<text x="852" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">RDSはSQLiteと別構成</text>
+<text x="852" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">実クラウドへ未適用</text>
+<rect x="1224" y="580" width="328" height="240" rx="16" fill="#ffffff" stroke="#a96916" stroke-width="2"/>
+<rect x="1242" y="595" width="118.0" height="28" rx="7" fill="#fff1d9"/>
+<text x="1252" y="613.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="600" fill="#a96916">未接続・未実施</text>
+<text x="1244" y="660.50" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="25" font-weight="600" fill="#172f3c">監視・復旧・通知</text>
+<text x="1244" y="701.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">手順と記録のモデル</text>
+<text x="1244" y="730.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">時刻・実測値は空欄</text>
+<text x="1244" y="759.90" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="21" font-weight="400" fill="#172f3c">実環境48項目は未実施</text>
+<rect x="48" y="905" width="1504" height="82" rx="12" fill="#ffffff"/>
+<text x="67" y="934.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="600" fill="#087f78">この図の要点</text>
+<text x="245" y="936.10" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="19" font-weight="600" fill="#172f3c">デモUI、APIの実装、インフラの宣言、運用モデルを分けて読みます。</text>
+<text x="67" y="968.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="600" fill="#a96916">残る確認・接続</text>
+<text x="245" y="969.20" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="18" font-weight="400" fill="#536c7a">ログイン・TLS・配信・AI・RDS・実配備をつなぐ作業と動作確認は未実施です。</text>
+<rect x="48" y="1004" width="205" height="34" rx="8" fill="#e5f5f1"/>
+<text x="61" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="600" fill="#087f78">参照コード</text>
+<rect x="268" y="1004" width="205" height="34" rx="8" fill="#eaf1fd"/>
+<text x="281" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="600" fill="#2b61af">設定・ひな形</text>
+<rect x="488" y="1004" width="205" height="34" rx="8" fill="#fff1d9"/>
+<text x="501" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="600" fill="#a96916">未接続・未実施</text>
+<polyline points="740,1021 804,1021" fill="none" stroke="#426174" stroke-width="3" stroke-linejoin="round"/>
+<text x="819" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="400" fill="#536c7a">ソース上の参照・処理</text>
+<polyline points="1080,1021 1144,1021" fill="none" stroke="#a96916" stroke-width="3" stroke-linejoin="round" stroke-dasharray="9 7"/>
+<text x="1159" y="1027.40" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="16" font-weight="400" fill="#536c7a">設計上の接続・未実施</text>
+<text x="48" y="1068.30" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="17" font-weight="400" fill="#536c7a">図は合成ソースの説明です。参照コード・設定の存在は、動作確認や監査PASSを意味しません。</text>
+<text x="48" y="1097.60" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Noto Sans CJK JP,Meiryo,sans-serif" font-size="14" font-weight="400" fill="#536c7a">確認先: examples/apps/README.md  /  examples/apps/policies/BOUNDARIES.md</text>
+</svg>

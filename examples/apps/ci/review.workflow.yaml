@@ -1,0 +1,15 @@
+# Inert workflow EXAMPLE: outside .github/workflows, not installed or executed.
+name: synthetic-review
+on: [pull_request]
+permissions: {contents: read}
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.invalid/approved/reviewer@sha256:0000000000000000000000000000000000000000000000000000000000000000
+    timeout-minutes: 10
+    steps:
+      - name: Review externally supplied immutable snapshot
+        run: python3 -B /trusted/audit.py --profile static --repo /readonly/snapshot --target-id synthetic --out /private/new-run
+        # An INCOMPLETE exit 2 must fail this gate; never append '|| true'.
+        # Snapshot acquisition and builder digest approval are deliberately not fabricated.

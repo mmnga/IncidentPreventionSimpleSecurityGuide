@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "source_id": "IPA-20261009",
+  "url": "https://www.ipa.go.jp/security/security-alert/2026/alert20261009.html",
+  "published_on": "2026-10-09",
+  "verified_on": "2026-10-09",
+  "not_certification": true,
+  "policy": "本スキル独自の対応表。IPAによる認証や公式チェックリストではない。テーマを検査項目数へ加算しない。",
+  "statement": "IPAは特定製品の脆弱性が原因だと断定していない。推奨の具体化と公表済み事実を混同しない。",
+  "groups": [
+    {
+      "id": "IPA-PUBLIC",
+      "title": "公開アプリと露出面",
+      "check_ids": [
+        "RAN-01-09",
+        "WEB-06",
+        "AUT-01",
+        "AZ-04",
+        "CLD-02"
+      ],
+      "source_topic": "外部公開資産の把握と公開範囲の再検討",
+      "static_action": "route/ingress/認証の宣言と台帳を照合する",
+      "external_action": "実際のDNS/公開経路/資産一覧を管理情報で突合する",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-PATCH",
+      "title": "構成要素と修正状況",
+      "check_ids": [
+        "SUP-01",
+        "SUP-02",
+        "SUP-03",
+        "SUP-08",
+        "RAN-01-03"
+      ],
+      "source_topic": "構成要素の未修正脆弱性への対処",
+      "static_action": "lock/版/静的SBOMと確認時点の供給元情報を照合する",
+      "external_action": "実行中の製品版とパッチ・緩和策の実反映を確認する",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-APP-LOG",
+      "title": "アプリのログ調査",
+      "check_ids": [
+        "OBS-06",
+        "OBS-07",
+        "OBS-09",
+        "IR-05"
+      ],
+      "source_topic": "異常の調査と調査可能範囲の整理",
+      "static_action": "イベント発行/保持/検知queryと調査手順の定義を読む",
+      "external_action": "アプリ単位で実ログを調べ、必要に応じて期間を広げる",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-SAAS-INVENTORY",
+      "title": "外部サービスの棚卸し",
+      "check_ids": [
+        "INT-01",
+        "INT-02",
+        "INT-10"
+      ],
+      "source_topic": "部門を含む利用サービスの把握",
+      "static_action": "コード/構成の連携先・scope・送信データを台帳へ対応付ける",
+      "external_action": "SSO/契約/部門台帳を突合しrepo外の利用を補完する",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-SAAS-LOG",
+      "title": "外部サービスのログ",
+      "check_ids": [
+        "OBS-06",
+        "OBS-07",
+        "OBS-09",
+        "INT-01"
+      ],
+      "source_topic": "サービス別のログ調査・権限・保有期間",
+      "static_action": "ログ取得設定と利用者/提供者の責任分界の文書を読む",
+      "external_action": "実際に見える範囲/保有期間を確認し、提供者のログも必要に応じて依頼する",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-ACCOUNT",
+      "title": "アカウントと認証",
+      "check_ids": [
+        "AUT-02",
+        "AUT-10",
+        "INT-04",
+        "AZ-04"
+      ],
+      "source_topic": "認証強化と不審なアカウントの点検",
+      "static_action": "認証/状態遷移/同期/失効/再有効化のコードを読む",
+      "external_action": "正規台帳と実アカウントを突合しMFA例外と変更履歴を確認する",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-PRIVILEGE",
+      "title": "API連携・最小権限",
+      "check_ids": [
+        "INT-02",
+        "SEC-07",
+        "CLD-03",
+        "AZ-01"
+      ],
+      "source_topic": "連携部品を含むアクセス権の再検討",
+      "static_action": "OAuth/IAM/roleの要求権限と実利用操作を照合する",
+      "external_action": "管理画面/実APIで有効なscope・権限・同意を確認する",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-BULK",
+      "title": "一括取得・持ち出し経路",
+      "check_ids": [
+        "AZ-06",
+        "WEB-09",
+        "DAT-06",
+        "OBS-09"
+      ],
+      "source_topic": "大量漏えいリスクを実装の検査へ具体化（独自設計）",
+      "static_action": "exportの認可/件数/保存/ログを経路全体で読む",
+      "external_action": "制限の実効性・権限変更後の拒否・検知到達を別途検証する",
+      "derived_control": true,
+      "external_required": true
+    },
+    {
+      "id": "IPA-MINIMIZE",
+      "title": "データ最小化・保存期限",
+      "check_ids": [
+        "DAT-01",
+        "DAT-02",
+        "DAT-05",
+        "DAT-09"
+      ],
+      "source_topic": "保有目的と必要最小限への見直し",
+      "static_action": "field/serializer/保存先/削除job/一時残留を確認する",
+      "external_action": "現存するデータと保存先・削除結果・保全例外を照合する",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-STORAGE",
+      "title": "保管と暗号化",
+      "check_ids": [
+        "DAT-03",
+        "DAT-08",
+        "CLD-01",
+        "OBS-07"
+      ],
+      "source_topic": "保管場所・アクセス記録・暗号化の再検討",
+      "static_action": "暗号化/鍵分離/ACL/データアクセスeventの宣言を読む",
+      "external_action": "実際の鍵権限・暗号化・共有・ログ到達を確認する",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-RESPONSE",
+      "title": "異常発見後の判断",
+      "check_ids": [
+        "IR-01",
+        "IR-05",
+        "IR-09"
+      ],
+      "source_topic": "異常発見から調査・対応へ移す体制",
+      "static_action": "判定/保全/連絡/通知情報の照合手順を文書で読む",
+      "external_action": "連絡先と判断権限を検証し、異常があれば調査を進める",
+      "derived_control": false,
+      "external_required": true
+    },
+    {
+      "id": "IPA-SUPPLY",
+      "title": "委託先・拠点との責任分界",
+      "check_ids": [
+        "INT-01",
+        "TST-01",
+        "IR-01"
+      ],
+      "source_topic": "組織外も含めた管理責任",
+      "static_action": "repoの境界・委託先連携・責任者の定義を照合する",
+      "external_action": "契約/拠点/委託先の台帳と実運用の連絡経路を確認する",
+      "derived_control": false,
+      "external_required": true
+    }
+  ]
+}

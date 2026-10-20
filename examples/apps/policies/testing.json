@@ -1,0 +1,43 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "negative_cases": [
+    "cross-tenant id",
+    "revoked session",
+    "disabled account",
+    "missing MFA",
+    "negative/omitted/huge limit",
+    "batch cost",
+    "cache auth-version change",
+    "mail content reflection"
+  ],
+  "static_tools": {
+    "sast": null,
+    "sca": null,
+    "secrets": null,
+    "iac": null
+  },
+  "required_result_fields": [
+    "scope_hash",
+    "tool_version",
+    "rules_version",
+    "files_seen",
+    "files_scanned",
+    "errors",
+    "timeouts",
+    "excluded_files",
+    "db_as_of"
+  ],
+  "suppressions": [],
+  "suppression_requires": [
+    "owner",
+    "reason",
+    "expiry",
+    "independent approval"
+  ],
+  "dast": {
+    "authorized_target": null,
+    "performed": false
+  },
+  "regression_results": null,
+  "current_threat_intelligence": null
+}

@@ -1,0 +1,87 @@
+{
+  "version": "9.2.0",
+  "base_version": "9.1.0",
+  "verified_on": "2026-10-17",
+  "source_ids": [
+    "RFC-AUTO-RESPONSE",
+    "RFC-DKIM-REPLAY",
+    "RFC-MIME-TEXT"
+  ],
+  "new_check_ids": [],
+  "removed_check_ids": [],
+  "changed_controls": [
+    {
+      "id": "WEB-01",
+      "added_static_criteria": [
+        "WEB-01/S2"
+      ],
+      "added_full_criteria": [
+        "WEB-01/MAIL-1"
+      ]
+    },
+    {
+      "id": "WEB-09",
+      "added_static_criteria": [
+        "WEB-09/S5"
+      ],
+      "added_full_criteria": [
+        "WEB-09/MAIL-1"
+      ]
+    }
+  ],
+  "before": {
+    "total_checks": 220,
+    "static_checks": 172,
+    "out_of_scope": 48,
+    "static_criteria": 182,
+    "full_criteria": 125
+  },
+  "after": {
+    "total_checks": 220,
+    "static_checks": 172,
+    "out_of_scope": 48,
+    "static_criteria": 184,
+    "full_criteria": 127
+  },
+  "groups": [
+    {
+      "title": "メール本文・ヘッダー・MIMEへの未信頼入力",
+      "check_ids": [
+        "WEB-01"
+      ],
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "既存の文脈別出力制御にメールの各パート・構造と表示の隠蔽を追加する。既存S1は変更しない。"
+    },
+    {
+      "title": "自動返信・通知の内容と送信権限の濫用",
+      "check_ids": [
+        "WEB-09"
+      ],
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "API濫用の既存範囲に、攻撃者が選んだ内容の公式通知化とqueue/配信権限の境界を追加する。エスケープだけでは覆えない意味上の悪用を検証する。"
+    },
+    {
+      "title": "関連する認可・資格情報・記録・否定テスト",
+      "check_ids": [
+        "AUT-01",
+        "AZ-01",
+        "AZ-08",
+        "SEC-07",
+        "CLD-03",
+        "OBS-07",
+        "TST-01",
+        "TST-02"
+      ],
+      "decision": "REUSE_EXISTING",
+      "reason": "認証・worker認可・最小権限・監査記録・テスト定義は既存項目を利用し、メール用の重複チェックIDを作らない。"
+    }
+  ],
+  "migration": "台帳/engineによりscopeが変わる。旧scopeの書換えは禁止。既存条件を維持して追加2静的/2full条件を個別に再確認する。",
+  "preserved_criteria_sha256": "db54a002243a014eeba8ffe51a4d1d53462237d0c68619c52c737e2c584c821c",
+  "base_catalog_sha256": "44f868d2c3d708a29d563b5492966a2acdf029669faf5980078496e472aa3de8",
+  "not_performed": [
+    "対象コード・メール生成コード・テストの実行",
+    "実送信・DNS照会・受信者への接触",
+    "DKIMリプレイ・実クライアント表示・DAST・侵入試験"
+  ]
+}

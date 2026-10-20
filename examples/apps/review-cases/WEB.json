@@ -1,0 +1,231 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "WEB",
+  "cases": [
+    {
+      "control_id": "WEB-01",
+      "title": "XSSと出力エンコード",
+      "counterexample": "入力をinnerHTMLやメールのHTMLパートへ未制約で埋める",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-01/S1",
+        "WEB-01/S2"
+      ],
+      "full_criteria": [
+        "WEB-01/MAIL-1"
+      ],
+      "definition_pointer": "checks.json#/80",
+      "additional_condition_focus": [
+        "HTML/CSS/header/MIME contexts separately; unknown adapter is not proof of a sink"
+      ]
+    },
+    {
+      "control_id": "WEB-02",
+      "title": "CSRF・cross-site操作",
+      "counterexample": "Cookie認証へ変更してCSRF/Origin検証を付けない",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/81",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "WEB-03",
+      "title": "CORSの実効許可範囲",
+      "counterexample": "CORS originを任意反射し資格情報を許す",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/82",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "WEB-04",
+      "title": "CSPと第三者script",
+      "counterexample": "CSPを外し任意第三者scriptを読み込む",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/83",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "WEB-05",
+      "title": "HTTPS・TLS・証明書検証",
+      "counterexample": "証明書検証を無効化しHTTPへfallbackする",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/84",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "WEB-06",
+      "title": "公開API docs・debug endpoint",
+      "counterexample": "debug/API docsの管理情報を匿名公開する",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/85",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "WEB-07",
+      "title": "cache headerと機密応答",
+      "counterexample": "個人データをpublic cache応答にする",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/86",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "WEB-08",
+      "title": "redirect・host headerの信頼",
+      "counterexample": "外部Forwarded/Hostを信頼して任意URLへredirectする",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-08/S1",
+        "WEB-08/S2"
+      ],
+      "full_criteria": [
+        "WEB-08/AR8-1"
+      ],
+      "definition_pointer": "checks.json#/87",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "WEB-09",
+      "title": "API濫用・ページング・query制限",
+      "counterexample": "任意の問い合わせ本文を署名対象通知に反射し共有予算も迂回する",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-09/S1",
+        "WEB-09/S2",
+        "WEB-09/S3",
+        "WEB-09/S4",
+        "WEB-09/S5"
+      ],
+      "full_criteria": [
+        "WEB-09/C1",
+        "WEB-09/C2",
+        "WEB-09/AR8-1",
+        "WEB-09/AR8-2",
+        "WEB-09/LAC-1",
+        "WEB-09/MAIL-1"
+      ],
+      "definition_pointer": "checks.json#/88",
+      "additional_condition_focus": [
+        "shared cumulative budgets",
+        "batch/GraphQL real costs",
+        "billing alerts versus hard caps",
+        "escaped arbitrary mail text still needs a content/authority boundary"
+      ]
+    },
+    {
+      "control_id": "WEB-10",
+      "title": "HTTP parser・proxy境界",
+      "counterexample": "複数proxy間の重複Content-Length/Transfer-Encodingを無制約で通す",
+      "inspect_files": [
+        "api/app.py",
+        "web/app.js",
+        "web/index.html",
+        "policies/ingress.conf",
+        "notifications/receipt.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "WEB-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/89",
+      "additional_condition_focus": []
+    }
+  ]
+}

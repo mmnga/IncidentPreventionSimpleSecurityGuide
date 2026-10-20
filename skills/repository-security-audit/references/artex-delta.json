@@ -1,0 +1,182 @@
+{
+  "from_version": "7",
+  "to_version": "8",
+  "new_check_ids": [],
+  "removed_check_ids": [],
+  "changed_controls": [
+    {
+      "id": "AUT-04",
+      "title": "総当たり・認証濫用",
+      "decision": "STRENGTHEN_EXISTING",
+      "gap": "既存は分散試行と共有制限を扱うが、計数更新の原子性・正規化された識別子・障害時分岐の証拠が未指定。",
+      "new_static_criteria": [
+        "AUT-04/S2"
+      ],
+      "new_full_criteria": [
+        "AUT-04/AR8-1"
+      ],
+      "labels": [
+        "分散認証の共有・原子的計数"
+      ]
+    },
+    {
+      "id": "WEB-08",
+      "title": "redirect・host headerの信頼",
+      "decision": "STRENGTHEN_EXISTING",
+      "gap": "既存のHost/Forwarded検査を、レート制限・監査ログへ使うclient IPの計算経路まで具体化する。",
+      "new_static_criteria": [
+        "WEB-08/S2"
+      ],
+      "new_full_criteria": [
+        "WEB-08/AR8-1"
+      ],
+      "labels": [
+        "転送ヘッダーと送信元判定の信頼境界"
+      ]
+    },
+    {
+      "id": "WEB-09",
+      "title": "API濫用・ページング・query制限",
+      "decision": "STRENGTHEN_EXISTING",
+      "gap": "単一リクエストの件数と分散カウンタに加え、長時間の分割取得と同時ジョブによる持ち出し上限の検証を必須化する。 / 既存の深さ/batch件数確認を、HTTP 1件内のalias・複数操作・resolverコスト・継続接続まで具体化する。",
+      "new_static_criteria": [
+        "WEB-09/S2",
+        "WEB-09/S3"
+      ],
+      "new_full_criteria": [
+        "WEB-09/AR8-1",
+        "WEB-09/AR8-2"
+      ],
+      "labels": [
+        "ページをまたぐ累積取得・同時実行予算",
+        "GraphQL/batchの操作数・実行コスト"
+      ]
+    },
+    {
+      "id": "AZ-10",
+      "title": "cache・検索・共有URLの境界",
+      "decision": "STRENGTHEN_EXISTING",
+      "gap": "既存のcache key分離を、DataLoader等のオブジェクト寿命・権限変更・負のキャッシュへ具体化する。",
+      "new_static_criteria": [
+        "AZ-10/S2"
+      ],
+      "new_full_criteria": [
+        "AZ-10/AR8-1"
+      ],
+      "labels": [
+        "認可コンテキストを越えるキャッシュ再利用"
+      ]
+    },
+    {
+      "id": "OBS-09",
+      "title": "異常な大量取得の検知",
+      "decision": "STRENGTHEN_EXISTING",
+      "gap": "既存の大量取得監視を、低速分散・探索失敗→成功・複数操作の相関と監視欠損へ具体化する。",
+      "new_static_criteria": [
+        "OBS-09/S2"
+      ],
+      "new_full_criteria": [
+        "OBS-09/AR8-1"
+      ],
+      "labels": [
+        "探索から取得までの相関と検知停止経路"
+      ]
+    },
+    {
+      "id": "TST-01",
+      "title": "脅威モデルと適用範囲",
+      "decision": "STRENGTHEN_EXISTING",
+      "gap": "既存の資産/境界台帳に加え、複数弱点を連鎖した場合の到達先と独立した阻止点の記録が必要。",
+      "new_static_criteria": [
+        "TST-01/S2"
+      ],
+      "new_full_criteria": [
+        "TST-01/AR8-1"
+      ],
+      "labels": [
+        "入口から機密データまでの経路レビュー"
+      ]
+    },
+    {
+      "id": "DEV-07",
+      "title": "リポジトリ内の監査妨害命令",
+      "decision": "STRENGTHEN_EXISTING",
+      "gap": "既存は対象内の文章命令を未信頼扱いするが、IDEの自動読込設定やhookがスキル読込前に動く境界も明示する。",
+      "new_static_criteria": [
+        "DEV-07/S2"
+      ],
+      "new_full_criteria": [
+        "DEV-07/AR8-1"
+      ],
+      "labels": [
+        "監査AIへの指示・hook・出力改ざん防止"
+      ]
+    },
+    {
+      "id": "RAN-01-09",
+      "title": "外部公開資産の棚卸し",
+      "decision": "STRENGTHEN_EXISTING",
+      "gap": "repo内の公開資産台帳を、JS/mobile/API schemaとbackend/ingressの差分検出まで具体化する。",
+      "new_static_criteria": [
+        "RAN-01-09/S2"
+      ],
+      "new_full_criteria": [
+        "RAN-01-09/AR8-1"
+      ],
+      "labels": [
+        "複数クライアント・旧版APIの公開面突合"
+      ]
+    }
+  ],
+  "reused_check_ids": [
+    "AIM-01",
+    "AIM-02",
+    "AIM-03",
+    "AIM-04",
+    "AIM-05",
+    "AIM-06",
+    "AIM-07",
+    "AIM-08",
+    "AIM-10",
+    "AUT-01",
+    "AUT-02",
+    "AUT-05",
+    "AUT-06",
+    "AUT-10",
+    "AZ-01",
+    "AZ-02",
+    "AZ-03",
+    "AZ-04",
+    "AZ-05",
+    "AZ-06",
+    "AZ-07",
+    "AZ-08",
+    "AZ-09",
+    "CLD-03",
+    "CLD-05",
+    "CTR-08",
+    "DAT-02",
+    "DAT-06",
+    "DEV-02",
+    "DEV-03",
+    "DEV-06",
+    "DEV-09",
+    "DEV-10",
+    "INJ-01",
+    "INJ-02",
+    "INJ-05",
+    "INJ-06",
+    "IR-01",
+    "OBS-01",
+    "OBS-02",
+    "OBS-07",
+    "REL-02",
+    "REL-03",
+    "SUP-02",
+    "WEB-06"
+  ],
+  "mapped_check_count": 53,
+  "added_static_criteria": 9,
+  "static_count": 172,
+  "full_count": 220
+}

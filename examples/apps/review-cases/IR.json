@@ -1,0 +1,189 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "IR",
+  "cases": [
+    {
+      "control_id": "IR-01",
+      "title": "漏えい対応の連絡・責任者",
+      "counterexample": "通常IdP停止時の連絡先・責任者が不明である",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "IR-01/S1"
+      ],
+      "full_criteria": [
+        "IR-01/C1"
+      ],
+      "definition_pointer": "checks.json#/170",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "IR-02",
+      "title": "秘密値の緊急失効",
+      "counterexample": "passwordだけ変更し派生token/sessionを残す",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "IR-02/C1",
+        "IR-02/C2"
+      ],
+      "definition_pointer": "checks.json#/171",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "IR-03",
+      "title": "端末・runnerの隔離と再構築",
+      "counterexample": "runnerを再利用したまま封じ込め済みとする",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/172",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "IR-04",
+      "title": "影響版・顧客・データの追跡",
+      "counterexample": "版・顧客・データ種別の影響範囲を記録しない",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "IR-04/C1",
+        "IR-04/C2"
+      ],
+      "definition_pointer": "checks.json#/173",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "IR-05",
+      "title": "証拠保全と変更記録",
+      "counterexample": "証拠の取得元/時刻/hash/変更者を保全しない",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "IR-05/S1"
+      ],
+      "full_criteria": [
+        "IR-05/C1",
+        "IR-05/C2"
+      ],
+      "definition_pointer": "checks.json#/174",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "IR-06",
+      "title": "安全なbuild・配布復旧",
+      "counterexample": "侵害依存/cacheを残して再build/releaseする",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/175",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "IR-07",
+      "title": "backup復元と復旧目標",
+      "counterexample": "backupの存在だけで復元/RPO/RTO成功とする",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/176",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "IR-08",
+      "title": "利用者・関係者への通知判断",
+      "counterexample": "通知ひな型の存在だけで承認・到達・更新判断済みとする",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "IR-08/LAC-1"
+      ],
+      "definition_pointer": "checks.json#/177",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "IR-09",
+      "title": "侵害通知の受信と継続監視",
+      "counterexample": "侵害通知の受信先と継続監視ownerがいない",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "IR-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/178",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "IR-10",
+      "title": "事後分析と是正の検証",
+      "counterexample": "是正策の期限・owner・有効性の再確認を行わない",
+      "inspect_files": [
+        "operations/incident-response.md",
+        "operations/recovery-plan.json",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "IR-10/C1",
+        "IR-10/C2"
+      ],
+      "definition_pointer": "checks.json#/179",
+      "additional_condition_focus": []
+    }
+  ]
+}

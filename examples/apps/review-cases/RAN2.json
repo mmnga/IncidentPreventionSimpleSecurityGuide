@@ -1,0 +1,201 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "RAN2",
+  "cases": [
+    {
+      "control_id": "RAN-02-01",
+      "title": "管理者権限の分離",
+      "counterexample": "日常IDと特権IDを同一にし恒久管理権限を与える",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-02-01/S1"
+      ],
+      "full_criteria": [
+        "RAN-02-01/C1",
+        "RAN-02-01/C2"
+      ],
+      "definition_pointer": "checks.json#/190",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-02-02",
+      "title": "ドメイン管理者認証の露出",
+      "counterexample": "ドメイン管理資格情報の端末露出を確認しない",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-02-02/C1",
+        "RAN-02-02/C2"
+      ],
+      "definition_pointer": "checks.json#/191",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-02-03",
+      "title": "特権セッションの短期化",
+      "counterexample": "特権sessionを無期限にする",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-02-03/C1",
+        "RAN-02-03/C2"
+      ],
+      "definition_pointer": "checks.json#/192",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-02-04",
+      "title": "端末間リモート実行の制御",
+      "counterexample": "端末間のremote実行制限を未確認のまま有効とする",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-02-04/C1",
+        "RAN-02-04/C2"
+      ],
+      "definition_pointer": "checks.json#/193",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-02-05",
+      "title": "SMB管理共有の到達性",
+      "counterexample": "SMB管理共有への到達性を未取得のまま遮断済みとする",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-02-05/C1",
+        "RAN-02-05/C2"
+      ],
+      "definition_pointer": "checks.json#/194",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-02-06",
+      "title": "ネットワークセグメンテーション",
+      "counterexample": "user/app/database/management/backup間を無制限接続する",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-02-06/S1"
+      ],
+      "full_criteria": [
+        "RAN-02-06/C1",
+        "RAN-02-06/C2"
+      ],
+      "definition_pointer": "checks.json#/195",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-02-07",
+      "title": "横移動に使える共通鍵の排除",
+      "counterexample": "端末間でローカル管理鍵を共通利用する",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-02-07/C1",
+        "RAN-02-07/C2"
+      ],
+      "definition_pointer": "checks.json#/196",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-02-08",
+      "title": "端末EDRの改ざん防止",
+      "counterexample": "EDR改ざん保護の実状態と例外期限を未取得にする",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-02-08/C1",
+        "RAN-02-08/C2"
+      ],
+      "definition_pointer": "checks.json#/197",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-02-09",
+      "title": "管理プレーンのアクセスログ",
+      "counterexample": "管理planeの実ログ到達・欠損を確認しない",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-02-09/C1",
+        "RAN-02-09/C2"
+      ],
+      "definition_pointer": "checks.json#/198",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-02-10",
+      "title": "権限昇格経路の継続評価",
+      "counterexample": "role委任/所有者変更による昇格経路を再評価しない",
+      "inspect_files": [
+        "operations/network-and-privilege.json",
+        "kubernetes/workload.yaml",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-02-10/C1",
+        "RAN-02-10/C2"
+      ],
+      "definition_pointer": "checks.json#/199",
+      "additional_condition_focus": []
+    }
+  ]
+}

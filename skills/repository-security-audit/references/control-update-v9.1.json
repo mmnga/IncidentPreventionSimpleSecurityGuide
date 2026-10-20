@@ -1,0 +1,140 @@
+{
+  "version": "9.1.0",
+  "base_version": "9.0.0",
+  "published_on": "2026-10-15",
+  "verified_on": "2026-10-16",
+  "source_ids": [
+    "LAC-20261015",
+    "NICT-20261013"
+  ],
+  "new_check_ids": [],
+  "removed_check_ids": [],
+  "changed_controls": [
+    {
+      "id": "WEB-09",
+      "added_static_criteria": [
+        "WEB-09/S4"
+      ],
+      "added_full_criteria": [
+        "WEB-09/LAC-1"
+      ]
+    },
+    {
+      "id": "IR-08",
+      "added_static_criteria": [],
+      "added_full_criteria": [
+        "IR-08/LAC-1"
+      ]
+    }
+  ],
+  "before": {
+    "total_checks": 220,
+    "static_checks": 172,
+    "out_of_scope": 48,
+    "static_criteria": 181,
+    "full_criteria": 123
+  },
+  "after": {
+    "total_checks": 220,
+    "static_checks": 172,
+    "out_of_scope": 48,
+    "static_criteria": 182,
+    "full_criteria": 125
+  },
+  "groups": [
+    {
+      "title": "公開アプリからAPIまでの信頼境界",
+      "check_ids": [
+        "SEC-05",
+        "AUT-01",
+        "AZ-01",
+        "AZ-02",
+        "AZ-04",
+        "RAN-01-09",
+        "TST-01",
+        "TST-02"
+      ],
+      "source_ids": [
+        "LAC-20261015",
+        "NICT-20261013"
+      ],
+      "decision": "REUSE_EXISTING",
+      "reason": "公開クライアントと旧APIの対応、サーバー側の認証/認可、否定テストは既存条件で確認できる。難読化・WAF・User-Agentだけを境界にしない。"
+    },
+    {
+      "title": "認証情報とクラウドIDの管理",
+      "check_ids": [
+        "SEC-07",
+        "SEC-08",
+        "SEC-10",
+        "AUT-02",
+        "CLD-03"
+      ],
+      "source_ids": [
+        "LAC-20261015"
+      ],
+      "decision": "REUSE_EXISTING",
+      "reason": "権限・期限・root/MFA・旧資格情報の失効は既存の静的条件と実環境側条件へ対応付ける。"
+    },
+    {
+      "title": "クラウド課金サービスの異常利用",
+      "check_ids": [
+        "WEB-09",
+        "AIM-10"
+      ],
+      "source_ids": [
+        "LAC-20261015"
+      ],
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "APIの計算量・取得量制限に、クラウドアカウントの課金監視と通知/停止判断の接続を追加。AI未搭載を理由にクラウドIDの悪用リスクを省略しない。"
+    },
+    {
+      "title": "保有データの削減と保存期限",
+      "check_ids": [
+        "DAT-01",
+        "DAT-02",
+        "DAT-05"
+      ],
+      "source_ids": [
+        "LAC-20261015"
+      ],
+      "decision": "REUSE_EXISTING",
+      "reason": "変更しにくい本人確認情報も、保有目的・最小化・削除/復元時の扱いという既存条件で確認する。"
+    },
+    {
+      "title": "侵害調査と監視の範囲",
+      "check_ids": [
+        "OBS-06",
+        "OBS-07",
+        "OBS-09",
+        "IR-04"
+      ],
+      "source_ids": [
+        "LAC-20261015"
+      ],
+      "decision": "REUSE_EXISTING",
+      "reason": "調査クエリの定義と実ログの調査記録を分ける。記事の観測時期は調査範囲を検討する材料であり、保存期間の一律義務へ変更しない。"
+    },
+    {
+      "title": "公表・対象者通知・注意喚起",
+      "check_ids": [
+        "IR-01",
+        "IR-08",
+        "RAN-04-10"
+      ],
+      "source_ids": [
+        "LAC-20261015"
+      ],
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "通知判断に、確定前後を区別するひな型・承認経路・更新判断を追加する。"
+    }
+  ],
+  "migration": "新しいsnapshot/台帳/engineに結び付いた証拠を取り直す。旧scope_idの書換えや追加条件を埋めない証拠再利用は禁止。",
+  "not_performed": [
+    "対象コード・テストの実行",
+    "実環境・実ログの調査",
+    "DAST・侵入試験",
+    "クラウドAPI呼出・課金・設定変更・実通知"
+  ],
+  "preserved_criteria_sha256": "0544127d5c3eb5e1fae5b5ff1382d91f1184c175091ca1f36fa907be28c92383"
+}

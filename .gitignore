@@ -1,0 +1,23 @@
+# macOS metadata
+.DS_Store
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local synthetic app and Terraform fixture
+/test-project/
+
+# Local security-audit snapshots, evidence, and reports
+/audit-runs/
+
+# Local incident case studies and original historical materials
+/private-case-studies/
+
+tests/
+validation/

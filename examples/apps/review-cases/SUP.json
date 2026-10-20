@@ -1,0 +1,193 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "SUP",
+  "cases": [
+    {
+      "control_id": "SUP-01",
+      "title": "全manifest・lockfileの棚卸し",
+      "counterexample": "Flutter/terraform/コンテナの間接依存を棚卸しから外す",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-01/S1"
+      ],
+      "full_criteria": [
+        "SUP-01/C1",
+        "SUP-01/C2"
+      ],
+      "definition_pointer": "checks.json#/30",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SUP-02",
+      "title": "既知脆弱性と悪用実績",
+      "counterexample": "SCAのDB更新日を未取得のまま最新とする",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-02/S1"
+      ],
+      "full_criteria": [
+        "SUP-02/C1",
+        "SUP-02/C2"
+      ],
+      "definition_pointer": "checks.json#/31",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SUP-03",
+      "title": "悪性パッケージ・侵害版",
+      "counterexample": "正規パッケージの侵害版を脆弱性件数ゼロだけで許す",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/32",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SUP-04",
+      "title": "install・build lifecycle script",
+      "counterexample": "未レビューのpostinstallを有効にする",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/33",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SUP-05",
+      "title": "registryとdependency confusion",
+      "counterexample": "private namespaceを公開registryへfallbackさせる",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/34",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SUP-06",
+      "title": "整合性・署名・provenance",
+      "counterexample": "lockのintegrityやprovenanceの照合を省略する",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/35",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SUP-07",
+      "title": "非固定Git・URL・動的依存",
+      "counterexample": "Git依存を可変branchへ固定する",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/36",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SUP-08",
+      "title": "保守終了・runtimeサポート",
+      "counterexample": "runtime/SDKのサポート終了を未調査で無視する",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/37",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SUP-09",
+      "title": "更新PRと差分レビュー",
+      "counterexample": "依存更新PRのdiffと権限追加をレビューしない",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/38",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "SUP-10",
+      "title": "SBOMと実配布物の一致",
+      "counterexample": "source SBOMだけで実image/APK/IPAの全依存と呼ぶ",
+      "inspect_files": [
+        "policies/dependencies.json",
+        "flutter/pubspec.yaml",
+        "terraform/versions.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "SUP-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/39",
+      "additional_condition_focus": []
+    }
+  ]
+}

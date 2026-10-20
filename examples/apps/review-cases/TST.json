@@ -1,0 +1,178 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "TST",
+  "cases": [
+    {
+      "control_id": "TST-01",
+      "title": "脅威モデルと適用範囲",
+      "counterexample": "公開入口から認証・認可・worker・egressの経路をモデル化しない",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "TST-01/S1",
+        "TST-01/S2"
+      ],
+      "full_criteria": [
+        "TST-01/AR8-1"
+      ],
+      "definition_pointer": "checks.json#/160",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "TST-02",
+      "title": "認証・認可の否定テスト",
+      "counterexample": "別tenant/失効token等の否定ケース定義がない",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "TST-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/161",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "TST-03",
+      "title": "SASTの範囲とエラー",
+      "counterexample": "SASTがparse error/除外/timeoutを成功に含める",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "TST-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/162",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "TST-04",
+      "title": "SCAの更新とゲート",
+      "counterexample": "古いSCA DBで全依存を確認済みとする",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "TST-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/163",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "TST-05",
+      "title": "秘密情報検査の多段化",
+      "counterexample": "現在ソースだけ調べ履歴/配布物/ignoredの秘密検査を省く",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "TST-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/164",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "TST-06",
+      "title": "IaC・containerの検査",
+      "counterexample": "IaC/imageの未解析範囲を記録しない",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "TST-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/165",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "TST-07",
+      "title": "DAST・APIテストの安全実行",
+      "counterexample": "実環境DASTが未許可・未実施なのに成功と記録する",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/166",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "TST-08",
+      "title": "例外・抑制の期限管理",
+      "counterexample": "抑制に責任者・理由・期限を設けない",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "TST-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/167",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "TST-09",
+      "title": "修正の回帰テスト",
+      "counterexample": "修正した否定経路を回帰ケースへ追加しない",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "TST-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/168",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "TST-10",
+      "title": "監査証拠の完全性と新鮮さ",
+      "counterexample": "別scope/古い時刻/不一致hashの証拠を再利用する",
+      "inspect_files": [
+        "policies/testing.json",
+        "policies/BOUNDARIES.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "TST-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/169",
+      "additional_condition_focus": []
+    }
+  ]
+}

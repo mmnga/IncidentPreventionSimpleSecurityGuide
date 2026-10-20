@@ -1,0 +1,197 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "RAN4",
+  "cases": [
+    {
+      "control_id": "RAN-04-01",
+      "title": "大量持ち出しと暗号化の相関検知",
+      "counterexample": "大量持出しと暗号化の相関を実ログで確認しない",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-01/C1",
+        "RAN-04-01/C2"
+      ],
+      "definition_pointer": "checks.json#/210",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-04-02",
+      "title": "外向き大容量転送の異常検知",
+      "counterexample": "外向き転送の平時差・長期累積を実測しない",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-02/C1",
+        "RAN-04-02/C2"
+      ],
+      "definition_pointer": "checks.json#/211",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-04-03",
+      "title": "外部共有リンクの一括発行監視",
+      "counterexample": "共有リンク一括発行の追跡を実施しない",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-03/C1",
+        "RAN-04-03/C2"
+      ],
+      "definition_pointer": "checks.json#/212",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-04-04",
+      "title": "ランサム対応の封じ込め手順",
+      "counterexample": "委託先/クラウド/backupを含む隔離・失効を記録しない",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-04/C1",
+        "RAN-04-04/C2"
+      ],
+      "definition_pointer": "checks.json#/213",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-04-05",
+      "title": "クリーンルーム復旧手順",
+      "counterexample": "侵害端末と同じ環境で復旧する",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-05/C1",
+        "RAN-04-05/C2"
+      ],
+      "definition_pointer": "checks.json#/214",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-04-06",
+      "title": "オフライン復旧経路",
+      "counterexample": "通常IdP停止時のoffline復旧経路を試していない",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-06/C1",
+        "RAN-04-06/C2"
+      ],
+      "definition_pointer": "checks.json#/215",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-04-07",
+      "title": "RPO・RTOの実測",
+      "counterexample": "RPO/RTOの目標値を実測結果として記入する",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-07/C1",
+        "RAN-04-07/C2"
+      ],
+      "definition_pointer": "checks.json#/216",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-04-08",
+      "title": "復元テストの成功証跡",
+      "counterexample": "restore完了通知だけでテナント整合/削除再適用を成功とする",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-08/C1",
+        "RAN-04-08/C2"
+      ],
+      "definition_pointer": "checks.json#/217",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-04-09",
+      "title": "復旧用IDと鍵の独立保管",
+      "counterexample": "復旧ID/鍵を侵害範囲と同じ保管先へ置く",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-09/C1",
+        "RAN-04-09/C2"
+      ],
+      "definition_pointer": "checks.json#/218",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-04-10",
+      "title": "二重恐喝時の法務・通知手順",
+      "counterexample": "二重恐喝の通知・法務・証拠保全の判断権限が未確定である",
+      "inspect_files": [
+        "operations/recovery-plan.json",
+        "operations/incident-response.md",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-04-10/C1",
+        "RAN-04-10/C2"
+      ],
+      "definition_pointer": "checks.json#/219",
+      "additional_condition_focus": []
+    }
+  ]
+}

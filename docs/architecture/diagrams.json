@@ -1,0 +1,2325 @@
+[
+  {
+    "number": "01",
+    "id": "01-overview",
+    "title": "全体構成",
+    "subtitle": "クライアント、API、保存先、補助処理、インフラ・運用の関係。",
+    "summary": "WebとFlutterは既定でそれぞれメモリ内デモを使います。API接続用コードは別にあり、接続時はAPIが認証・認可します。APIの保存先はSQLiteです。TerraformのRDSや補助関数を、接続済みの一体アプリとしては扱いません。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "Web UI",
+        "body": "既定はメモリ内デモ\nAPI用クラスは別に存在\n通信は自動で始めない",
+        "kind": "code"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "Python API",
+        "body": "WSGIのfactory\n認証・認可・利用量制限\nノート・export・受付",
+        "kind": "code"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "SQLite",
+        "body": "users / sessions\nnotes / jobs / budgets\ninquiries / outbox",
+        "kind": "code"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "export worker",
+        "body": "同じDBで失効を再確認\ntenant / ownerで取得\n結果を依頼者に束縛",
+        "kind": "code"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "Flutter UI",
+        "body": "iOS / Android共通\n既定はDemoGateway\nHTTPSクライアントあり",
+        "kind": "code"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "通知・連携・AI",
+        "body": "固定通知や権限境界\n個別の参照関数を用意\n実行基盤への接続は別",
+        "kind": "code"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "Terraform / K8s",
+        "body": "AWS資源と配備の例\nRDSはSQLiteと別構成\n実クラウドへ未適用",
+        "kind": "config"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "監視・復旧・通知",
+        "body": "手順と記録のモデル\n時刻・実測値は空欄\n実環境48項目は未実施",
+        "kind": "model"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            340
+          ],
+          [
+            832,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1224,
+            340
+          ],
+          [
+            1160,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            376,
+            700
+          ],
+          [
+            408,
+            700
+          ],
+          [
+            408,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            604,
+            460
+          ],
+          [
+            604,
+            580
+          ]
+        ],
+        "planned": true,
+        "label": "呼出し基盤は未接続",
+        "label_at": [
+          604,
+          510
+        ]
+      }
+    ],
+    "takeaway": "デモUI、APIの実装、インフラの宣言、運用モデルを分けて読みます。",
+    "remaining": "ログイン・TLS・配信・AI・RDS・実配備をつなぐ作業と動作確認は未実施です。",
+    "sources": [
+      "examples/apps/README.md",
+      "examples/apps/policies/BOUNDARIES.md"
+    ],
+    "checks": [
+      "AUT-01",
+      "AZ-01",
+      "WEB-01",
+      "CLD-01"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "参照コードの主な関係"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "別途接続する補助処理・設定・運用"
+      }
+    ]
+  },
+  {
+    "number": "02",
+    "id": "02-api",
+    "title": "API・認証・データ処理",
+    "subtitle": "保護対象のAPI要求を、入力検査・主体の確認・対象ごとの認可からDBまで追う。",
+    "summary": "HTTPS・Host・Origin、入力サイズとschema、現在のセッション、tenant/ownerを確認します。SQLiteのBEGIN IMMEDIATE内で共有予算と更新を扱い、export workerも独自の取引で失効と予算を再確認します。管理者のパスワードログインは拒否します。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "保護対象の要求",
+        "body": "Bearer tokenを受け取る\n入力のtenantを信用しない\nURLと操作を識別",
+        "kind": "code"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "入口・入力の検査",
+        "body": "HTTPS / Host / Origin\nJSON・長さ・許可キー\n件数と利用量を制限",
+        "kind": "code"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "現在の主体を確認",
+        "body": "token hashをDBで照合\n有効期限・activeを確認\nauth_versionも照合",
+        "kind": "code"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "対象ごとの認可",
+        "body": "tenant_id / owner_id\nサーバーが条件を付ける\nSQLは値をbindする",
+        "kind": "code"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "管理者の入口",
+        "body": "passwordだけでは拒否\n登録済みをMFA成功にしない\n実IdPとの接続は未提供",
+        "kind": "code"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "監査イベント",
+        "body": "actor / tenant / action\n対象ID・件数を記録\ntokenや本文を出さない",
+        "kind": "code"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "export worker",
+        "body": "失効・権限版を再確認\nAPIと同じ共有予算\n上限付きで結果を保存",
+        "kind": "code"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "SQLiteの取引",
+        "body": "BEGIN IMMEDIATE\n予算・データ・outbox\n同じDBで更新する",
+        "kind": "code"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            768,
+            340
+          ],
+          [
+            832,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1160,
+            340
+          ],
+          [
+            1224,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1388,
+            460
+          ],
+          [
+            1388,
+            580
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1160,
+            700
+          ],
+          [
+            1224,
+            700
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            832,
+            700
+          ],
+          [
+            768,
+            700
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1388,
+            460
+          ],
+          [
+            1388,
+            510
+          ],
+          [
+            604,
+            510
+          ],
+          [
+            604,
+            580
+          ]
+        ],
+        "label": "操作のメタデータ",
+        "label_at": [
+          840,
+          510
+        ]
+      }
+    ],
+    "takeaway": "認可の判定はAPIとworkerに置き、クライアントの表示制御に任せません。",
+    "remaining": "実IdP、TLS状態を渡すWSGI設定、暗号化・分散配置・性能等は未検証です。",
+    "sources": [
+      "examples/apps/api/app.py",
+      "examples/apps/api/security.py",
+      "examples/apps/api/workers.py",
+      "examples/apps/api/schema.sql"
+    ],
+    "checks": [
+      "AUT-01",
+      "AZ-01",
+      "AZ-02",
+      "AZ-07",
+      "INJ-01",
+      "WEB-09"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "保護APIが受ける要求"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "DBと補助処理・管理者入口の扱い"
+      }
+    ]
+  },
+  {
+    "number": "03",
+    "id": "03-web",
+    "title": "Web UI",
+    "subtitle": "通信しないデモと、明示的に接続するAPIクライアントを分ける。",
+    "summary": "画面のbackendはdemoで固定し、ノートはブラウザーのメモリに保存します。表示はtextContentです。Apiクラスには固定HTTPS先・許可route・Bearerがありますが、UIへの切替とtoken取得は未実装です。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "入力フォーム",
+        "body": "ノートの作成・一覧\n問い合わせ・export\n既定backendはdemo",
+        "kind": "code"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "demoオブジェクト",
+        "body": "list / add / contact\nexportもローカル処理\n外部へ送信しない",
+        "kind": "code"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "メモリ内の配列",
+        "body": "ページ内だけで保持\n永続化・共有はしない\n認証機能は持たない",
+        "kind": "code"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "テキストとして表示",
+        "body": "textContentで差し込む\n入力をHTML化しない\nエラー表示は固定文面",
+        "kind": "code"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "token取得・接続",
+        "body": "ログイン画面なし\n自動session取得なし\nUIからの切替は未実装",
+        "kind": "model"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "Apiクラス",
+        "body": "HTTPS先・routeを固定\nBearerを要求へ付ける\nCookie・redirectは使わない",
+        "kind": "code"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "APIへの接続",
+        "body": "api.atlas.invalid\n実接続先・TLSが必要\nサーバーで再認可する",
+        "kind": "model"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "CSP・応答制御",
+        "body": "外部scriptを許可しない\nAPI応答はno-store\nCORSのOriginを固定",
+        "kind": "config"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            768,
+            340
+          ],
+          [
+            832,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1160,
+            340
+          ],
+          [
+            1224,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            376,
+            700
+          ],
+          [
+            440,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            700
+          ],
+          [
+            832,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            408,
+            340
+          ],
+          [
+            408,
+            510
+          ],
+          [
+            604,
+            510
+          ],
+          [
+            604,
+            580
+          ]
+        ],
+        "planned": true,
+        "label": "切替は未実装",
+        "label_at": [
+          604,
+          510
+        ]
+      }
+    ],
+    "takeaway": "画面では入力をテキストとして描画し、データ権限はAPIで確認する設計です。",
+    "remaining": "ログイン・API切替・export結果pollingと、実ブラウザーでの動作確認は未実施です。",
+    "sources": [
+      "examples/apps/web/app.js",
+      "examples/apps/web/index.html",
+      "examples/apps/policies/ingress.conf"
+    ],
+    "checks": [
+      "SEC-05",
+      "REL-04",
+      "WEB-01",
+      "WEB-02",
+      "WEB-03",
+      "WEB-04"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "既定の動作：メモリ内デモ（通信なし）"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "接続用コードと設定（UIへの配線は未実装）"
+      }
+    ]
+  },
+  {
+    "number": "04",
+    "id": "04-mobile",
+    "title": "Flutter・iOS・Android",
+    "subtitle": "共通UIと通信adapterを分け、OS側の通信・配布設定を合わせて読む。",
+    "summary": "共通UIはNotesGatewayを呼び、既定のDemoGatewayがメモリ内データを返します。別のHttpsGatewayは接続先を固定しtokenをメモリに保持します。OS設定の例はありますが、SDK生成ホスト、署名、ビルド成果物は未提供です。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "Flutter共通UI",
+        "body": "ノートと問い合わせ\nTextで内容を描画\niOS / Androidで共有",
+        "kind": "code"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "NotesGateway",
+        "body": "UIから処理を抽象化\nnotes / add / contact\n切替先をここで選ぶ",
+        "kind": "code"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "DemoGateway",
+        "body": "既定で選ばれる実装\n外部通信はしない\nアカウントも使わない",
+        "kind": "code"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "メモリ内データ",
+        "body": "実行中だけ保持\nサーバーとは共有しない\n永続tokenも持たない",
+        "kind": "code"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "Android設定",
+        "body": "平文HTTPを禁止\nシステムCAを使用\nallowBackup=false",
+        "kind": "config"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "iOS設定",
+        "body": "ATSの任意通信を禁止\nget-task-allow=false\n署名・実機確認は別",
+        "kind": "config"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "HttpsGateway",
+        "body": "固定HTTPS先・許可route\nBearerはメモリだけ\nサイズと待ち時間を制限",
+        "kind": "code"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "バックエンドAPI",
+        "body": "実接続先・認証が必要\n端末の値を信用しない\nAPI側でtenantを認可",
+        "kind": "model"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            768,
+            340
+          ],
+          [
+            832,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1160,
+            340
+          ],
+          [
+            1224,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1160,
+            700
+          ],
+          [
+            1224,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            604,
+            460
+          ],
+          [
+            604,
+            510
+          ],
+          [
+            996,
+            510
+          ],
+          [
+            996,
+            580
+          ]
+        ],
+        "planned": true,
+        "label": "UIはDemoGatewayを選択中",
+        "label_at": [
+          840,
+          510
+        ]
+      }
+    ],
+    "takeaway": "端末へ秘密鍵や権限を埋めず、権限判定をサーバー側へ残す設計です。",
+    "remaining": "Gradle wrapper・Xcode project等の生成、依存取得、ビルド・署名・実機検証は未実施です。",
+    "sources": [
+      "examples/apps/flutter/lib/main.dart",
+      "examples/apps/flutter/lib/api.dart",
+      "examples/apps/flutter/android/app/src/main/AndroidManifest.xml",
+      "examples/apps/flutter/ios/Runner/Info.plist",
+      "examples/apps/flutter/README.md"
+    ],
+    "checks": [
+      "SEC-05",
+      "REL-02",
+      "REL-04",
+      "AUT-01",
+      "WEB-01",
+      "DAT-01"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "既定の動作：DemoGateway（通信なし）"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "OS設定と任意のHTTPS接続"
+      }
+    ]
+  },
+  {
+    "number": "05",
+    "id": "05-notifications",
+    "title": "問い合わせ・受付メール",
+    "subtitle": "問い合わせ本文の保存と、公式通知の生成に渡す情報を分ける。",
+    "summary": "受付APIは原文をinquiriesに保存し、outboxには固定種別とサーバー生成IDだけを登録します。通知生成関数は検証済み宛先を別に参照し、固定文面・受付番号・固定URLを使います。原文はメールへ渡しません。workerの配線と配信権限は未提供です。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "問い合わせ入力",
+        "body": "接続時の任意本文を想定\nUIの既定はローカルデモ\nAPIでは主体を認証する",
+        "kind": "model"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "受付API",
+        "body": "本文の型と長さを検査\n主体別の受付予算\n保存とoutboxを同じ取引で",
+        "kind": "code"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "原文の保存",
+        "body": "inquiries.body\ntenant / ownerを保持\n原文はここで扱う",
+        "kind": "code"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "固定event",
+        "body": "event_id / receipt_id\nkind / recipient_id\n本文・任意URLは含めない",
+        "kind": "code"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "検証済み宛先",
+        "body": "IDから宛先を取得する設計\n登録・検証の実装は別\n本文へのDB権限も要確認",
+        "kind": "model"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "受付メール生成",
+        "body": "固定文面・受付番号のみ\nURLは固定のポータル\nHTMLパートを作らない",
+        "kind": "code"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "配信adapter",
+        "body": "資格情報・roleを分離\n重複排除と失敗時の整合\n具体的な接続は未提供",
+        "kind": "model"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "署名・実配信",
+        "body": "外部配信設定は未提供\n実テンプレートも別確認\n実送信は行っていない",
+        "kind": "model"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            340
+          ],
+          [
+            832,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            604,
+            460
+          ],
+          [
+            604,
+            495
+          ],
+          [
+            1388,
+            495
+          ],
+          [
+            1388,
+            460
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1552,
+            340
+          ],
+          [
+            1584,
+            340
+          ],
+          [
+            1584,
+            525
+          ],
+          [
+            604,
+            525
+          ],
+          [
+            604,
+            580
+          ]
+        ],
+        "planned": true,
+        "label": "workerの接続は未実装",
+        "label_at": [
+          1070,
+          525
+        ]
+      },
+      {
+        "points": [
+          [
+            376,
+            700
+          ],
+          [
+            440,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            700
+          ],
+          [
+            832,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            1160,
+            700
+          ],
+          [
+            1224,
+            700
+          ]
+        ],
+        "planned": true
+      }
+    ],
+    "takeaway": "自由本文・任意URLを通知へ渡さず、固定文面と受付番号だけを生成します。",
+    "remaining": "宛先検証、配信role、重複排除、外部テンプレート・署名設定は未確認です。",
+    "sources": [
+      "examples/apps/notifications/receipt.py",
+      "examples/apps/api/app.py",
+      "examples/apps/api/schema.sql",
+      "examples/apps/policies/BOUNDARIES.md"
+    ],
+    "checks": [
+      "WEB-01",
+      "WEB-09",
+      "INJ-07",
+      "INT-01",
+      "OBS-01"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "本文の保存と固定eventの登録"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "通知用の情報・固定本文・未接続の配信"
+      }
+    ]
+  },
+  {
+    "number": "06",
+    "id": "06-integrations",
+    "title": "OAuth・webhook・外部連携",
+    "subtitle": "外部の入力を、署名・形式・登録済みの権限の境界で分ける。",
+    "summary": "OAuth開始情報、署名検証を注入するID tokenの入口、webhookの生データHMAC・時刻・サイズ・形式・ID登録を参照関数にしています。実IdP、callback全体、署名鍵取得、tenantを登録に束縛して反映する処理は未接続です。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "OAuth開始情報",
+        "body": "stateとPKCEを生成\nS256・固定redirect\n有効期間は5分",
+        "kind": "code"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "実IdPとの通信",
+        "body": "認可・token交換が必要\n接続と資格情報はなし\n通信は行っていない",
+        "kind": "model"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "署名検証の入口",
+        "body": "外部の検証関数を注入\nissuer / aud / exp\n署名済みclaimsを要求",
+        "kind": "code"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "ログインへの接続",
+        "body": "callbackのstate検証\ntoken交換・失効\nsession発行は未接続",
+        "kind": "model"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "webhookの入力",
+        "body": "raw bodyと署名\nevent_id・timestamp\n外部提供者を想定",
+        "kind": "model"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "生データを検査",
+        "body": "HMACを定数時間で比較\n時刻の差は5分以内\nサイズは64KiB以下",
+        "kind": "code"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "形式とIDを確認",
+        "body": "許可キー・typeを検査\nDBへevent_idを登録\nID一意制約を使う",
+        "kind": "code"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "コネクタの認可",
+        "body": "登録先とtenantを照合\n失効・切断・再送も確認\n反映処理は未提供",
+        "kind": "model"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            340
+          ],
+          [
+            832,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            1160,
+            340
+          ],
+          [
+            1224,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            376,
+            700
+          ],
+          [
+            440,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            700
+          ],
+          [
+            832,
+            700
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1160,
+            700
+          ],
+          [
+            1224,
+            700
+          ]
+        ],
+        "planned": true
+      }
+    ],
+    "takeaway": "外部応答をそのまま採用せず、検証関数とアプリの権限判定の間に境界を置きます。",
+    "remaining": "callback・実鍵管理・tenant束縛・失効、event_idと署名対象の整合は未完成です。",
+    "sources": [
+      "examples/apps/integrations/boundaries.py",
+      "examples/apps/policies/integrations.json",
+      "examples/apps/api/security.py"
+    ],
+    "checks": [
+      "AUT-05",
+      "INJ-08",
+      "INT-01",
+      "INT-02",
+      "INT-03",
+      "INT-04",
+      "INT-10"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "OAuth / ID tokenの境界"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "webhookの検査とコネクタ認可"
+      }
+    ]
+  },
+  {
+    "number": "07",
+    "id": "07-ai",
+    "title": "AI・検索・tool実行の境界",
+    "subtitle": "参照文書やモデル出力に権限を渡さず、検索条件とtoolの入口を制約する。",
+    "summary": "検索前にtenant/ownerのfilterを渡し、tool提案で許可リスト・schema・必要な承認・停止フラグを確認します。返すのは主体と権限版に束縛した提案です。モデル、検索基盤、tool実行、実backendへの配線は含みません。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "入力・参照文書",
+        "body": "信頼しないデータとして扱う\n権限や命令へ昇格させない\n実接続の処理系は未提供",
+        "kind": "model"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "検索前の権限条件",
+        "body": "tenant / ownerをfilter\n取得件数は5件まで\nindex実装は別に必要",
+        "kind": "code"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "モデルの応答",
+        "body": "外部AIは呼ばない\n出力内容も未信頼\nprovider設定は未取得",
+        "kind": "model"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "tool提案を検査",
+        "body": "許可tool・引数schema\n必要な独立承認を確認\n主体・権限版を添える",
+        "kind": "code"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "停止フラグ",
+        "body": "stoppedなら提案を拒否\n停止機構の実運用は別\nMCP等は起動しない",
+        "kind": "code"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "会話キーの生成",
+        "body": "tenant / actorを含む\nauth_versionも含む\n実memory保存は未接続",
+        "kind": "code"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "実処理の直前",
+        "body": "backendで現在の権限確認\n対象とtenantを再認可\n実行基盤は未提供",
+        "kind": "model"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "提供者・運用設定",
+        "body": "保持・学習利用の実設定\n監査・予算・停止の実効性\n設定や実測は未取得",
+        "kind": "model"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            340
+          ],
+          [
+            832,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            1160,
+            340
+          ],
+          [
+            1224,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            1388,
+            460
+          ],
+          [
+            1388,
+            510
+          ],
+          [
+            996,
+            510
+          ],
+          [
+            996,
+            580
+          ]
+        ],
+        "planned": true,
+        "label": "実行基盤は未接続",
+        "label_at": [
+          1140,
+          510
+        ]
+      },
+      {
+        "points": [
+          [
+            212,
+            820
+          ],
+          [
+            212,
+            870
+          ],
+          [
+            1584,
+            870
+          ],
+          [
+            1584,
+            340
+          ],
+          [
+            1552,
+            340
+          ]
+        ],
+        "label": "提案を拒否する条件",
+        "label_at": [
+          700,
+          870
+        ]
+      }
+    ],
+    "takeaway": "モデル出力を権限にせず、提案の検証とbackendの再認可を分ける設計です。",
+    "remaining": "検索基盤・モデル・tool実行・実memory・provider設定の接続や挙動は未確認です。",
+    "sources": [
+      "examples/apps/ai/policy.py",
+      "examples/apps/policies/ai-runtime.json"
+    ],
+    "checks": [
+      "AIM-01",
+      "AIM-02",
+      "AIM-03",
+      "AIM-04",
+      "AIM-05",
+      "AIM-06",
+      "AIM-10"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "検索からtool提案までの境界"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "停止・会話キー・実行前の権限確認"
+      }
+    ]
+  },
+  {
+    "number": "08",
+    "id": "08-terraform",
+    "title": "Terraform・AWSの資源構成",
+    "subtitle": "宣言した資源の参照と、公開範囲・暗号化・権限・保持の確認点。",
+    "summary": "private subnetと非公開RDS、KMS、S3、通知queue、最小IAM、ログ、予算通知、backup planを宣言します。provisioningは既定で拒否します。APIはSQLiteの実装で、RDSへ接続するbackendは含みません。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "VPC・private subnet",
+        "body": "2つのprivate subnet\npublic IPを付けない\nDBはapp SGから5432",
+        "kind": "config"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "非公開RDS",
+        "body": "PostgreSQLの宣言\n暗号化・管理password\nbackup保持は14日",
+        "kind": "config"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "KMS key",
+        "body": "rotationを有効に宣言\n削除待ちは30日\nprevent_destroyを指定",
+        "kind": "config"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "監査用S3",
+        "body": "public accessをblock\n版管理・KMS・Object Lock\n保持は30日の宣言",
+        "kind": "config"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "API role",
+        "body": "対象queueへの送信のみ\nメール送信権限は持たない\n実policyの照合は未実施",
+        "kind": "config"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "通知queue",
+        "body": "暗号化を宣言\n保持1日・可視性60秒\n通知workerは別途必要",
+        "kind": "config"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "ログ・費用通知",
+        "body": "ログ保持は90日\n予算の80%でSNS通知\n支出の強制停止ではない",
+        "kind": "config"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "backup plan",
+        "body": "日次・35日保持の宣言\nvaultはKMSを参照\n対象選択・実復元はなし",
+        "kind": "config"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            832,
+            340
+          ],
+          [
+            768,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            1160,
+            340
+          ],
+          [
+            1224,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            376,
+            700
+          ],
+          [
+            440,
+            700
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            996,
+            460
+          ],
+          [
+            996,
+            510
+          ],
+          [
+            604,
+            510
+          ],
+          [
+            604,
+            580
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            996,
+            460
+          ],
+          [
+            996,
+            580
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            996,
+            460
+          ],
+          [
+            996,
+            510
+          ],
+          [
+            1388,
+            510
+          ],
+          [
+            1388,
+            580
+          ]
+        ]
+      }
+    ],
+    "takeaway": "公開範囲・暗号化・権限の宣言を確認できます。RDSはAPIのSQLiteと別の構成例です。",
+    "remaining": "state backend・実効policy・backup対象・RDS接続等は未提供。applyはしていません。",
+    "sources": [
+      "examples/apps/terraform/network.tf",
+      "examples/apps/terraform/data.tf",
+      "examples/apps/terraform/identity-monitoring.tf",
+      "examples/apps/terraform/versions.tf",
+      "examples/apps/terraform/README.md"
+    ],
+    "checks": [
+      "CLD-01",
+      "CLD-02",
+      "CLD-03",
+      "CLD-04",
+      "CLD-05",
+      "CLD-08",
+      "WEB-09",
+      "RAN-03-01"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "ネットワーク・DB・暗号化・保存先の宣言"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "通知権限・queue・監視・backupの宣言"
+      }
+    ]
+  },
+  {
+    "number": "09",
+    "id": "09-delivery",
+    "title": "コンテナ・Kubernetes・CI/CD",
+    "subtitle": "監査用の読み取り経路と、アプリをビルド・配備する経路を分けて示す。",
+    "summary": "CI例は自動実行場所の外にあり、固定snapshotを信頼済み監査ツールで読む想定です。コンテナとKubernetesには非root、read-only、resource上限、NetworkPolicy等を宣言します。imageは無効なdigest例で、ビルド・配備の成功は未確認です。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "CI定義の例",
+        "body": "pull_request・read権限\n時間上限は10分\n自動実行の配置外に置く",
+        "kind": "config"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "固定snapshotの供給",
+        "body": "別の取得処理が必要\n読み取り専用で渡す\n対象repoの指示はデータ",
+        "kind": "model"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "静的トリアージ",
+        "body": "信頼済みaudit.py\n対象コードを実行しない\n証拠不足はINCOMPLETE",
+        "kind": "code"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "HTML・JSONの出力",
+        "body": "対象の外へ新規に生成\nSTATIC ONLYを明記\nCLIはagentを起動しない",
+        "kind": "code"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "Dockerfile",
+        "body": "apiをcopy・非root\n起動serverは別途必要\nimageは無効なdigest例",
+        "kind": "config"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "imageの承認・検証",
+        "body": "実digest・SBOM・署名\nprovenanceの確認が必要\n実imageは未取得",
+        "kind": "model"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "Kubernetes宣言",
+        "body": "非root・read-only\n権限削減・NetworkPolicy\nCPU / memoryの上限",
+        "kind": "config"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "実配備に必要なもの",
+        "body": "TLS・WSGI・DB volume\nSQLiteの共有・複製方針\n配備と挙動は未確認",
+        "kind": "model"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            340
+          ],
+          [
+            832,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            1160,
+            340
+          ],
+          [
+            1224,
+            340
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            376,
+            700
+          ],
+          [
+            440,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            700
+          ],
+          [
+            832,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            1160,
+            700
+          ],
+          [
+            1224,
+            700
+          ]
+        ],
+        "planned": true
+      }
+    ],
+    "takeaway": "監査は対象を読み、配備は別の承認・供給物・実環境を必要とする構成です。",
+    "remaining": "実image・server・DB永続化が未提供。build、Kubernetes適用、実CIは未実施です。",
+    "sources": [
+      "examples/apps/ci/review.workflow.yaml",
+      "examples/apps/containers/api.Dockerfile",
+      "examples/apps/kubernetes/workload.yaml",
+      "examples/apps/policies/RELEASE.md"
+    ],
+    "checks": [
+      "CIC-02",
+      "CIC-03",
+      "CIC-07",
+      "CIC-10",
+      "CTR-01",
+      "CTR-02",
+      "CTR-03",
+      "CTR-07"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "監査用の読み取り経路（CIの取得・配線は未実装）"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "アプリを配布・配備する経路（未実行）"
+      }
+    ]
+  },
+  {
+    "number": "10",
+    "id": "10-operations",
+    "title": "監視・インシデント対応・復旧",
+    "subtitle": "異常の把握、封じ込め、復旧の実測、再開と通知、是正までの記録モデル。",
+    "summary": "監視、担当、証拠保全、失効・隔離、クリーンルーム、復元、削除対象の再適用、整合性、RPO/RTOの実測、通知判断、是正を記録する設計です。全て未実施のモデルで、実環境48項目の合格資料ではありません。",
+    "cards": [
+      {
+        "id": "card-0",
+        "box": [
+          48,
+          220,
+          328,
+          240
+        ],
+        "title": "異常を把握",
+        "body": "利用量・export・受付\n権限変更・防御停止\n実ログと到達性は未取得",
+        "kind": "model"
+      },
+      {
+        "id": "card-1",
+        "box": [
+          440,
+          220,
+          328,
+          240
+        ],
+        "title": "影響・証拠を保全",
+        "body": "対象tenant・データ種別\n時刻・hash・保管者\n取得元と変更を記録",
+        "kind": "model"
+      },
+      {
+        "id": "card-2",
+        "box": [
+          832,
+          220,
+          328,
+          240
+        ],
+        "title": "失効・隔離",
+        "body": "鍵・派生token・session\n端末・runner・外部連携\n実際の失効成功を記録",
+        "kind": "model"
+      },
+      {
+        "id": "card-3",
+        "box": [
+          1224,
+          220,
+          328,
+          240
+        ],
+        "title": "復旧環境を用意",
+        "body": "クリーンなsource・依存\n独立した復旧IDと鍵\nbackupの実体を確認",
+        "kind": "model"
+      },
+      {
+        "id": "card-4",
+        "box": [
+          48,
+          580,
+          328,
+          240
+        ],
+        "title": "是正・回帰",
+        "body": "ownerと期限を割当て\n原因と影響を見直す\n修正後の確認結果を残す",
+        "kind": "model"
+      },
+      {
+        "id": "card-5",
+        "box": [
+          440,
+          580,
+          328,
+          240
+        ],
+        "title": "再開・通知判断",
+        "body": "段階再開と必要な承認\n利用者の行動と更新判断\n到達・代替連絡も記録",
+        "kind": "model"
+      },
+      {
+        "id": "card-6",
+        "box": [
+          832,
+          580,
+          328,
+          240
+        ],
+        "title": "復旧を実測",
+        "body": "復元点・開始・利用可能時刻\nRPO / RTOを算出\n目標値と結果を区別",
+        "kind": "model"
+      },
+      {
+        "id": "card-7",
+        "box": [
+          1224,
+          580,
+          328,
+          240
+        ],
+        "title": "復元・整合性確認",
+        "body": "削除tombstoneを再適用\ntenant・認証状態を確認\n実データの整合性を記録",
+        "kind": "model"
+      }
+    ],
+    "edges": [
+      {
+        "points": [
+          [
+            376,
+            340
+          ],
+          [
+            440,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            768,
+            340
+          ],
+          [
+            832,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            1160,
+            340
+          ],
+          [
+            1224,
+            340
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            1388,
+            460
+          ],
+          [
+            1388,
+            580
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            1224,
+            700
+          ],
+          [
+            1160,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            832,
+            700
+          ],
+          [
+            768,
+            700
+          ]
+        ],
+        "planned": true
+      },
+      {
+        "points": [
+          [
+            440,
+            700
+          ],
+          [
+            376,
+            700
+          ]
+        ],
+        "planned": true
+      }
+    ],
+    "takeaway": "すべて手順・記録のモデルです。48実環境項目は未実施で、復旧能力は未証明です。",
+    "remaining": "実ログ・失効確認・復旧時刻・整合性・通知到達等の実記録が別途必要です。",
+    "sources": [
+      "examples/apps/operations/incident-response.md",
+      "examples/apps/operations/recovery-plan.json",
+      "examples/apps/operations/monitoring-rules.json",
+      "examples/apps/operations/external-controls.json"
+    ],
+    "checks": [
+      "OBS-01",
+      "IR-03",
+      "IR-07",
+      "IR-08",
+      "RAN-03-01",
+      "RAN-03-10",
+      "RAN-04-01"
+    ],
+    "lanes": [
+      {
+        "box": [
+          32,
+          180,
+          1536,
+          300
+        ],
+        "title": "想定する手順：検知から復旧準備"
+      },
+      {
+        "box": [
+          32,
+          540,
+          1536,
+          310
+        ],
+        "title": "想定する手順：復元から実測・再開・是正"
+      }
+    ]
+  }
+]

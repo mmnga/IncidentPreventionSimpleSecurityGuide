@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "assessment": "STATIC_ONLY",
+  "execution_performed": false,
+  "instructions": "任意の補助テンプレート。証拠ファイルとしてハッシュを付けTST-01/S2等に添付する。CLIは経路の意味的正しさや網羅性を自動検証しない。",
+  "paths": [
+    {
+      "id": "PATH-001",
+      "entry": "<REQUIRED route/ingress/client>",
+      "asset": "<REQUIRED sensitive resource>",
+      "preconditions": [],
+      "steps": [],
+      "boundaries": [],
+      "control_refs": [],
+      "blocking_evidence": [],
+      "unresolved_assumptions": [],
+      "source_locations": [],
+      "status": "NOT_RUN",
+      "reviewer": "<REQUIRED>"
+    }
+  ]
+}

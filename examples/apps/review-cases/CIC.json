@@ -1,0 +1,177 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "CIC",
+  "cases": [
+    {
+      "control_id": "CIC-01",
+      "title": "Action・再利用workflowの固定",
+      "counterexample": "第三者Actionを可変tag参照へ変更する",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/20",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CIC-02",
+      "title": "CIトークンの最小権限",
+      "counterexample": "CIトークンをwrite-allにする",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/21",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CIC-03",
+      "title": "特権イベントと未信頼コード",
+      "counterexample": "特権イベントで外部PRのソースを実行する",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/22",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CIC-04",
+      "title": "式展開・シェルへの入力注入",
+      "counterexample": "PRタイトルをshell命令の文字列へ直接展開する",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/23",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CIC-05",
+      "title": "checkout資格情報の残留",
+      "counterexample": "checkout資格情報をworkspaceへ残す",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/24",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CIC-06",
+      "title": "秘密情報の継承・PR配布",
+      "counterexample": "全secretsを再利用workflowへ一括継承する",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/25",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CIC-07",
+      "title": "runner隔離・使い捨て性",
+      "counterexample": "外部PRを永続self-hosted runnerで処理する",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/26",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CIC-08",
+      "title": "ビルドの外向き通信",
+      "counterexample": "buildから任意外部宛先への通信を許す",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/27",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CIC-09",
+      "title": "cache・artifact汚染",
+      "counterexample": "外部PRのcache/artifactを署名jobへ無検証で渡す",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/28",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CIC-10",
+      "title": "デプロイ承認と署名job分離",
+      "counterexample": "build jobへdeploy資格情報と署名権限を同居させる",
+      "inspect_files": [
+        "ci/review.workflow.yaml",
+        "policies/RELEASE.md"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CIC-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/29",
+      "additional_condition_focus": []
+    }
+  ]
+}

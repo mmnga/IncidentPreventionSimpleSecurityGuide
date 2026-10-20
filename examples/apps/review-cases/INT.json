@@ -1,0 +1,191 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "INT",
+  "cases": [
+    {
+      "control_id": "INT-01",
+      "title": "外部連携の台帳・所有者",
+      "counterexample": "OAuth/bot/SaaS接続の所有者・解除方法を記録しない",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-01/S1"
+      ],
+      "full_criteria": [
+        "INT-01/C1"
+      ],
+      "definition_pointer": "checks.json#/130",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INT-02",
+      "title": "OAuth scope最小化",
+      "counterexample": "用途外の全組織read/write scopeを要求する",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/131",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INT-03",
+      "title": "refresh token・連携秘密値の保管",
+      "counterexample": "refresh tokenを平文で広域共有する",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/132",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INT-04",
+      "title": "連携解除と退職後失効",
+      "counterexample": "解除したIDを同期再試行で無承認再有効化する",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-04/S1"
+      ],
+      "full_criteria": [
+        "INT-04/C1"
+      ],
+      "definition_pointer": "checks.json#/133",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INT-05",
+      "title": "webhook署名・時刻・replay",
+      "counterexample": "webhookを署名/時刻/一意event IDの検証なしで受け入れる",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/134",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INT-06",
+      "title": "外部responseの検証",
+      "counterexample": "providerのresponseを無条件にschema/権限済みと信頼する",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/135",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INT-07",
+      "title": "外向きwebhookのSSRFとpayload",
+      "counterexample": "外向きwebhookを内部IPへ転送し他tenantのpayloadを混ぜる",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/136",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INT-08",
+      "title": "service-to-service認証",
+      "counterexample": "サービス間で万能共通鍵を無期限共有する",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/137",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INT-09",
+      "title": "第三者障害・侵害時の遮断",
+      "counterexample": "第三者停止時に旧認可へfail-openし自動再接続する",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/138",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "INT-10",
+      "title": "送信データと再利用・保持設定",
+      "counterexample": "提供者の保管・再利用設定を未承認のまま本文送信する",
+      "inspect_files": [
+        "integrations/boundaries.py",
+        "policies/integrations.json",
+        "api/security.py"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "INT-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/139",
+      "additional_condition_focus": []
+    }
+  ]
+}

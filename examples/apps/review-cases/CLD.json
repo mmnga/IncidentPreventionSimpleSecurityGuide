@@ -1,0 +1,183 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "CLD",
+  "cases": [
+    {
+      "control_id": "CLD-01",
+      "title": "ストレージ公開・ACL",
+      "counterexample": "S3 public access blockを解除する",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CLD-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/100",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CLD-02",
+      "title": "DB・管理portの外部公開",
+      "counterexample": "DB/管理portを0.0.0.0/0へ公開する",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CLD-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/101",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CLD-03",
+      "title": "IAM wildcard・権限昇格",
+      "counterexample": "app roleへIAM wildcardと昇格経路を与える",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CLD-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/102",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CLD-04",
+      "title": "環境間・アカウント間分離",
+      "counterexample": "devとprodのrole/state/keyを共用する",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CLD-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/103",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CLD-05",
+      "title": "metadata・workload identity",
+      "counterexample": "長期共通鍵と制限なしmetadataアクセスへ変更する",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CLD-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/104",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CLD-06",
+      "title": "Terraform state・plan保護",
+      "counterexample": "state/planを公開artifactへ出す",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CLD-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/105",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CLD-07",
+      "title": "IaCと実環境のdrift",
+      "counterexample": "実設定diff未取得なのにIaCと一致とする",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/106",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CLD-08",
+      "title": "serverless・API gateway権限",
+      "counterexample": "serverless/API gatewayの呼出権限を全principalへ広げる",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CLD-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/107",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CLD-09",
+      "title": "クラウド監査ログの独立保管",
+      "counterexample": "監査ログの保管・削除権限を攻撃対象roleと共有する",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "CLD-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/108",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "CLD-10",
+      "title": "DNS・TLS・放置資産",
+      "counterexample": "廃止DNSと未更新証明書を台帳から落とす",
+      "inspect_files": [
+        "terraform/network.tf",
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/109",
+      "additional_condition_focus": []
+    }
+  ]
+}

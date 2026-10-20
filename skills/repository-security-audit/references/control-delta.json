@@ -1,0 +1,1761 @@
+{
+  "version": "5.0.0",
+  "reviewed_at": "2026-10-09",
+  "baseline": "v4 (220 checks)",
+  "total_checks": 220,
+  "new_check_ids": [],
+  "removed_check_ids": [],
+  "strengthened_count": 54,
+  "criterion_count": 108,
+  "policy": "完全重複は再利用。不足があれば既存IDの検証/合格条件/証拠を強化。対象・リスク・合否検証が既存にない場合のみ新ID。",
+  "changes": [
+    {
+      "id": "SUP-01",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "依存台帳を顧客向けアプリだけで閉じると、連携するBI・管理製品の脆弱性が抜ける。",
+      "scope_boundary": "SUP-01は製品・版・所有者の網羅性。修正優先度と実反映はSUP-02。",
+      "source_ids": [
+        "JP08"
+      ],
+      "before": {
+        "id": "SUP-01",
+        "category_id": "SUP",
+        "category": "依存関係とサプライチェーン",
+        "title": "全manifest・lockfileの棚卸し",
+        "applicability": "言語パッケージ、OSパッケージ、ビルドツールを取り込む場合。",
+        "verification": "monorepo、サンプル、toolingを含め全ecosystemのmanifestとlockを列挙する。",
+        "pass_criteria": "全コンポーネントに再現可能な解決情報があり、検査漏れがない。",
+        "remediation": "不足lockを作成し、対象一覧を継続更新する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S02",
+          "S04",
+          "S08",
+          "D03",
+          "D04",
+          "S11"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "SUP-01/C1",
+        "SUP-01/C2"
+      ]
+    },
+    {
+      "id": "SUP-02",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "深刻度ラベルだけを理由に、悪用可能な脆弱性への対処を遅らせない。",
+      "scope_boundary": "一般の依存・製品を対象。境界機器の実パッチと代替緩和試験はRAN-01-03に集約。",
+      "source_ids": [
+        "JP07",
+        "JP08"
+      ],
+      "before": {
+        "id": "SUP-02",
+        "category_id": "SUP",
+        "category": "依存関係とサプライチェーン",
+        "title": "既知脆弱性と悪用実績",
+        "applicability": "言語パッケージ、OSパッケージ、ビルドツールを取り込む場合。",
+        "verification": "最新の承認済みDBでlock・SBOMを照合し、KEVと供給元通知も確認する。",
+        "pass_criteria": "未解決脆弱性がなく、DB時点・対象版・推移依存・除外根拠が記録される。",
+        "remediation": "修正版へ更新する。例外はWAIVEDとして合格から除外する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S02",
+          "S04",
+          "S08",
+          "D03",
+          "D04",
+          "S11"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "SUP-02/C1",
+        "SUP-02/C2"
+      ]
+    },
+    {
+      "id": "AUT-01",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "正規ヘッダー・トークンを使った正常系だけでは認証迂回を見逃す。",
+      "scope_boundary": "身元確認はAUT-01。認証後の役割・操作権限はAZ-04。",
+      "source_ids": [
+        "JP08"
+      ],
+      "before": {
+        "id": "AUT-01",
+        "category_id": "AUT",
+        "category": "認証とセッション",
+        "title": "認証処理の一元化と迂回",
+        "applicability": "ログイン、APIトークン、SSOまたはユーザーセッションを持つ場合。",
+        "verification": "全公開route・RPCを列挙し、認証middlewareと直接呼出の両方を調べる。",
+        "pass_criteria": "保護対象へ別route、HTTP method、内部headerで迂回できない。",
+        "remediation": "サーバー側の信頼できる境界で認証を強制する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "D05"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "AUT-01/C1",
+        "AUT-01/C2"
+      ]
+    },
+    {
+      "id": "AZ-04",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "管理画面を隠すだけでは、管理APIのアカウント追加・権限変更を防げない。",
+      "scope_boundary": "管理操作の認可のみ。通常データの他人・別テナント参照は既存AZ項目を継続。",
+      "source_ids": [
+        "JP08"
+      ],
+      "before": {
+        "id": "AZ-04",
+        "category_id": "AZ",
+        "category": "認可とテナント分離",
+        "title": "管理機能・ロール昇格",
+        "applicability": "保護リソース、権限ロールまたはテナントを持つ場合。",
+        "verification": "一般ユーザーからadmin endpoint、role変更、代理操作を確認する。",
+        "pass_criteria": "管理権限を持たない主体の昇格・管理操作を拒否する。",
+        "remediation": "権限変更に厳密な認可と監査を追加する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "D05"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "AZ-04/C1",
+        "AZ-04/C2"
+      ]
+    },
+    {
+      "id": "INJ-01",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "文字列だけの検査ではNoSQLの型・演算子注入が漏れる。",
+      "scope_boundary": "SQL/NoSQLのquery境界を対象。shell/eval/テンプレートは別の既存INJ項目。",
+      "source_ids": [
+        "JP08"
+      ],
+      "before": {
+        "id": "INJ-01",
+        "category_id": "INJ",
+        "category": "入力とコード実行境界",
+        "title": "SQL・NoSQL injection",
+        "applicability": "外部入力、ファイル、ネットワーク応答を処理する場合。",
+        "verification": "外部入力からquery構築までのデータフローと否定テストを確認する。",
+        "pass_criteria": "値がparameter化され、動的識別子は許可リストで制御される。",
+        "remediation": "文字列連結を廃止し、parameter化する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "D05",
+          "S08"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "INJ-01/C1",
+        "INJ-01/C2"
+      ]
+    },
+    {
+      "id": "WEB-09",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "全体・IP単位の制限だけでは機能別の悪用を止められない。",
+      "scope_boundary": "リクエストを抑制する制御。大量参照の検知・通報はOBS-09。",
+      "source_ids": [
+        "JP08"
+      ],
+      "before": {
+        "id": "WEB-09",
+        "category_id": "WEB",
+        "category": "Web・HTTP・APIの露出",
+        "title": "API濫用・ページング・query制限",
+        "applicability": "Web UI、HTTP API、GraphQL、ブラウザ連携を提供する場合。",
+        "verification": "export、検索、GraphQL深さ、batch件数、添付容量を確認する。",
+        "pass_criteria": "大量取得・高負荷操作にユーザーとtenant単位の上限がある。",
+        "remediation": "レート・件数・query cost・容量制限を設定する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "D05"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "WEB-09/C1",
+        "WEB-09/C2"
+      ]
+    },
+    {
+      "id": "DAT-05",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "保管期限の文書だけでなく、過去データが消えていることを確認する。",
+      "scope_boundary": "業務上の保存期限による削除。端末残留はDAT-09、攻撃によるバックアップ破壊の防止はRAN-03。",
+      "source_ids": [
+        "JP08"
+      ],
+      "before": {
+        "id": "DAT-05",
+        "category_id": "DAT",
+        "category": "データ保護とプライバシー",
+        "title": "保存期限・削除・派生データ",
+        "applicability": "個人情報、顧客データ、業務機密を保存・処理する場合。",
+        "verification": "削除jobがDB、cache、index、添付、backupにどう波及するか確認する。",
+        "pass_criteria": "期限と削除要件が実装・テストされ、残存範囲を説明できる。",
+        "remediation": "削除の伝播と保持期間を統一する。",
+        "severity": "MEDIUM",
+        "source_ids": [
+          "S05",
+          "S06",
+          "D05"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "DAT-05/C1",
+        "DAT-05/C2"
+      ]
+    },
+    {
+      "id": "DAT-09",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "クラウド保存へ移した後も、端末キャッシュ・同期コピーが漏えい源として残り得る。",
+      "scope_boundary": "端末上の一時/同期残留に限定。業務保存期限の統制はDAT-05。",
+      "source_ids": [
+        "JP02"
+      ],
+      "before": {
+        "id": "DAT-09",
+        "category_id": "DAT",
+        "category": "データ保護とプライバシー",
+        "title": "一時ファイル・crash dump",
+        "applicability": "個人情報、顧客データ、業務機密を保存・処理する場合。",
+        "verification": "temp、swap、core dump、プロセスメモリ採取、削除時点を調べる。",
+        "pass_criteria": "機密情報を含む一時物が不適切に残存・共有されない。",
+        "remediation": "保存先・権限・自動削除とdump方針を設定する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S05",
+          "S06",
+          "D05"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "DAT-09/C1",
+        "DAT-09/C2"
+      ]
+    },
+    {
+      "id": "OBS-07",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "侵害後に追跡できる粒度のアプリ/SaaSイベントが必要。",
+      "scope_boundary": "アプリの証跡生成・保全。管理プレーン操作はRAN-02-09、大量持出しの警報はOBS-09。",
+      "source_ids": [
+        "JP01",
+        "JP07",
+        "JP08"
+      ],
+      "before": {
+        "id": "OBS-07",
+        "category_id": "OBS",
+        "category": "ログ・テレメトリ・サポート",
+        "title": "監査eventの網羅",
+        "applicability": "ログ、分析、監視、サポート用の診断データを生成する場合。",
+        "verification": "login、失敗、権限変更、export、token発行、管理操作を列挙する。",
+        "pass_criteria": "重要操作が主体・対象・結果・時刻とともに追跡できる。",
+        "remediation": "欠落eventを追加し、相関IDを整備する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S06",
+          "D05"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "OBS-07/C1",
+        "OBS-07/C2"
+      ]
+    },
+    {
+      "id": "OBS-09",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "正規アカウントを使った大量/低速分散参照を、正常ログインとして見逃さない。",
+      "scope_boundary": "アプリの意味に基づく読取り・export検知。ネットワーク転送はRAN-04-02、暗号化等との相関はRAN-04-01。",
+      "source_ids": [
+        "JP07",
+        "JP08"
+      ],
+      "before": {
+        "id": "OBS-09",
+        "category_id": "OBS",
+        "category": "ログ・テレメトリ・サポート",
+        "title": "異常な大量取得の検知",
+        "applicability": "ログ、分析、監視、サポート用の診断データを生成する場合。",
+        "verification": "export量、API利用、token利用元、egress急増の検知をテストする。",
+        "pass_criteria": "漏えい兆候が適切な担当へ通知され、対応手順につながる。",
+        "remediation": "利用量・権限変更・送信先の監視を実装する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S06",
+          "D05"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "OBS-09/C1",
+        "OBS-09/C2"
+      ]
+    },
+    {
+      "id": "IR-02",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "ネットワーク隔離とパスワード変更だけでは、SaaSや発行済みtokenへのアクセスが残る。",
+      "scope_boundary": "資格情報とセッションの失効範囲。ネットワーク封じ込めはRAN-04-04。",
+      "source_ids": [
+        "JP01",
+        "JP07"
+      ],
+      "before": {
+        "id": "IR-02",
+        "category_id": "IR",
+        "category": "漏えい対応と復旧",
+        "title": "秘密値の緊急失効",
+        "applicability": "全プロダクト。クラウド・SaaS・顧客連絡を含む運用責任範囲。",
+        "verification": "API key、OAuth、session、CI、deploy、署名鍵の失効手順を確認する。",
+        "pass_criteria": "影響経路に応じた失効・交換を漏れなく実行できる。",
+        "remediation": "資格情報台帳と一括失効手順を整備する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S14"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "IR-02/C1",
+        "IR-02/C2"
+      ]
+    },
+    {
+      "id": "IR-04",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "ログの消失や不足があると、漏えい無しの断定も被害範囲の確定もできない。",
+      "scope_boundary": "影響評価と確度の記録。証拠採取手順はIR-05、通知の法的判断はRAN-04-10。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "IR-04",
+        "category_id": "IR",
+        "category": "漏えい対応と復旧",
+        "title": "影響版・顧客・データの追跡",
+        "applicability": "全プロダクト。クラウド・SaaS・顧客連絡を含む運用責任範囲。",
+        "verification": "SBOM、release、tenant、アクセスログで影響範囲を特定する演習を行う。",
+        "pass_criteria": "対象期間・資格情報・配布先・データ範囲を根拠付きで追跡できる。",
+        "remediation": "相関IDと資産・release台帳を整備する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S16"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "IR-04/C1",
+        "IR-04/C2"
+      ]
+    },
+    {
+      "id": "IR-05",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "調査前のOS更新・再構築が侵入証拠を消すことを防ぐ。",
+      "scope_boundary": "証拠の保全手順に限定。バックアップから業務を戻す試験はRAN-04。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "IR-05",
+        "category_id": "IR",
+        "category": "漏えい対応と復旧",
+        "title": "証拠保全と変更記録",
+        "applicability": "全プロダクト。クラウド・SaaS・顧客連絡を含む運用責任範囲。",
+        "verification": "ログ、snapshot、hash、取得時刻、保管権限、作業記録を確認する。",
+        "pass_criteria": "復旧で証拠を失わず、取扱い履歴を残す。",
+        "remediation": "保全先と取得・アクセス手順を定める。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S04",
+          "S05",
+          "S06",
+          "S07"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "IR-05/C1",
+        "IR-05/C2"
+      ]
+    },
+    {
+      "id": "IR-10",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "事例名を追加しても対策の検証が増えないため、重複排除した検査差分で改善を管理する。",
+      "scope_boundary": "新しいチェックの追加管理と改善効果の確認。各対策の実効試験は対応する既存IDで一度だけ行う。",
+      "source_ids": [
+        "JP08",
+        "JP09"
+      ],
+      "before": {
+        "id": "IR-10",
+        "category_id": "IR",
+        "category": "漏えい対応と復旧",
+        "title": "事後分析と是正の検証",
+        "applicability": "全プロダクト。クラウド・SaaS・顧客連絡を含む運用責任範囲。",
+        "verification": "過去事故・演習の原因、再発防止、所有者、期限、完了証拠を確認する。",
+        "pass_criteria": "文書化だけでなく是正と有効性確認まで完了する。",
+        "remediation": "是正を追跡し、検査項目と回帰テストへ反映する。",
+        "severity": "MEDIUM",
+        "source_ids": [
+          "S04",
+          "S05",
+          "S06",
+          "S07"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "IR-10/C1",
+        "IR-10/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-01",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "公開/残存する管理経路の閉鎖を実効設定で確認。",
+      "scope_boundary": "管理画面の到達性。資産の網羅性はRAN-01-09、端末プロトコルはRAN-01-02。",
+      "source_ids": [
+        "JP02",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-01-01",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "VPN・ZTNAの公開管理面",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-01/C1",
+        "RAN-01-01/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-02",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "RDP/SSHの直接公開と踏み台迂回を防ぐ。",
+      "scope_boundary": "接続入口の到達性と認証。接続後の横移動はRAN-02-04。",
+      "source_ids": [
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-01-02",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "RDP・SSHの外部公開",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-02/C1",
+        "RAN-01-02/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-03",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "境界機器の未修正を実環境で解消。Medium等の既知悪用も除外しない。",
+      "scope_boundary": "境界機器の版と緩和策。一般依存の判定はSUP-02。",
+      "source_ids": [
+        "JP07",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-01-03",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "未修正の境界機器脆弱性",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-03/C1",
+        "RAN-01-03/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-04",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "委託先・緊急用を含むMFA例外がID/パスワードだけの入口を残さない。",
+      "scope_boundary": "MFAの強制範囲と耐フィッシング。緊急IDの保管/監査はRAN-01-10。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-01-04",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "認証基盤のMFA耐フィッシング",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-04/C1",
+        "RAN-01-04/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-05",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "サービス資格情報から全基盤への権限を与えない。",
+      "scope_boundary": "非対話サービスIDの権限。人の管理権限はRAN-02-01。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-01-05",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "サービスアカウントの過剰権限",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-05/C1",
+        "RAN-01-05/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-06",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "流出通知・不審ログインを受けて資格情報の再利用を断つ。",
+      "scope_boundary": "認証情報露出の検知から失効を起動する統制。横断失効の実行はIR-02。",
+      "source_ids": [
+        "JP01",
+        "JP07"
+      ],
+      "before": {
+        "id": "RAN-01-06",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "初期アクセスブローカー由来の認証情報",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-06/C1",
+        "RAN-01-06/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-07",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "開発端末の侵害が本番へ直結しない。",
+      "scope_boundary": "開発→本番の信頼境界。その他の区画はRAN-02-06。",
+      "source_ids": [
+        "JP01",
+        "JP02"
+      ],
+      "before": {
+        "id": "RAN-01-07",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "開発者端末から本番への到達性",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-07/C1",
+        "RAN-01-07/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-08",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "サポート用遠隔ツールが無承認の裏口にならない。",
+      "scope_boundary": "遠隔支援ツールの導入・接続許可。通常SSH/RDP入口はRAN-01-02。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-01-08",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "サポート用リモートツールの統制",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-08/C1",
+        "RAN-01-08/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-09",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "支店・委託先・旧環境を含む公開資産の抜けを防ぐ。",
+      "scope_boundary": "資産の完全性を検査。個別の脆弱性/管理面はRAN-01-01/03。",
+      "source_ids": [
+        "JP02",
+        "JP07",
+        "JP08"
+      ],
+      "before": {
+        "id": "RAN-01-09",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "外部公開資産の棚卸し",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-09/C1",
+        "RAN-01-09/C2"
+      ]
+    },
+    {
+      "id": "RAN-01-10",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "緊急IDは恒久的な認証例外ではなく監査可能な回復経路にする。",
+      "scope_boundary": "緊急IDの保管・使用・回収。災害時の独立鍵保管はRAN-04-09。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-01-10",
+        "category_id": "RAN1",
+        "category": "ランサムウェア：侵入経路と露出面",
+        "title": "ブレークグラス認証の監査",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-01-10/C1",
+        "RAN-01-10/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-01",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "侵害された日常IDが全体管理者にならない。",
+      "scope_boundary": "人間の常用IDと管理階層の分離。サービスIDはRAN-01-05。",
+      "source_ids": [
+        "JP02",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-02-01",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "管理者権限の分離",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-01/C1",
+        "RAN-02-01/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-02",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "高権限認証情報を侵害されやすい端末に露出させない。",
+      "scope_boundary": "ドメイン等の最上位認証情報のログオン先。IDの分離そのものはRAN-02-01。",
+      "source_ids": [
+        "JP02",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-02-02",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "ドメイン管理者認証の露出",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-02/C1",
+        "RAN-02-02/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-03",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "承認期限を過ぎた特権が残らない。",
+      "scope_boundary": "特権の時間制約。権限内容はRAN-02-01。",
+      "source_ids": [
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-02-03",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "特権セッションの短期化",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-03/C1",
+        "RAN-02-03/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-04",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "端末から端末への遠隔実行を制限する。",
+      "scope_boundary": "WinRM/WMI/RPC/SSH等の遠隔実行。SMB共有はRAN-02-05。",
+      "source_ids": [
+        "JP02",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-02-04",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "端末間リモート実行の制御",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-04/C1",
+        "RAN-02-04/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-05",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "管理共有を横移動・一括破壊の経路にしない。",
+      "scope_boundary": "SMB/CIFS・管理共有への到達と書込み。一般区画分離はRAN-02-06。",
+      "source_ids": [
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-02-05",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "SMB管理共有の到達性",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-05/C1",
+        "RAN-02-05/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-06",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "支店・委託先・IT/OT・backup間の必要外通信を閉じる。",
+      "scope_boundary": "セグメント間の通信境界。開発→本番はRAN-01-07、特定protocolはRAN-02-04/05。",
+      "source_ids": [
+        "JP01",
+        "JP02",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-02-06",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "ネットワークセグメンテーション",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-06/C1",
+        "RAN-02-06/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-07",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "共通のローカル管理者passwordやSSH鍵で横展開させない。",
+      "scope_boundary": "端末間の共通認証情報。一般secret保管はSEC統制を維持。",
+      "source_ids": [
+        "T01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-02-07",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "横移動に使える共通鍵の排除",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-07/C1",
+        "RAN-02-07/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-08",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "EDRが導入済みでも攻撃者に停止されないことを確かめる。",
+      "scope_boundary": "防御機能の改ざん阻止。未導入/heartbeat欠落の検知はRAN-03-10。",
+      "source_ids": [
+        "JP01",
+        "T02"
+      ],
+      "before": {
+        "id": "RAN-02-08",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "端末EDRの改ざん防止",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-08/C1",
+        "RAN-02-08/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-09",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "基盤管理者の操作を侵害対象から独立して追跡する。",
+      "scope_boundary": "IdP・cloud・hypervisor・backup等の管理ログ。アプリログはOBS-07。",
+      "source_ids": [
+        "JP01",
+        "JP02"
+      ],
+      "before": {
+        "id": "RAN-02-09",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "管理プレーンのアクセスログ",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-09/C1",
+        "RAN-02-09/C2"
+      ]
+    },
+    {
+      "id": "RAN-02-10",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "一つ一つは小さい権限の組合せによる特権奪取を評価する。",
+      "scope_boundary": "複数のrole/委任/secret読取を結ぶ昇格経路。単一roleの権限はRAN-02-01。",
+      "source_ids": [
+        "JP02",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-02-10",
+        "category_id": "RAN2",
+        "category": "ランサムウェア：横展開と特権昇格",
+        "title": "権限昇格経路の継続評価",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-02-10/C1",
+        "RAN-02-10/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-01",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "公開アプリ基盤へのwebshellや配布外コード変更を捉える。",
+      "scope_boundary": "重要コード/設定の完全性。データの暗号化挙動はRAN-03-04。",
+      "source_ids": [
+        "JP08",
+        "JP01"
+      ],
+      "before": {
+        "id": "RAN-03-01",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "重要ファイルの大量変更検知",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-01/C1",
+        "RAN-03-01/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-02",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "本番資格情報からバックアップをまとめて消せない。",
+      "scope_boundary": "backupの管理権限分離。不変な保持の仕様はRAN-03-09。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-03-02",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "バックアップ削除権限の分離",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-02/C1",
+        "RAN-03-02/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-03",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "ローカル復元点の削除を無監視にしない。",
+      "scope_boundary": "shadow copy/ローカル復元点の監視。外部backupの不変性とは別。",
+      "source_ids": [
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-03-03",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "シャドウコピー削除の監視",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-03/C1",
+        "RAN-03-03/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-04",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "既知hashの無検出ではなく大量暗号化に相当する挙動を検証する。",
+      "scope_boundary": "データの変更挙動と阻止/隔離。コード完全性はRAN-03-01。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-03-04",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "大量暗号化の振る舞い検知",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-04/C1",
+        "RAN-03-04/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-05",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "業務アプリからの不審な子プロセスや遠隔実行を監視する。",
+      "scope_boundary": "process親子・実行主体・起動元の異常。変更挙動はRAN-03-04。",
+      "source_ids": [
+        "JP08",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-03-05",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "異常なプロセス起動の監視",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-05/C1",
+        "RAN-03-05/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-06",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "アプリIDからDB全体破壊や権限変更をさせない。",
+      "scope_boundary": "DBの論理破壊権限。storage基盤APIはRAN-03-07。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-03-06",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "重要DBの破壊操作保護",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-06/C1",
+        "RAN-03-06/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-07",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "storage削除に加え、鍵停止・消去が復元不能を招く経路を保護する。",
+      "scope_boundary": "storage/仮想化/KMSの管理API破壊。DB論理操作とWORM保持は別ID。",
+      "source_ids": [
+        "JP01",
+        "T04"
+      ],
+      "before": {
+        "id": "RAN-03-07",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "ストレージ管理APIの破壊権限",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-07/C1",
+        "RAN-03-07/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-08",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "versioning有効だけでなく、旧版が保持・復元できるか確認する。",
+      "scope_boundary": "objectの版/削除marker/lifecycle。WORMの削除不能性はRAN-03-09。",
+      "source_ids": [
+        "T03",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-03-08",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "オブジェクトストレージの版管理",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-08/C1",
+        "RAN-03-08/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-09",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "不変backupが名前だけの保護や迂回可能な設定ではないことを検証する。",
+      "scope_boundary": "WORM/retentionの削除不能性。管理者分離はRAN-03-02、鍵はRAN-03-07。",
+      "source_ids": [
+        "JP01",
+        "T03"
+      ],
+      "before": {
+        "id": "RAN-03-09",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "バックアップの不変性・WORM",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-09/C1",
+        "RAN-03-09/C2"
+      ]
+    },
+    {
+      "id": "RAN-03-10",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "EDR未導入・停止・除外の監視漏れを資産母数から発見する。",
+      "scope_boundary": "防御の配置/稼働監視と受付。停止阻止そのものはRAN-02-08。",
+      "source_ids": [
+        "JP01",
+        "T02"
+      ],
+      "before": {
+        "id": "RAN-03-10",
+        "category_id": "RAN3",
+        "category": "ランサムウェア：暗号化・破壊の阻止",
+        "title": "保護機能停止の検出と通知",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-03-10/C1",
+        "RAN-03-10/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-01",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "持ち出しと暗号化の複合攻撃を時系列で結ぶ。",
+      "scope_boundary": "複数段階の相関。アプリ単独/通信単独の検知はOBS-09/RAN-04-02。",
+      "source_ids": [
+        "JP01",
+        "JP07"
+      ],
+      "before": {
+        "id": "RAN-04-01",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "大量持ち出しと暗号化の相関検知",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-01/C1",
+        "RAN-04-01/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-02",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "外向き転送を宛先と量の異常として検知する。",
+      "scope_boundary": "network/proxy/cloud egress。アプリの参照意味はOBS-09。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-04-02",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "外向き大容量転送の異常検知",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-02/C1",
+        "RAN-04-02/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-03",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "外部共有リンクを大量生成して持ち出す経路を管理する。",
+      "scope_boundary": "共有リンク/外部招待の制御。通常API参照はOBS-09。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-04-03",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "外部共有リンクの一括発行監視",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-03/C1",
+        "RAN-04-03/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-04",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "単一ネットワークの切断で封じ込め完了にしない。",
+      "scope_boundary": "host/区画/SaaS接続の隔離。ID/token失効はIR-02を参照し二重実装しない。",
+      "source_ids": [
+        "JP01",
+        "JP07",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-04-04",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "ランサム対応の封じ込め手順",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-04/C1",
+        "RAN-04-04/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-05",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "復号や上書き復旧だけで再侵入経路を持ち込まない。",
+      "scope_boundary": "復旧先の信頼性・再接続承認。復元データ検証はRAN-04-08。",
+      "source_ids": [
+        "JP01",
+        "JP02",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-04-05",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "クリーンルーム復旧手順",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-05/C1",
+        "RAN-04-05/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-06",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "IdP・DNS・管理端末を同時喪失しても復旧を開始する。",
+      "scope_boundary": "オフライン/独立経路による復旧開始。鍵の独立保管はRAN-04-09。",
+      "source_ids": [
+        "JP01",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-04-06",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "オフライン復旧経路",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-06/C1",
+        "RAN-04-06/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-07",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "バックアップjob成功ではなく業務のRPO/RTO達成を測る。",
+      "scope_boundary": "復旧時間/損失許容の測定。データ整合はRAN-04-08。",
+      "source_ids": [
+        "JP01",
+        "JP02",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-04-07",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "RPO・RTOの実測",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-07/C1",
+        "RAN-04-07/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-08",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "復元できたファイル数ではなく、業務データの整合と利用を確認する。",
+      "scope_boundary": "実データ復元の完全性/整合性。時間指標はRAN-04-07。",
+      "source_ids": [
+        "JP01",
+        "JP02",
+        "JP09"
+      ],
+      "before": {
+        "id": "RAN-04-08",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "復元テストの成功証跡",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-08/C1",
+        "RAN-04-08/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-09",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "本番IdPの侵害/停止で復旧IDと復号鍵を失わない。",
+      "scope_boundary": "復旧資格情報・復号材料の独立性。破壊権限はRAN-03-07。",
+      "source_ids": [
+        "JP01",
+        "JP09",
+        "T04"
+      ],
+      "before": {
+        "id": "RAN-04-09",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "復旧用IDと鍵の独立保管",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-09/C1",
+        "RAN-04-09/C2"
+      ]
+    },
+    {
+      "id": "RAN-04-10",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "漏えいの有無が未確定でも、暗号化/喪失を含む報告判断を進める。",
+      "scope_boundary": "法務判断・当事者通知・公表管理。被害範囲の確度はIR-04。",
+      "source_ids": [
+        "JP09",
+        "JP10"
+      ],
+      "before": {
+        "id": "RAN-04-10",
+        "category_id": "RAN4",
+        "category": "ランサムウェア：恐喝・復旧・演習",
+        "title": "二重恐喝時の法務・通知手順",
+        "applicability": "当該リポジトリが利用する実行基盤・開発環境・データ・運用体制。対象外は資産台帳と承認証拠が必要。",
+        "verification": "コード・IaC・CI設定を確認し、実環境の設定エクスポート、検知ルール、権限レビュー、演習または復旧ログを突合する。コードだけで確認できない場合はBLOCKED/NOT_RUN。",
+        "pass_criteria": "対象資産の完全性が確認され、該当統制が実環境で有効かつ直近の試験・ログで立証され、未解決例外がない。",
+        "remediation": "対象資産と責任者を確定し、最小権限・監視・隔離・不変バックアップ・復旧試験を適用して証拠を再取得する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "R01",
+          "R02",
+          "R03"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_ids": [
+        "RAN-04-10/C1",
+        "RAN-04-10/C2"
+      ]
+    }
+  ],
+  "deduplication_decisions": [
+    {
+      "control": "公開bundle・モバイルアプリにサーバーsecretを含めない",
+      "existing_ids": [
+        "SEC-05",
+        "REL-01"
+      ],
+      "decision": "REUSE_UNCHANGED",
+      "source_ids": [
+        "JP08"
+      ],
+      "reason": "配布物内のsecretと公開設定を検査する既存の合格条件でカバー。"
+    },
+    {
+      "control": ".env・バックアップ・DB dumpの意図しない公開を防ぐ",
+      "existing_ids": [
+        "SEC-03",
+        "REL-03"
+      ],
+      "decision": "REUSE_UNCHANGED",
+      "source_ids": [
+        "JP08"
+      ],
+      "reason": "ファイル存在だけでなく配布経路と公開対象の検証が既にある。"
+    },
+    {
+      "control": "他人・別テナントのデータをAPIで取得できない",
+      "existing_ids": [
+        "AZ-01",
+        "AZ-02"
+      ],
+      "decision": "REUSE_UNCHANGED",
+      "source_ids": [
+        "JP08"
+      ],
+      "reason": "オブジェクト/テナント単位の否定試験が既にある。"
+    },
+    {
+      "control": "API tokenを必要なscopeと有効期限へ限定する",
+      "existing_ids": [
+        "SEC-07"
+      ],
+      "decision": "REUSE_UNCHANGED",
+      "source_ids": [
+        "JP08"
+      ],
+      "reason": "実効scopeと期限を検証する既存項目へ対応付けのみ。"
+    },
+    {
+      "control": "事故時にtoken・鍵を実際に失効する",
+      "existing_ids": [
+        "SEC-10",
+        "IR-02"
+      ],
+      "decision": "MERGE_NO_NEW_ID",
+      "source_ids": [
+        "JP01",
+        "JP08"
+      ],
+      "reason": "通常の失効試験SEC-10を維持し、横断失効不足のみIR-02で強化。"
+    },
+    {
+      "control": "共通原因の複数事例を同じ是正チケットに結び付ける",
+      "existing_ids": [
+        "IR-10"
+      ],
+      "decision": "MERGE_NO_NEW_ID",
+      "source_ids": [
+        "JP09"
+      ],
+      "reason": "事例数・年度・攻撃グループ名を理由に新しい検査IDを増やさない。"
+    }
+  ],
+  "limits": "国内1年間の全公表事故を網羅した集計ではない。確認した一次情報の対策を既存統制へ統合。criteriaは220項目内の合格条件で、別検査数として水増ししない。"
+}

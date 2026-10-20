@@ -1,0 +1,36 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "connector": {
+    "owner": "synthetic-service-owner",
+    "scope": [
+      "openid",
+      "profile"
+    ],
+    "subject_tenant_binding": "required",
+    "refresh_token_store": "encrypted and isolated"
+  },
+  "outbound_webhook": {
+    "endpoint": "https://hooks.partner.invalid/events",
+    "redirects": false,
+    "payload_fields": [
+      "type",
+      "object_id"
+    ],
+    "tenant_authorization": "repeat at worker"
+  },
+  "disconnect": [
+    "revoke grant",
+    "delete refresh token",
+    "cancel queued work",
+    "reject old callbacks"
+  ],
+  "provider_response": {
+    "schema_required": true,
+    "payload_not_trusted_as_html": true
+  },
+  "circuit_breaker": {
+    "failure": "stop integration, preserve revoked state",
+    "resume": "independent approval"
+  },
+  "provider_retention_and_real_permissions": null
+}

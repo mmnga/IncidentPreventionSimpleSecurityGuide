@@ -1,0 +1,167 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "GIT",
+  "cases": [
+    {
+      "control_id": "GIT-01",
+      "title": "全到達可能履歴の秘密情報検査",
+      "counterexample": "取得履歴から廃止branchを除き秘密検査済みとする",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "GIT-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/10",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "GIT-02",
+      "title": "shallow・partial cloneと取得範囲",
+      "counterexample": "shallow=trueの取得範囲を全履歴と報告する",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "GIT-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/11",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "GIT-03",
+      "title": "未追跡・ignoredファイル",
+      "counterexample": "ignored/untracked一覧を取得せず全ソースと呼ぶ",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "GIT-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/12",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "GIT-04",
+      "title": "submodule・LFSの実体",
+      "counterexample": "LFS pointerとsubmodule SHAだけで実体確認を済ませる",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "GIT-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/13",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "GIT-05",
+      "title": "公開範囲とfork・mirror",
+      "counterexample": "mirror/forkの公開設定が未取得のまま非公開とする",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/14",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "GIT-06",
+      "title": "保護ブランチ・ruleset",
+      "counterexample": "保護rulesetが未設定のmainへ直接更新を許す",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/15",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "GIT-07",
+      "title": "重要ファイルのCODEOWNERS",
+      "counterexample": "通知/CI/IaC変更をCODEOWNERSの対象から外す",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "GIT-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/16",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "GIT-08",
+      "title": "管理者・botの迂回権限",
+      "counterexample": "管理botへ期限なしのruleset迂回権限を与える",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/17",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "GIT-09",
+      "title": "push時の秘密情報防止",
+      "counterexample": "push保護の例外申請を記録せず常時許可する",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/18",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "GIT-10",
+      "title": "force push・削除・監査証跡",
+      "counterexample": "force-push/branch削除の監査記録を保持しない",
+      "inspect_files": [
+        "policies/git-governance.json",
+        "policies/CODEOWNERS.example"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/19",
+      "additional_condition_focus": []
+    }
+  ]
+}

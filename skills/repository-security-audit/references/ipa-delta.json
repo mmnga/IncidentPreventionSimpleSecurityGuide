@@ -1,0 +1,319 @@
+{
+  "version": "6.0.0",
+  "baseline": "v5",
+  "verified_at": "2026-10-09",
+  "source_id": "IPA-20261009",
+  "total_checks": 220,
+  "new_check_ids": [],
+  "removed_check_ids": [],
+  "strengthened_count": 8,
+  "changes": [
+    {
+      "id": "OBS-06",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "ログの保持値だけでなく、サービスごとの調査権限と入手可能期間が不足。",
+      "before": {
+        "id": "OBS-06",
+        "category_id": "OBS",
+        "category": "ログ・テレメトリ・サポート",
+        "title": "ログの閲覧権限・保持期間",
+        "applicability": "ログ、分析、監視、サポート用の診断データを生成する場合。",
+        "verification": "ログ基盤、query API、download、保存先ACL、削除期間を確認する。",
+        "pass_criteria": "本番ログのアクセスを必要者に限定し、過剰保存しない。",
+        "remediation": "役割別権限と保持・削除policyを設定する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S06",
+          "D05"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_id": "OBS-06/C1"
+    },
+    {
+      "id": "OBS-07",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "既存の監査イベントを維持し、アカウント不正追加・再有効化の追跡を明確化。",
+      "before": {
+        "id": "OBS-07",
+        "category_id": "OBS",
+        "category": "ログ・テレメトリ・サポート",
+        "title": "監査eventの網羅",
+        "applicability": "ログ、分析、監視、サポート用の診断データを生成する場合。",
+        "verification": "従来の検査を維持：login、失敗、権限変更、export、token発行、管理操作を列挙する。 追加して検証：【C1】本番相当の安全な操作を実行し、ログで対象データと主体を特定できること、秘密値を含めないことを確認する。 【C2】ログ転送停止を安全に模擬し、別管理の保管・欠落通知・検索可能な保持期間を確認する。",
+        "pass_criteria": "従来の合格条件も維持：重要操作が主体・対象・結果・時刻とともに追跡できる。 追加の適用条件C1/C2をそれぞれ証拠付きで満たす。未実施・判断待ち・受容リスクは合格不可。 認証、検索/参照、export、トークン作成、権限変更に主体・対象・時刻・結果・相関IDが記録される。 攻撃対象の運用者だけでは消せない保管先へログが届き、保持・時刻同期・欠落検出が機能する。",
+        "remediation": "重要操作の監査イベントと別管理のログ保全を追加し、欠落時に検知できるようにする。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S06",
+          "D05",
+          "JP01",
+          "JP07",
+          "JP08"
+        ],
+        "mode": "evidence_review",
+        "revision": 5,
+        "criteria": [
+          {
+            "id": "OBS-07/C1",
+            "expectation": "認証、検索/参照、export、トークン作成、権限変更に主体・対象・時刻・結果・相関IDが記録される。",
+            "verification": "本番相当の安全な操作を実行し、ログで対象データと主体を特定できること、秘密値を含めないことを確認する。",
+            "required_evidence": [
+              "重要操作と記録フィールドの一覧",
+              "マスク済みのイベント到達サンプル"
+            ]
+          },
+          {
+            "id": "OBS-07/C2",
+            "expectation": "攻撃対象の運用者だけでは消せない保管先へログが届き、保持・時刻同期・欠落検出が機能する。",
+            "verification": "ログ転送停止を安全に模擬し、別管理の保管・欠落通知・検索可能な保持期間を確認する。",
+            "required_evidence": [
+              "ログ保管権限と保持設定",
+              "転送停止・復帰の通知と検索試験"
+            ]
+          }
+        ],
+        "scope_boundary": "アプリの証跡生成・保全。管理プレーン操作はRAN-02-09、大量持出しの警報はOBS-09。",
+        "required_evidence": [
+          "重要操作と記録フィールドの一覧",
+          "マスク済みのイベント到達サンプル",
+          "ログ保管権限と保持設定",
+          "転送停止・復帰の通知と検索試験"
+        ],
+        "change_reason": "侵害後に追跡できる粒度のアプリ/SaaSイベントが必要。"
+      },
+      "after_criterion_id": "OBS-07/C1"
+    },
+    {
+      "id": "OBS-09",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "既存の大量取得検知では、直近ログの期間拡張と再調査手順を明示していない。",
+      "before": {
+        "id": "OBS-09",
+        "category_id": "OBS",
+        "category": "ログ・テレメトリ・サポート",
+        "title": "異常な大量取得の検知",
+        "applicability": "ログ、分析、監視、サポート用の診断データを生成する場合。",
+        "verification": "従来の検査を維持：export量、API利用、token利用元、egress急増の検知をテストする。 追加して検証：【C1】通常業務の基準と監視対象を確認し、安全なログ再生で単発大量参照と時間/送信元分散した参照の両方を検証する。 【C2】テスト警報の受付時刻・担当・対応手順を突合し、通知先未登録や委託先IDの除外がないことを確認する。",
+        "pass_criteria": "従来の合格条件も維持：漏えい兆候が適切な担当へ通知され、対応手順につながる。 追加の適用条件C1/C2をそれぞれ証拠付きで満たす。未実施・判断待ち・受容リスクは合格不可。 主体・テナント・機能ごとの参照量や範囲の異常を検知し、保守IDも免除しない。 警報は24時間の担当へ届き、対象ID・対象データを使って一次封じ込め判断につながる。",
+        "remediation": "有効IDによる持ち出しも監視し、機能別の検知と担当者への到達を確認する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S06",
+          "D05",
+          "JP07",
+          "JP08"
+        ],
+        "mode": "evidence_review",
+        "revision": 5,
+        "criteria": [
+          {
+            "id": "OBS-09/C1",
+            "expectation": "主体・テナント・機能ごとの参照量や範囲の異常を検知し、保守IDも免除しない。",
+            "verification": "通常業務の基準と監視対象を確認し、安全なログ再生で単発大量参照と時間/送信元分散した参照の両方を検証する。",
+            "required_evidence": [
+              "アプリ参照の検知条件と業務基準",
+              "大量/低速分散参照の検知結果"
+            ]
+          },
+          {
+            "id": "OBS-09/C2",
+            "expectation": "警報は24時間の担当へ届き、対象ID・対象データを使って一次封じ込め判断につながる。",
+            "verification": "テスト警報の受付時刻・担当・対応手順を突合し、通知先未登録や委託先IDの除外がないことを確認する。",
+            "required_evidence": [
+              "通知・当番経路",
+              "テスト警報の受領と初動記録"
+            ]
+          }
+        ],
+        "scope_boundary": "アプリの意味に基づく読取り・export検知。ネットワーク転送はRAN-04-02、暗号化等との相関はRAN-04-01。",
+        "required_evidence": [
+          "アプリ参照の検知条件と業務基準",
+          "大量/低速分散参照の検知結果",
+          "通知・当番経路",
+          "テスト警報の受領と初動記録"
+        ],
+        "change_reason": "正規アカウントを使った大量/低速分散参照を、正常ログインとして見逃さない。"
+      },
+      "after_criterion_id": "OBS-09/C3"
+    },
+    {
+      "id": "INT-01",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "コード上のconnectorだけでは、部署単位の外部サービスやVPNが抜ける。",
+      "before": {
+        "id": "INT-01",
+        "category_id": "INT",
+        "category": "外部SaaS・OAuth・webhook",
+        "title": "外部連携の台帳・所有者",
+        "applicability": "第三者SaaS、OAuth app、外部webhookを利用する場合。",
+        "verification": "OAuth app、GitHub App、bot、SaaS連携、connectorの全体を列挙する。",
+        "pass_criteria": "全連携の所有者、データ範囲、必要性、解除方法が明確。",
+        "remediation": "未管理連携を停止し、承認台帳へ統合する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S05",
+          "S06",
+          "D05",
+          "S13"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_id": "INT-01/C1"
+    },
+    {
+      "id": "INT-04",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "退職時の解除に加え、不正アカウントと停止済みIDの復活を拾う必要がある。",
+      "before": {
+        "id": "INT-04",
+        "category_id": "INT",
+        "category": "外部SaaS・OAuth・webhook",
+        "title": "連携解除と退職後失効",
+        "applicability": "第三者SaaS、OAuth app、外部webhookを利用する場合。",
+        "verification": "ユーザー削除、権限縮小、app解除時のtoken利用をテストする。",
+        "pass_criteria": "不要になった連携と派生sessionが利用できない。",
+        "remediation": "解除eventを処理し、定期棚卸しする。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S05",
+          "S06",
+          "D05",
+          "S13"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_id": "INT-04/C1"
+    },
+    {
+      "id": "AZ-06",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "一括処理の単件相当認可を、非同期ジョブと取得経路まで具体化する。",
+      "before": {
+        "id": "AZ-06",
+        "category_id": "AZ",
+        "category": "認可とテナント分離",
+        "title": "一括処理・export認可",
+        "applicability": "保護リソース、権限ロールまたはテナントを持つ場合。",
+        "verification": "batch、CSV export、集計、検索の項目単位と件数範囲を確認する。",
+        "pass_criteria": "単件APIと同じ認可が一括処理にも適用される。",
+        "remediation": "各対象に認可を適用し、exportを制限する。",
+        "severity": "CRITICAL",
+        "source_ids": [
+          "D05"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_id": "AZ-06/C1"
+    },
+    {
+      "id": "WEB-09",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "既存の機能別制限を、利用者入力による件数上書きにも適用する。",
+      "before": {
+        "id": "WEB-09",
+        "category_id": "WEB",
+        "category": "Web・HTTP・APIの露出",
+        "title": "API濫用・ページング・query制限",
+        "applicability": "Web UI、HTTP API、GraphQL、ブラウザ連携を提供する場合。",
+        "verification": "従来の検査を維持：export、検索、GraphQL深さ、batch件数、添付容量を確認する。 追加して検証：【C1】機能・ID・端末/送信先・テナント・全体の制限設計を確認し、許可された低負荷の境界値試験で遮断・遅延を確認する。 【C2】分散カウンタとキー設計をレビューし、隔離環境で経路切替と制限ストア障害を再現する。",
+        "pass_criteria": "従来の合格条件も維持：大量取得・高負荷操作にユーザーとtenant単位の上限がある。 追加の適用条件C1/C2をそれぞれ証拠付きで満たす。未実施・判断待ち・受容リスクは合格不可。 ログイン、再設定、SMS送信、検索、exportに、用途と損失許容に応じた制限がある。 複数ノード・送信元変更・別API経路で制限が消失せず、共有ストア故障時の安全側動作が決まる。",
+        "remediation": "業務機能別の共有制限と安全な縮退を実装し、単一IPのみの制御に依存しない。",
+        "severity": "HIGH",
+        "source_ids": [
+          "D05",
+          "JP08"
+        ],
+        "mode": "evidence_review",
+        "revision": 5,
+        "criteria": [
+          {
+            "id": "WEB-09/C1",
+            "expectation": "ログイン、再設定、SMS送信、検索、exportに、用途と損失許容に応じた制限がある。",
+            "verification": "機能・ID・端末/送信先・テナント・全体の制限設計を確認し、許可された低負荷の境界値試験で遮断・遅延を確認する。",
+            "required_evidence": [
+              "機能別の制限値と根拠",
+              "制限到達時の安全なテスト結果"
+            ]
+          },
+          {
+            "id": "WEB-09/C2",
+            "expectation": "複数ノード・送信元変更・別API経路で制限が消失せず、共有ストア故障時の安全側動作が決まる。",
+            "verification": "分散カウンタとキー設計をレビューし、隔離環境で経路切替と制限ストア障害を再現する。",
+            "required_evidence": [
+              "分散制限の構成",
+              "迂回・ストア障害時の検証記録"
+            ]
+          }
+        ],
+        "scope_boundary": "リクエストを抑制する制御。大量参照の検知・通報はOBS-09。",
+        "required_evidence": [
+          "機能別の制限値と根拠",
+          "制限到達時の安全なテスト結果",
+          "分散制限の構成",
+          "迂回・ストア障害時の検証記録"
+        ],
+        "change_reason": "全体・IP単位の制限だけでは機能別の悪用を止められない。"
+      },
+      "after_criterion_id": "WEB-09/C1"
+    },
+    {
+      "id": "IR-01",
+      "decision": "STRENGTHEN_EXISTING",
+      "reason": "連絡先だけでなく、異常発見をインシデント判断へ進める条件を明確にする。",
+      "before": {
+        "id": "IR-01",
+        "category_id": "IR",
+        "category": "漏えい対応と復旧",
+        "title": "漏えい対応の連絡・責任者",
+        "applicability": "全プロダクト。クラウド・SaaS・顧客連絡を含む運用責任範囲。",
+        "verification": "security連絡先、当番、判断権限、provider窓口を確認する。",
+        "pass_criteria": "連絡・意思決定・停止権限が明確で、連絡経路を検証済み。",
+        "remediation": "対応台帳と連絡訓練を整備する。",
+        "severity": "HIGH",
+        "source_ids": [
+          "S04",
+          "S05",
+          "S06",
+          "S07"
+        ],
+        "mode": "evidence_review"
+      },
+      "after_criterion_id": "IR-01/C1"
+    }
+  ],
+  "mapped_count": 36,
+  "reused_ids": [
+    "AUT-01",
+    "AUT-02",
+    "AUT-10",
+    "AZ-01",
+    "AZ-04",
+    "CLD-01",
+    "CLD-02",
+    "CLD-03",
+    "DAT-01",
+    "DAT-02",
+    "DAT-03",
+    "DAT-05",
+    "DAT-06",
+    "DAT-08",
+    "DAT-09",
+    "INT-02",
+    "INT-10",
+    "IR-05",
+    "IR-09",
+    "RAN-01-03",
+    "RAN-01-09",
+    "SEC-07",
+    "SUP-01",
+    "SUP-02",
+    "SUP-03",
+    "SUP-08",
+    "TST-01",
+    "WEB-06"
+  ],
+  "static_control_count": 172,
+  "external_only_count": 48,
+  "deduplication_policy": "対策の対象・検証経路・合格条件が同じなら既存IDを再利用。足りない境界だけを同じIDへ統合する。"
+}

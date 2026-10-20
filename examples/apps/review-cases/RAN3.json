@@ -1,0 +1,207 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "RAN3",
+  "cases": [
+    {
+      "control_id": "RAN-03-01",
+      "title": "重要ファイルの大量変更検知",
+      "counterexample": "重要ファイルの大量変更・正規deploy外変更を未検知にする",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-03-01/C1",
+        "RAN-03-01/C2"
+      ],
+      "definition_pointer": "checks.json#/200",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-03-02",
+      "title": "バックアップ削除権限の分離",
+      "counterexample": "app roleへbackup削除権限を与える",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-03-02/S1"
+      ],
+      "full_criteria": [
+        "RAN-03-02/C1",
+        "RAN-03-02/C2"
+      ],
+      "definition_pointer": "checks.json#/201",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-03-03",
+      "title": "シャドウコピー削除の監視",
+      "counterexample": "shadow copy削除の実監視結果を取得しない",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-03-03/C1",
+        "RAN-03-03/C2"
+      ],
+      "definition_pointer": "checks.json#/202",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-03-04",
+      "title": "大量暗号化の振る舞い検知",
+      "counterexample": "大量暗号化検知の実効性をルール名だけで合格にする",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-03-04/C1",
+        "RAN-03-04/C2"
+      ],
+      "definition_pointer": "checks.json#/203",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-03-05",
+      "title": "異常なプロセス起動の監視",
+      "counterexample": "異常process起動を実監視せず検知済みとする",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-03-05/C1",
+        "RAN-03-05/C2"
+      ],
+      "definition_pointer": "checks.json#/204",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-03-06",
+      "title": "重要DBの破壊操作保護",
+      "counterexample": "日常DB roleにDROP/広域DELETEを許す",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-03-06/S1"
+      ],
+      "full_criteria": [
+        "RAN-03-06/C1",
+        "RAN-03-06/C2"
+      ],
+      "definition_pointer": "checks.json#/205",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-03-07",
+      "title": "ストレージ管理APIの破壊権限",
+      "counterexample": "storage管理APIへ保護解除・大量削除権限を与える",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-03-07/S1"
+      ],
+      "full_criteria": [
+        "RAN-03-07/C1",
+        "RAN-03-07/C2"
+      ],
+      "definition_pointer": "checks.json#/206",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-03-08",
+      "title": "オブジェクトストレージの版管理",
+      "counterexample": "object versioningを停止する",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-03-08/S1"
+      ],
+      "full_criteria": [
+        "RAN-03-08/C1",
+        "RAN-03-08/C2"
+      ],
+      "definition_pointer": "checks.json#/207",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-03-09",
+      "title": "バックアップの不変性・WORM",
+      "counterexample": "WORM保持の短縮・削除をapp管理者に許す",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "RAN-03-09/S1"
+      ],
+      "full_criteria": [
+        "RAN-03-09/C1",
+        "RAN-03-09/C2"
+      ],
+      "definition_pointer": "checks.json#/208",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "RAN-03-10",
+      "title": "保護機能停止の検出と通知",
+      "counterexample": "保護agent/log停止の実heartbeat欠損通知を確認しない",
+      "inspect_files": [
+        "terraform/data.tf",
+        "terraform/identity-monitoring.tf",
+        "operations/monitoring-rules.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [
+        "RAN-03-10/C1",
+        "RAN-03-10/C2"
+      ],
+      "definition_pointer": "checks.json#/209",
+      "additional_condition_focus": []
+    }
+  ]
+}

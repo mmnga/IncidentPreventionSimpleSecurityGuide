@@ -1,0 +1,205 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "AZ",
+  "cases": [
+    {
+      "control_id": "AZ-01",
+      "title": "各endpointのサーバー側認可",
+      "counterexample": "管理routeをUIだけで隠しサーバー側認可を外す",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/60",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AZ-02",
+      "title": "オブジェクト単位のIDOR/BOLA",
+      "counterexample": "object IDだけでnotesを検索しowner条件を外す",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/61",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AZ-03",
+      "title": "組織・テナント横断",
+      "counterexample": "tenant_idをJSON入力から採用する",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/62",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AZ-04",
+      "title": "管理機能・ロール昇格",
+      "counterexample": "memberのrole変更を許す",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-04/S1"
+      ],
+      "full_criteria": [
+        "AZ-04/C1",
+        "AZ-04/C2"
+      ],
+      "definition_pointer": "checks.json#/63",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AZ-05",
+      "title": "mass assignment・フィールド認可",
+      "counterexample": "UPDATEへ任意の入力fieldを一括代入する",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/64",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AZ-06",
+      "title": "一括処理・export認可",
+      "counterexample": "export workerだけtenant/owner条件を外す",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-06/S1"
+      ],
+      "full_criteria": [
+        "AZ-06/C1"
+      ],
+      "definition_pointer": "checks.json#/65",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AZ-07",
+      "title": "GraphQL・WebSocket・RPC認可",
+      "counterexample": "batch/subscriptionで1件目だけ認可する",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/66",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AZ-08",
+      "title": "worker・queueの権限継承",
+      "counterexample": "queueに渡ったactorを再検証せず実行する",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/67",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AZ-09",
+      "title": "DB RLSと接続role",
+      "counterexample": "アプリDB接続へBYPASSRLS/所有者roleを使う",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-09/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/68",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AZ-10",
+      "title": "cache・検索・共有URLの境界",
+      "counterexample": "loader/cacheをtenant/主体/権限版を含めず共有する",
+      "inspect_files": [
+        "api/app.py",
+        "api/workers.py",
+        "api/advanced.py",
+        "policies/postgres.sql"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AZ-10/S1",
+        "AZ-10/S2"
+      ],
+      "full_criteria": [
+        "AZ-10/AR8-1"
+      ],
+      "definition_pointer": "checks.json#/69",
+      "additional_condition_focus": []
+    }
+  ]
+}

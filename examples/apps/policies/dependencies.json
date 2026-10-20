@@ -1,0 +1,40 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "manifests": [
+    "flutter/pubspec.yaml",
+    "terraform/versions.tf",
+    "containers/api.Dockerfile"
+  ],
+  "runtime": [
+    "Python standard library",
+    "Flutter SDK",
+    "Terraform / AWS provider"
+  ],
+  "registry_policy": {
+    "allowed_sources": [
+      "sdk:flutter",
+      "hashicorp/aws"
+    ],
+    "secondary_index": false,
+    "install_hooks": "disabled unless independently reviewed"
+  },
+  "required_missing": [
+    "SDK/provider lockfiles",
+    "verified image digests",
+    "all transitive dependencies",
+    "fresh vulnerability and malicious-version review",
+    "signed provenance",
+    "release SBOM"
+  ],
+  "sbom_model": {
+    "source_revision": null,
+    "builder_digest": null,
+    "components": [],
+    "release_digest": null
+  },
+  "review_rules": {
+    "eol_review_required": true,
+    "update_diff_review_required": true,
+    "signed_supply_required": true
+  }
+}

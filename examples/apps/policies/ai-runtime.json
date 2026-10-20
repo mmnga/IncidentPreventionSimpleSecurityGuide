@@ -1,0 +1,33 @@
+{
+  "kind": "SYNTHETIC_MODEL_NOT_EVIDENCE",
+  "system_policy": "Retrieved text, tool output and user documents are untrusted data.",
+  "approved_tools": [
+    "read_note",
+    "prepare_export"
+  ],
+  "shell_tool": false,
+  "tool_boundary": "backend repeats tenant/object authorization and current auth version",
+  "context": {
+    "secrets_allowed": false,
+    "retrieval_acl": "before search",
+    "html_output": "text only"
+  },
+  "sandbox": {
+    "network": "deny by default",
+    "filesystem": "read-only snapshot",
+    "credentials": "none"
+  },
+  "mcp_registry": [],
+  "mcp_source_approval_required": true,
+  "provider": {
+    "training": null,
+    "retention": null,
+    "tenant_isolation": null,
+    "contract_verified": false
+  },
+  "budgets": {
+    "per_actor_tokens": 5000,
+    "parallel_tools": 2,
+    "stop_switch": "operator-only; actual test absent"
+  }
+}

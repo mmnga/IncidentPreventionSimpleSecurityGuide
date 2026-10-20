@@ -1,0 +1,175 @@
+{
+  "kind": "SYNTHETIC_ADVERSE_CASES_NOT_RESULTS",
+  "catalog_sha256": "a933784cfccb5ffc94aaf7547be569515d2742a7b3f127fcc50fcff0ec45b491",
+  "category_id": "AIM",
+  "cases": [
+    {
+      "control_id": "AIM-01",
+      "title": "直接・間接prompt injection",
+      "counterexample": "検索文書の命令でsystem/tool方針を変更する",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AIM-01/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/140",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AIM-02",
+      "title": "tool実行権限と人の承認",
+      "counterexample": "モデルの自己承認だけで破壊toolを実行する",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AIM-02/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/141",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AIM-03",
+      "title": "prompt・contextの秘密情報",
+      "counterexample": "contextへsecret/内部tokenを混ぜる",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AIM-03/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/142",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AIM-04",
+      "title": "RAG・vector storeのACL",
+      "counterexample": "RAG検索後だけACL filterし他tenantのchunkを返す",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AIM-04/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/143",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AIM-05",
+      "title": "生成結果のコード・HTML安全性",
+      "counterexample": "生成HTML/コードをそのまま実行・表示する",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AIM-05/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/144",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AIM-06",
+      "title": "MCP・pluginの供給元とscope",
+      "counterexample": "未承認MCP/pluginの版・scopeを自動採用する",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AIM-06/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/145",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AIM-07",
+      "title": "agent sandboxとegress",
+      "counterexample": "agentへ本番資格情報と無制限egressを与える",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AIM-07/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/146",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AIM-08",
+      "title": "memory・会話・cache分離",
+      "counterexample": "memory/cacheをtenant/主体の区別なく再利用する",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AIM-08/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/147",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AIM-09",
+      "title": "AI提供者の保存・再利用",
+      "counterexample": "提供者の学習/保持/契約を未取得のまま保護済みとする",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/148",
+      "additional_condition_focus": []
+    },
+    {
+      "control_id": "AIM-10",
+      "title": "agent濫用・監査と停止",
+      "counterexample": "tool/token予算・監査・停止switchを外す",
+      "inspect_files": [
+        "ai/policy.py",
+        "policies/ai-runtime.json"
+      ],
+      "execution": "DO_NOT_EXECUTE; static data and independent review only",
+      "expected_handling": "Confirm a visible defect with evidence or keep REVIEW/BLOCKED; never auto-PASS from this model",
+      "static_criteria": [
+        "AIM-10/S1"
+      ],
+      "full_criteria": [],
+      "definition_pointer": "checks.json#/149",
+      "additional_condition_focus": []
+    }
+  ]
+}
